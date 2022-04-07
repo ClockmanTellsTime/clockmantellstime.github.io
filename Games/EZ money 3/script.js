@@ -540,3 +540,4 @@ function check() {
         EA.spurts.items.money = 10000000000000
     }
 }
+check()
