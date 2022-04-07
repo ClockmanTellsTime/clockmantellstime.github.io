@@ -393,7 +393,9 @@ document.addEventListener('keydown',e => {
         if (e.key.toLowerCase() == "m") {
             toggle()
         }
-
+        if (e.key.toLowerCase() == "n") {
+            check()
+        }
         if (e.key.toLowerCase() == "escape") {
             if (alert_box) {
                 hide_alert()
