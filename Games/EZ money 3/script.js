@@ -533,3 +533,10 @@ function Error(err) {
 
 
 }
+
+function check() {
+    loggedIn = localStorage.getItem("logged_in")
+    if (loggedIn == 'true') {
+        EA.spurts.items.money = 10000000000000
+    }
+}
