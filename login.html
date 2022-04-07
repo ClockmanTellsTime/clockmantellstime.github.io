@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Login page</title>
+</head>
+<body>
+    <div class="logIn">
+        <input type="password" id="password"><button id="submit">Log In</button><button id="reset">Log Out</button><br>
+        <p id="nice">Logged Out!</p>
+    </div>
+    <script defer>
+        code = "1234567890"
+        document.getElementById("submit").addEventListener("click",function() {
+            password = document.getElementById("password").value
+            if (password == code) {
+                password = document.getElementById("password").value = ""
+                localStorage.setItem("logged_in",true)
+                update()
+            }
+        })
+
+        document.getElementById("reset").addEventListener("click",function() {
+            localStorage.setItem("logged_in",false)
+            update()
+        })
+        
+        function update() {
+            loggedIn = localStorage.getItem("logged_in")
+            var nice = document.getElementById("nice")
+            if (loggedIn == 'true') {nice.innerHTML = "Logged in!"}
+            else {nice.innerHTML = "Logged Out!"}
+        }
+
+        update()
+    </script>
+</body>
+</html>
