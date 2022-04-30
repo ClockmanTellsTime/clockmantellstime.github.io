@@ -4,7 +4,7 @@ function num2txt(num) {
 
 
     //suffixes
-    const suffixes = ["thousand"," million"," billion"," trillion"," quadrillion"," quintillion"," sextillion"," septillion", " octillion"," nonillion"," decillion"," undecillion"," duodecillion"," tridecillion"," quaddecillion"," quindecillion"," sexadecillion"," septadecillion"," octadecillion"," nondecillion"," vigintillion"];
+    const suffixes = [" million"," billion"," trillion"," quadrillion"," quintillion"," sextillion"," septillion"," octillion"," nonillion"," dectillion"," unD"," dD"," trD"," qdD"," qnD"," sxD"," spD", " octD"," nonD"," Vg"," unVg"," dVg"," trVg"," qdVg"," qnVg"," sxVg"," spVg"," ocVg"," nonVg"," Tg"," unTg"," dTg"," tsTg"," qdTg"," qnTg"," sxTG"," spTg"," ocTg"," nonTg"," Qdr"," unQdr"," dQdr"," trQdr"," qdQdr"," qnQdr"," sxQdr"," spQdr"," octQdr"," nonQdr"," Qgnt"," INF"];
 
     //variables
     let n = String(num);
