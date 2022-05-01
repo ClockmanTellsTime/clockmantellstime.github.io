@@ -1,10 +1,7 @@
 function num2txt(num) {
-    //the e in the name of this function stands for easy to make for me
-    //the 2 in the name is how many hours it took me to make this function 
-
 
     //suffixes
-    const suffixes = [" million"," billion"," trillion"," quadrillion"," quintillion"," sextillion"," septillion"," octillion"," nonillion"," dectillion"," unD"," dD"," trD"," qdD"," qnD"," sxD"," spD", " octD"," nonD"," Vg"," unVg"," dVg"," trVg"," qdVg"," qnVg"," sxVg"," spVg"," ocVg"," nonVg"," Tg"," unTg"," dTg"," tsTg"," qdTg"," qnTg"," sxTG"," spTg"," ocTg"," nonTg"," Qdr"," unQdr"," dQdr"," trQdr"," qdQdr"," qnQdr"," sxQdr"," spQdr"," octQdr"," nonQdr"," Qgnt"," INF"];
+    const suffixes = [" million"," billion"," trillion"," quadrillion"," quintillion"," sextillion"," septillion"," octillion"," nonillion"," dectillion"," unD"," dD"," trD"," qdD"," qnD"," sxD"," spD", " octD"," nvD"," Vg"," unVg"," dVg"," trVg"," qdVg"," qnVg"," sxVg"," spVg"," ocVg"," nonVg"," Tg"," unTg"," dTg"," tsTg"," qdTg"," qnTg"," sxTG"," spTg"," ocTg"," noTg"," Qdr"," unQdr"," dQdr"," trQdr"," qdQdr"," qnQdr"," sxQdr"," spQdr"," octQdr"," nonQdr"," qQGnt"," uQGnt"," dQGnt"," tQGnt"," qdQGnt"," QnQGnt"," sxQGnt"," SpQGnt"," OQqGnt"," NvQqGnt"," SXGntl"," USXGntl"," DSXGntl"," TSXGntl"," qtSXGntl"," QnSXGntl"," sxSXGntl"," spSXGntl"," oSXGntl"," NVSXGntl"," SPTGNL"," USPTGNL"," dSPTGNL"," tSPTGNL"," qtSPTGNL"," qnSPTGNL"," svSPTGNL"," spSPTGNL"," oSPTGNL","NVSPTGNL"," OTGNTL"," UOTGNTL"," dOTGNTL"," tOTGNTL"," qtOTGNTL"," qnOTGNTL"," svOTGNTL"," spOTGNTL"," otOTGNTL"," nvOTGNTL"," NONGNTL"," uNONGNTL"," dNONGNTL"," tNONGNTL"," qtNONGNTL"," qnNONGNTL"," svNONGNTL"," spNONGNTL"," octNONGNTL"," nvNONGNTL"," CENT"," UNCENT"," DuCENT"]
 
     //variables
     let n = String(num);
@@ -12,6 +9,7 @@ function num2txt(num) {
 
     //leave function early if number to small
     if (num <= 999) {return String(num)}
+    if (num >= Infinity){return "INF"}
 
     //dumb number that makes this way too hard
     dumbNumber = 1000000000000000000000
@@ -39,9 +37,6 @@ function num2txt(num) {
             iDontEvenKnow = iDontEvenKnow + "0"
         }
         
-        if (Something > 150) {
-            return "INF"
-        }
         
         n = iDontEvenKnow
     }   
@@ -86,7 +81,3 @@ function num2txt(num) {
     //return pogger number
     return betterNumber
 }  
-
-
-
-
