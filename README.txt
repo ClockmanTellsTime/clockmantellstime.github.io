@@ -1,5 +1,5 @@
 Website:
-clockmantellstime.github.io
+https://clockmantellstime.github.io
 
 Number suffix adder:
 <script src="https://clockmantellstime.github.io/other/num2txt.js"></script> (put this in your html file)
