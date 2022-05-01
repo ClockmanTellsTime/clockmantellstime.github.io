@@ -39,6 +39,10 @@ function num2txt(num) {
             iDontEvenKnow = iDontEvenKnow + "0"
         }
         
+        if (Something > 150) {
+            return "INF"
+        }
+        
         n = iDontEvenKnow
     }   
 
