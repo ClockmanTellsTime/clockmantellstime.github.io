@@ -358,9 +358,9 @@ function main() {
     bronze = new ore("bronze",100000,minute)
     gold = new ore("gold",1000000,minute*2.5)
     topaz = new ore("topaz",10000000,minute*5)
-    amathyst = new ore("amathyst",100000000,minute*15)
-    ruby = new ore("ruby",1000000000,hour)
-    topaz = new ore("topaz",10000000000,hour*5)
+    ruby = new ore("ruby",1000000000,minute*15)
+    topaz = new ore("topaz",10000000000,hour)
+    amathyst = new ore("amathyst",100000000,hour*5)
     
     dropDown()
 
