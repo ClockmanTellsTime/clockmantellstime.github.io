@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    overflow: hidden;
 }
 .Select{
     font-size: 140px;
@@ -56,7 +57,7 @@ body{
 }
 
 .start{
-    
+    visibility: visibility;
     position: relative;
     top: 100px;
     
