@@ -1,1 +1,358 @@
-const _0x576430=_0x24e2;(function(_0x1019be,_0xc98251){const _0x431b4a=_0x24e2,_0x50f542=_0x1019be();while(!![]){try{const _0x3163df=-parseInt(_0x431b4a(0x179))/0x1*(-parseInt(_0x431b4a(0x15a))/0x2)+-parseInt(_0x431b4a(0x18b))/0x3+-parseInt(_0x431b4a(0x15e))/0x4*(parseInt(_0x431b4a(0x19c))/0x5)+-parseInt(_0x431b4a(0x1ad))/0x6*(parseInt(_0x431b4a(0x192))/0x7)+-parseInt(_0x431b4a(0x17c))/0x8*(-parseInt(_0x431b4a(0x16a))/0x9)+parseInt(_0x431b4a(0x187))/0xa+parseInt(_0x431b4a(0x155))/0xb;if(_0x3163df===_0xc98251)break;else _0x50f542['push'](_0x50f542['shift']());}catch(_0x150b3b){_0x50f542['push'](_0x50f542['shift']());}}}(_0x48d3,0x41f48),document[_0x576430(0x171)](_0x576430(0x14f),function(_0x32004b){const _0x4b9846=_0x576430;console['log'](_0x32004b[_0x4b9846(0x186)]+_0x4b9846(0x15d)+_0x32004b[_0x4b9846(0x164)]),_0x32004b[_0x4b9846(0x186)]===0x31&&(document[_0x4b9846(0x1a0)](_0x4b9846(0x1a4))['style'][_0x4b9846(0x1a6)]===_0x4b9846(0x19a)?upgrade():document[_0x4b9846(0x1a0)](_0x4b9846(0x140))[_0x4b9846(0x147)][_0x4b9846(0x1a6)]===_0x4b9846(0x19a)?setDifficulty(_0x4b9846(0x142)):start()),_0x32004b['keyCode']===0x32&&(document['getElementById'](_0x4b9846(0x140))[_0x4b9846(0x147)]['visibility']===_0x4b9846(0x19a)&&setDifficulty(_0x4b9846(0x16e))),_0x32004b[_0x4b9846(0x186)]===0x33&&(document[_0x4b9846(0x1a0)](_0x4b9846(0x140))['style']['visibility']===_0x4b9846(0x19a)&&setDifficulty(_0x4b9846(0x150))),_0x32004b[_0x4b9846(0x186)]===0x34&&(document[_0x4b9846(0x1a0)](_0x4b9846(0x140))[_0x4b9846(0x147)]['visibility']===_0x4b9846(0x19a)&&setDifficulty(_0x4b9846(0x172))),_0x32004b[_0x4b9846(0x186)]===0x53&&(document[_0x4b9846(0x1a0)](_0x4b9846(0x1a4))[_0x4b9846(0x147)][_0x4b9846(0x1a6)]==='visible'&&(saveGame(),window[_0x4b9846(0x1ac)](_0x4b9846(0x144)))),_0x32004b[_0x4b9846(0x186)]===0x52&&(document[_0x4b9846(0x1a0)](_0x4b9846(0x1a4))['style'][_0x4b9846(0x1a6)]===_0x4b9846(0x19a)&&resetGame()),_0x32004b['keyCode']===0x4c&&loadGame();}));let stats={'money':0x0,'upgrade':0x1,'printer':0x0,'builder':0x0,'manager':0x0,'mk1':0x0,'mk2':0x0,'mk3':0x0,'mk4':0x0,'mk5':0x0,'mk1Lvl':0x1,'mk2Lvl':0x1,'mk3Lvl':0x1,'mk4Lvl':0x1,'mk5Lvl':0x1,'earnPrinter':0x5,'mk1Earn':0x2710,'mk2Earn':0x7a120,'mk3Earn':0x4c4b40,'mk4Earn':0x9502f900,'mk5Earn':0xba43b7400,'has':![],'has1':![]},other={'diffiiculty':0x0},prices={'upgrade':0x3e8,'printer':0x3e8,'builder':0x61a8,'manager':0x186a0,'mk1':0x7a120,'mk2':0xe4e1c0,'mk3':0x5f5e100,'mk4':0xba43b7400,'mk5':0xe8d4a51000,'has':0x2710,'has1':0x186a0},difficulties={'easy':0x1,'medium':0x2,'hard':0x5,'insane':0x14},automations={'mk1':setInterval(function(){const _0x16983f=_0x576430;change(_0x16983f(0x151),stats['mk1']*stats[_0x16983f(0x168)]);},0x3e8),'mk2':setInterval(function(){const _0x1df395=_0x576430;change(_0x1df395(0x151),stats[_0x1df395(0x16c)]*stats[_0x1df395(0x169)]);},0x3e8),'mk3':setInterval(function(){const _0x1eff60=_0x576430;change('money',stats[_0x1eff60(0x18a)]*stats['mk3Earn']);},0x3e8),'mk4':setInterval(function(){const _0x1b8eab=_0x576430;change(_0x1b8eab(0x151),stats[_0x1b8eab(0x176)]*stats[_0x1b8eab(0x16b)]);},0x3e8),'mk5':setInterval(function(){const _0x4664ef=_0x576430;change(_0x4664ef(0x151),stats[_0x4664ef(0x18c)]*stats[_0x4664ef(0x185)]);},0x3e8),'printer':setInterval(function(){const _0x12ab2f=_0x576430;change(_0x12ab2f(0x151),stats[_0x12ab2f(0x154)]*stats[_0x12ab2f(0x167)]);},0x3e8),'builder':setInterval(function(){const _0x5e132f=_0x576430;stats['money']>=prices[_0x5e132f(0x18c)]&&(stats[_0x5e132f(0x151)]/prices['mk5']>=stats[_0x5e132f(0x183)]?(change(_0x5e132f(0x18c),stats['builder']),change(_0x5e132f(0x151),-(stats[_0x5e132f(0x183)]*prices['mk5']))):(change(_0x5e132f(0x18c),Math[_0x5e132f(0x193)](stats['money']/prices[_0x5e132f(0x18c)])),change(_0x5e132f(0x151),-(Math[_0x5e132f(0x193)](stats['money']/prices['mk5'])*prices['mk5'])))),stats[_0x5e132f(0x151)]>=prices['mk4']&&(stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x176)]>=stats['builder']?(change(_0x5e132f(0x176),stats[_0x5e132f(0x183)]),change(_0x5e132f(0x151),-(stats[_0x5e132f(0x183)]*prices['mk4']))):(change('mk4',Math[_0x5e132f(0x193)](stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x176)])),change(_0x5e132f(0x151),-(Math[_0x5e132f(0x193)](stats['money']/prices[_0x5e132f(0x176)])*prices[_0x5e132f(0x176)])))),stats[_0x5e132f(0x151)]>=prices[_0x5e132f(0x18a)]&&(stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x18a)]>=stats[_0x5e132f(0x183)]?(change(_0x5e132f(0x18a),stats['builder']),change(_0x5e132f(0x151),-(stats[_0x5e132f(0x183)]*prices['mk3']))):(change('mk3',Math['floor'](stats['money']/prices[_0x5e132f(0x18a)])),change('money',-(Math[_0x5e132f(0x193)](stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x18a)])*prices['mk3'])))),stats[_0x5e132f(0x151)]>=prices[_0x5e132f(0x16c)]&&(stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x16c)]>=stats['builder']?(change(_0x5e132f(0x16c),stats['builder']),change(_0x5e132f(0x151),-(stats['builder']*prices['mk2']))):(change(_0x5e132f(0x16c),Math[_0x5e132f(0x193)](stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x16c)])),change(_0x5e132f(0x151),-(Math[_0x5e132f(0x193)](stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x16c)])*prices[_0x5e132f(0x16c)])))),stats['money']>=prices[_0x5e132f(0x149)]&&(stats['money']/prices[_0x5e132f(0x149)]>=stats['builder']?(change(_0x5e132f(0x149),stats[_0x5e132f(0x183)]),change(_0x5e132f(0x151),-(stats[_0x5e132f(0x183)]*prices[_0x5e132f(0x149)]))):(change(_0x5e132f(0x149),Math[_0x5e132f(0x193)](stats['money']/prices[_0x5e132f(0x149)])),change(_0x5e132f(0x151),-(Math['floor'](stats[_0x5e132f(0x151)]/prices[_0x5e132f(0x149)])*prices[_0x5e132f(0x149)]))));},0x7530),'manager':setInterval(function(){const _0x5c87d5=_0x576430;stats['money']>=prices[_0x5c87d5(0x183)]&&(stats[_0x5c87d5(0x151)]/prices[_0x5c87d5(0x183)]>=stats[_0x5c87d5(0x17d)]?(change(_0x5c87d5(0x183),stats[_0x5c87d5(0x17d)]),change('money',-(stats[_0x5c87d5(0x17d)]*prices[_0x5c87d5(0x183)]))):(change(_0x5c87d5(0x183),Math[_0x5c87d5(0x193)](stats['money']/prices['builder'])),change(_0x5c87d5(0x151),-(Math[_0x5c87d5(0x193)](stats['money']/prices[_0x5c87d5(0x183)])*prices[_0x5c87d5(0x183)])))),stats[_0x5c87d5(0x151)]>=prices['printer']&&(stats[_0x5c87d5(0x151)]/prices[_0x5c87d5(0x154)]>=stats[_0x5c87d5(0x17d)]?(change(_0x5c87d5(0x154),stats['manager']),change('money',-(stats[_0x5c87d5(0x17d)]*prices[_0x5c87d5(0x154)]))):(change(_0x5c87d5(0x154),Math['floor'](stats[_0x5c87d5(0x151)]/prices[_0x5c87d5(0x154)])),change(_0x5c87d5(0x151),-(Math[_0x5c87d5(0x193)](stats[_0x5c87d5(0x151)]/prices[_0x5c87d5(0x154)])*prices[_0x5c87d5(0x154)]))));},0xea60)};function change(_0x2a6831,_0xc1ee08){stats[_0x2a6831]+=_0xc1ee08,reload();}function hire(_0x88018c){const _0x27e848=_0x576430;stats[_0x27e848(0x151)]>=prices[_0x88018c]?(change(_0x88018c,0x1),change(_0x27e848(0x151),-prices[_0x88018c]),reload()):window[_0x27e848(0x1ac)](_0x27e848(0x14c)+num2txt(prices[_0x88018c]-stats[_0x27e848(0x151)])+'\x20more\x20money!');}function upgrade(){const _0x1d2465=_0x576430;stats[_0x1d2465(0x151)]>=prices[_0x1d2465(0x166)]?(stats[_0x1d2465(0x166)]++,stats[_0x1d2465(0x151)]-=prices['upgrade'],reload()):window['alert'](_0x1d2465(0x14c)+num2txt(prices[_0x1d2465(0x166)]-stats[_0x1d2465(0x151)])+_0x1d2465(0x1a8));}function num2txt(_0x405bd2){const _0x4bfb33=_0x576430,_0x1da5d9=[_0x4bfb33(0x146),_0x4bfb33(0x163),'\x20billion',_0x4bfb33(0x157),_0x4bfb33(0x1a5),_0x4bfb33(0x189)];let _0x51f103=String(_0x405bd2),_0x1a4b6e=0x0;if(_0x405bd2>0x3e7&&_0x405bd2<0x8ac7230489e80000){if((_0x51f103[_0x4bfb33(0x17b)]-0x1)%0x3===0x0){let _0x5d113b=_0x51f103[_0x4bfb33(0x1a3)](0x0),_0x5d1a6c=_0x51f103['charAt'](0x1),_0x436d8f=_0x1da5d9[(_0x51f103[_0x4bfb33(0x17b)]-0x1)/0x3-0x1];_0x1a4b6e=_0x5d113b+'.'+_0x5d1a6c+_0x436d8f;}if((_0x51f103[_0x4bfb33(0x17b)]-0x2)%0x3===0x0){let _0x35d1f0=_0x51f103['charAt'](0x0),_0x421f6c=_0x51f103[_0x4bfb33(0x1a3)](0x1),_0x4fadfe=_0x1da5d9[(_0x51f103[_0x4bfb33(0x17b)]-0x2)/0x3-0x1];_0x1a4b6e=_0x35d1f0+_0x421f6c+_0x4fadfe;}if((_0x51f103[_0x4bfb33(0x17b)]-0x3)%0x3===0x0){let _0x238b33=_0x51f103['charAt'](0x0),_0x511739=_0x51f103['charAt'](0x1),_0x6ba36=_0x51f103[_0x4bfb33(0x1a3)](0x2),_0x1fa0ae=_0x1da5d9[(_0x51f103[_0x4bfb33(0x17b)]-0x3)/0x3-0x1];_0x1a4b6e=_0x238b33+_0x511739+_0x6ba36+_0x1fa0ae;}}else return _0x405bd2;return _0x1a4b6e;}function reload(){const _0x2fbd9=_0x576430;document[_0x2fbd9(0x1a0)](_0x2fbd9(0x197))[_0x2fbd9(0x191)]='$'+num2txt(stats[_0x2fbd9(0x151)]),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x1aa))['innerHTML']=_0x2fbd9(0x19e)+num2txt(stats[_0x2fbd9(0x154)]),document['getElementById'](_0x2fbd9(0x16d))[_0x2fbd9(0x191)]=_0x2fbd9(0x18e)+num2txt(stats[_0x2fbd9(0x183)]),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x18f))[_0x2fbd9(0x191)]=_0x2fbd9(0x181)+num2txt(stats['manager']),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x195))[_0x2fbd9(0x191)]=_0x2fbd9(0x143)+num2txt(stats[_0x2fbd9(0x149)]),document[_0x2fbd9(0x1a0)]('mk2Display')[_0x2fbd9(0x191)]=_0x2fbd9(0x177)+num2txt(stats['mk2']),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x19d))[_0x2fbd9(0x191)]=_0x2fbd9(0x17e)+num2txt(stats[_0x2fbd9(0x18a)]),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x196))[_0x2fbd9(0x191)]=_0x2fbd9(0x182)+num2txt(stats[_0x2fbd9(0x176)]),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x153))['innerHTML']=_0x2fbd9(0x194)+num2txt(stats['mk5']),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x145))[_0x2fbd9(0x191)]=_0x2fbd9(0x178)+num2txt(prices[_0x2fbd9(0x166)])+_0x2fbd9(0x14b)+num2txt(stats[_0x2fbd9(0x166)])+_0x2fbd9(0x148),document[_0x2fbd9(0x1a0)](_0x2fbd9(0x154))[_0x2fbd9(0x191)]=_0x2fbd9(0x1a1)+num2txt(stats[_0x2fbd9(0x167)])+_0x2fbd9(0x14a)+num2txt(prices[_0x2fbd9(0x154)])+'!',document[_0x2fbd9(0x1a0)](_0x2fbd9(0x183))['innerHTML']=_0x2fbd9(0x1a9)+num2txt(prices[_0x2fbd9(0x183)])+'!',document['getElementById'](_0x2fbd9(0x17d))[_0x2fbd9(0x191)]=_0x2fbd9(0x173)+num2txt(prices['manager'])+'!',document[_0x2fbd9(0x1a0)](_0x2fbd9(0x149))['innerHTML']=_0x2fbd9(0x16f)+num2txt(stats[_0x2fbd9(0x168)])+_0x2fbd9(0x14a)+num2txt(prices[_0x2fbd9(0x149)])+'!',document[_0x2fbd9(0x1a0)](_0x2fbd9(0x16c))[_0x2fbd9(0x191)]=_0x2fbd9(0x1a2)+num2txt(stats[_0x2fbd9(0x169)])+_0x2fbd9(0x14a)+num2txt(prices[_0x2fbd9(0x16c)])+'!',document[_0x2fbd9(0x1a0)](_0x2fbd9(0x18a))[_0x2fbd9(0x191)]=_0x2fbd9(0x162)+num2txt(stats[_0x2fbd9(0x15c)])+_0x2fbd9(0x14a)+num2txt(prices['mk3'])+'!',document[_0x2fbd9(0x1a0)]('mk4')[_0x2fbd9(0x191)]=_0x2fbd9(0x14d)+num2txt(stats[_0x2fbd9(0x16b)])+_0x2fbd9(0x14a)+num2txt(prices[_0x2fbd9(0x176)])+'!',document[_0x2fbd9(0x1a0)](_0x2fbd9(0x18c))[_0x2fbd9(0x191)]=_0x2fbd9(0x15b)+num2txt(stats[_0x2fbd9(0x185)])+_0x2fbd9(0x158);}function _0x24e2(_0x1ca530,_0x3592cf){const _0x48d3af=_0x48d3();return _0x24e2=function(_0x24e206,_0x4468fe){_0x24e206=_0x24e206-0x140;let _0x52dc1c=_0x48d3af[_0x24e206];return _0x52dc1c;},_0x24e2(_0x1ca530,_0x3592cf);}function autoUpgrade(){const _0x2f985e=_0x576430;stats[_0x2f985e(0x180)]&&document[_0x2f985e(0x1a0)](_0x2f985e(0x165))['innerHTML']===_0x2f985e(0x160)?(t=setInterval(function(){const _0xef8840=_0x2f985e;stats[_0xef8840(0x151)]>=0x3e8&&(stats[_0xef8840(0x166)]++,stats[_0xef8840(0x151)]=stats['money']-0x3e8);},0.001),document[_0x2f985e(0x1a0)](_0x2f985e(0x165))['innerHTML']='on',stats[_0x2f985e(0x180)]=![],setTimeout(function(){const _0x114535=_0x2f985e;clearInterval(t),document[_0x114535(0x1a0)]('ez1')['innerHTML']='buy';},0xea60)):stats[_0x2f985e(0x151)]>=prices[_0x2f985e(0x180)]&&document[_0x2f985e(0x1a0)]('ez1')[_0x2f985e(0x191)]===_0x2f985e(0x160)?confirm(_0x2f985e(0x15f)+num2txt(prices['has'])+_0x2f985e(0x14e))?(stats['has']=!![],stats[_0x2f985e(0x151)]-=prices[_0x2f985e(0x180)]):window[_0x2f985e(0x1ac)]('Your\x20loss'):window[_0x2f985e(0x1ac)](_0x2f985e(0x199)+num2txt(prices[_0x2f985e(0x180)])+_0x2f985e(0x19f));}function autoPrintMoney(){const _0x4a0529=_0x576430;if(stats['has1']&&document[_0x4a0529(0x1a0)](_0x4a0529(0x19b))['innerHTML']===_0x4a0529(0x160)){var _0x4bbb94=setInterval(function(){const _0x3da117=_0x4a0529;change(_0x3da117(0x151),stats[_0x3da117(0x166)]);},0.001);document['getElementById'](_0x4a0529(0x19b))[_0x4a0529(0x191)]='on',stats[_0x4a0529(0x190)]=![],setTimeout(function(){const _0x1bad91=_0x4a0529;clearInterval(_0x4bbb94),document[_0x1bad91(0x1a0)]('ez2')[_0x1bad91(0x191)]=_0x1bad91(0x160);},0xea60);}else stats[_0x4a0529(0x151)]>=prices[_0x4a0529(0x190)]&&document['getElementById'](_0x4a0529(0x19b))[_0x4a0529(0x191)]==='buy'?confirm(_0x4a0529(0x15f)+num2txt(prices['has'])+_0x4a0529(0x14e))?(stats['has1']=!![],stats[_0x4a0529(0x151)]-=prices[_0x4a0529(0x190)]):window['alert'](_0x4a0529(0x156)):window[_0x4a0529(0x1ac)](_0x4a0529(0x199)+num2txt(prices[_0x4a0529(0x190)])+_0x4a0529(0x19f));}function levelUp(_0x270116){const _0x36a3fe=_0x576430;stats[_0x36a3fe(0x151)]>=prices[_0x270116]*0xa?stats[_0x270116+'Lvl']==0x6?(window[_0x36a3fe(0x1ac)]('Your\x20factory\x20is\x20at\x20max\x20level!'),document['getElementById'](_0x270116+_0x36a3fe(0x17f))['parentNode'][_0x36a3fe(0x159)](document[_0x36a3fe(0x1a0)](_0x270116+_0x36a3fe(0x17f)))):(stats[_0x270116+'Lvl']+=0x1,change(_0x36a3fe(0x151),-(prices[_0x270116]*0xa)),stats[_0x270116+_0x36a3fe(0x188)]=Math[_0x36a3fe(0x193)](stats[_0x270116+_0x36a3fe(0x188)]*1.5),reload()):window[_0x36a3fe(0x1ac)](_0x36a3fe(0x14c)+num2txt(prices[_0x270116]*0xa-stats[_0x36a3fe(0x151)])+'\x20to\x20do\x20this!');}function _0x48d3(){const _0x1159d8=['Mk1\x20factory:\x20A\x20basic\x20factory\x20that\x20prints\x20$','stringify','addEventListener','insane','Manager:\x20Someone\x20who\x20automaticly\x20hires\x20printers\x20and\x20builders\x20every\x20minute\x20if\x20you\x20can,\x20costs\x20','start','getItem','mk4','mk2\x20factories:\x20','Upgrade\x20printer,\x20costs\x20$','361FqYCFO','parse','length','192yAawXZ','manager','mk3\x20factories:\x20','Upgrade','has','Managers:\x20','mk4\x20factories:\x20','builder','white','mk5Earn','keyCode','1175980GGNDRj','Earn','\x20quintillion','mk3','1175565BwyESl','mk5','diffiiculty','Builders:\x20','managerDisplay','has1','innerHTML','142387mFgZqy','floor','mk5\x20factories:\x20','mk1Display','mk4Display','moneyDisplay','setItem','You\x20need\x20to\x20buy\x20it\x20for\x20$','visible','ez2','26455zPmwPf','mk3Display','Money\x20printers:\x20','\x20or\x20you\x20already\x20have\x20it\x20on','getElementById','Money\x20printer:\x20Someone\x20who\x20prints\x20$','Mk2\x20factory:\x20a\x20factory\x20that\x20can\x20print\x20$','charAt','game','\x20quadrillion','visibility','body','\x20more\x20money\x20to\x20do\x20this!','Builder:\x20Someone\x20who\x20automaticly\x20builds\x20factories\x20if\x20you\x20have\x20enough\x20money\x20for\x20them\x20every\x2015\x20seconds,\x20costs\x20','printerDisplay','Are\x20you\x20sure,\x20you\x20can\x27t\x20change\x20the\x20difficulty\x20later?','alert','18CfypzD','difficulty','hidden','easy','mk1\x20factories:\x20','Game\x20has\x20been\x20saved!','upgradeDisplay','\x20thousand','style','\x20at\x20a\x20time','mk1','\x20every\x20second,\x20costs\x20','!\x20Your\x20printer\x20prints\x20$','You\x20need\x20','Mk4\x20factory:\x20an\x20advanced\x20factory\x20that\x20can\x20produce\x20$','?\x20lasts\x20for\x2060\x20seconds','keyup','hard','money','no\x20save\x20found!','mk5Display','printer','4843663fDaLiV','Your\x20loss','\x20trillion','\x20every\x20second,\x20but\x20it\x20isn\x27t\x20cheap!','removeChild','1428bwivMw','Mk5\x20factory:\x20A\x20super\x20advanced\x20factory\x20that\x20can\x20print\x20$','mk3Earn','\x20-\x20','372WkPzes','Do\x20you\x20want\x20to\x20but\x20this\x20for\x20$','buy','backgroundColor','Mk3\x20factory:\x20a\x20slightly\x20advanced\x20factory\x20that\x20can\x20print\x20$','\x20million','key','ez1','upgrade','earnPrinter','mk1Earn','mk2Earn','149778VKGWHb','mk4Earn','mk2','builderDisplay','medium'];_0x48d3=function(){return _0x1159d8;};return _0x48d3();}function start(){const _0x37d8e2=_0x576430;confirm('Are\x20you\x20sure?')&&(document[_0x37d8e2(0x1a0)]('difficulty')['style'][_0x37d8e2(0x1a6)]='visible',document[_0x37d8e2(0x1a0)](_0x37d8e2(0x174))['style'][_0x37d8e2(0x1a6)]=_0x37d8e2(0x141),document[_0x37d8e2(0x1a0)](_0x37d8e2(0x1a7))[_0x37d8e2(0x147)][_0x37d8e2(0x161)]='black',document['getElementById']('start1')['style'][_0x37d8e2(0x1a6)]='hidden');}function setDifficulty(_0x2167ee){const _0x2ff0c5=_0x576430;if(confirm(_0x2ff0c5(0x1ab))){for(var _0x3514c3 in prices){prices[_0x3514c3]*=difficulties[_0x2167ee];}other[_0x2ff0c5(0x18d)]=_0x2167ee,document[_0x2ff0c5(0x1a0)](_0x2ff0c5(0x140))['style']['visibility']=_0x2ff0c5(0x141),document['getElementById'](_0x2ff0c5(0x1a4))[_0x2ff0c5(0x147)][_0x2ff0c5(0x1a6)]=_0x2ff0c5(0x19a),document[_0x2ff0c5(0x1a0)](_0x2ff0c5(0x1a7))[_0x2ff0c5(0x147)]['backgroundColor']=_0x2ff0c5(0x184);}}function saveGame(){const _0x3a5cb2=_0x576430;other[_0x3a5cb2(0x18d)]===_0x3a5cb2(0x142)&&localStorage[_0x3a5cb2(0x198)](_0x3a5cb2(0x142),JSON[_0x3a5cb2(0x170)](stats)),other[_0x3a5cb2(0x18d)]==='medium'&&localStorage[_0x3a5cb2(0x198)](_0x3a5cb2(0x16e),JSON[_0x3a5cb2(0x170)](stats)),other['diffiiculty']==='hard'&&localStorage[_0x3a5cb2(0x198)](_0x3a5cb2(0x150),JSON[_0x3a5cb2(0x170)](stats)),other[_0x3a5cb2(0x18d)]===_0x3a5cb2(0x172)&&localStorage[_0x3a5cb2(0x198)](_0x3a5cb2(0x172),JSON[_0x3a5cb2(0x170)](stats));}function loadGame(){const _0x35e795=_0x576430;if(other[_0x35e795(0x18d)]===_0x35e795(0x142))var _0xe7f929=JSON['parse'](localStorage[_0x35e795(0x175)](_0x35e795(0x142)));if(other[_0x35e795(0x18d)]===_0x35e795(0x16e))var _0xe7f929=JSON[_0x35e795(0x17a)](localStorage[_0x35e795(0x175)]('medium'));if(other[_0x35e795(0x18d)]===_0x35e795(0x150))var _0xe7f929=JSON['parse'](localStorage[_0x35e795(0x175)](_0x35e795(0x150)));if(other[_0x35e795(0x18d)]===_0x35e795(0x172))var _0xe7f929=JSON[_0x35e795(0x17a)](localStorage[_0x35e795(0x175)](_0x35e795(0x172)));try{for(var _0x2fe66f in _0xe7f929){stats[_0x2fe66f]=_0xe7f929[_0x2fe66f];}}catch(_0x4c5f50){window['alert'](_0x35e795(0x152));}}function resetGame(){const _0x7db4ec=_0x576430;if(confirm('Are\x20you\x20sure\x20you\x20want\x20to\x20reset?')){let _0x1c7c89={'money':0x0,'upgrade':0x1,'printer':0x0,'builder':0x0,'manager':0x0,'mk1':0x0,'mk2':0x0,'mk3':0x0,'mk4':0x0,'mk5':0x0,'mk1Lvl':0x1,'mk2Lvl':0x1,'mk3Lvl':0x1,'mk4Lvl':0x1,'mk5Lvl':0x1,'earnPrinter':0x5,'mk1Earn':0x2710,'mk2Earn':0x7a120,'mk3Earn':0x4c4b40,'mk4Earn':0x9502f900,'mk5Earn':0xba43b7400,'has':![],'has1':![]};other[_0x7db4ec(0x18d)]===_0x7db4ec(0x142)&&localStorage['setItem'](_0x7db4ec(0x142),JSON[_0x7db4ec(0x170)](_0x1c7c89)),other[_0x7db4ec(0x18d)]===_0x7db4ec(0x16e)&&localStorage[_0x7db4ec(0x198)](_0x7db4ec(0x16e),JSON[_0x7db4ec(0x170)](_0x1c7c89)),other['diffiiculty']===_0x7db4ec(0x150)&&localStorage['setItem'](_0x7db4ec(0x150),JSON[_0x7db4ec(0x170)](_0x1c7c89)),other[_0x7db4ec(0x18d)]===_0x7db4ec(0x172)&&localStorage[_0x7db4ec(0x198)](_0x7db4ec(0x172),JSON[_0x7db4ec(0x170)](_0x1c7c89)),loadGame();}}
+difficulties = ["easy","medium","hard","insane"]
+document.addEventListener("keypress", event => {
+    if (event.key.toLowerCase() == " "){
+        if (document.getElementById("start").style.visibility == "") {
+            start()
+        }
+    }
+
+    if (event.key.toLowerCase() == "r"){
+        if (window.confirm("Are you sure you want to reset, this is not able to be undone? ")) {
+            reset() 
+        }
+    }
+
+    if (typeof(parseInt(event.key)) ==  "number") {
+        if (parseInt(event.key) > 0 && parseInt(event.key) < 5) {
+            if (document.getElementById("difficulty").style.visibility == "visible") {
+                setDifficulty(difficulties[parseInt(event.key)-1])
+                
+            }
+        }
+    }
+})
+
+
+var q = {
+    money: 0,
+    moneyPerSecond: 0,
+    print: {
+        earn: 1,
+        cost: 1000
+    },
+
+    builders: {
+        amount: 0,
+        cost: 50000
+    },
+    managers: {
+        amount: 0,
+        cost: 250000
+    },
+    superManagers: {
+        amount: 0,
+        cost: 150000000
+    },
+
+    mk1: {
+        amount: 0,
+        cost: 500000,
+        level: 0,
+        earn: 50000,
+    },
+    mk2: {
+        amount: 0,
+        cost: 15000000,
+        level: 0,
+        earn: 750000,
+    },
+    mk3: {
+        amount: 0,
+        cost: 1000000000,
+        level: 0,
+        earn: 5000000,
+    },
+    mk4: {
+        amount: 0,
+        cost: 50000000000,
+        level: 0,
+        earn: 2500000,
+    },
+    mk5: {
+        amount: 0,
+        cost: 1000000000000,
+        level: 0,
+        earn: 50000000000,
+    },
+
+    easy: 1,
+    medium: 5,
+    hard: 10,
+    insane: 25,
+
+    autoPrint: 100000,
+    autoUpgrade: 10000,
+    autoPlay: 500000000,
+}
+
+difficulty = ""
+
+const stock = JSON.parse(JSON.stringify(q))
+
+
+function giveMoney() {
+    q.money += q.print.earn;
+    
+}
+
+function upgrade() {
+    if (q.money < q.print.cost) {window.alert(`You need $${num2txt(q.print.cost - q.money)} more to do this.`);return false}
+    q.money -= q.print.cost
+    q.print.earn += 1;
+    
+}
+
+
+
+function start() {
+    if (window.confirm("Are you Sure? ")) {
+        document.getElementById("start").style.visibility = "hidden"
+        document.getElementById("difficulty").style.visibility = "visible"
+    }
+}
+
+function setDifficulty(difficult) {
+    if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {
+        document.getElementById("difficulty").style.visibility = "hidden"
+        document.getElementById("game").style.visibility = "visible"
+        document.getElementById("body").style.backgroundColor = "white"
+        for (var i in q) {
+            if (q[i].cost != undefined) {
+                q[i].cost *= q[difficult]
+            }
+            
+        }
+        difficulty = difficult
+        if (localStorage.getItem("EZ_money_1_save/"+difficulty) != undefined) {
+            load()
+        }
+        setInterval(function() {save()},1)
+    }
+}
+
+function autoPrintMoney() {
+    if (q.money < q.autoPrint) {window.alert(`You need $${num2txt(q.autoPrint - q.money)} more to do this.`);return false}
+    q.money -= q.autoPrint
+    document.getElementById("ez2").innerHTML = "on"
+
+    var ez = setInterval(function(){
+        q.money += q.print.earn
+        
+    },10)
+    
+    var hard = setTimeout(function() {
+        clearInterval(ez)
+        document.getElementById("ez2").innerHTML = "buy"
+    },60000)
+}
+
+function autoUpgrade() {
+    if (q.money < q.autoUpgrade) {window.alert(`You need $${num2txt(q.autoUpgrade - q.money)} more to do this.`);return false}
+    q.money -= q.autoUpgrade
+    document.getElementById("ez1").innerHTML = "on"
+
+    var ez = setInterval(function() {
+        if (q.money >= q.print.cost) {
+            upgrade()
+        }
+    },10)
+
+    var hard = setTimeout(function() {
+        clearInterval(ez)
+        document.getElementById("ez1").innerHTML = "buy"
+    },60000)
+}
+
+function autoPlay() {
+    if (q.money < q.autoPlay) {window.alert(`You need $${num2txt(q.autoPlay - q.money)} more to do this.`);return false}
+    q.money -= q.autoPlay
+    window.alert("Get trolled bozo")
+}
+
+function  update(){{}
+    document.getElementById("moneyDisplay").innerHTML = `Money: $${num2txt(q.money)}`
+    document.getElementById("upgradeDisplay").innerHTML = `Costs $${num2txt(q.print.cost)} to upgrade. You currently make $${num2txt(q.print.earn)} per click.`
+    document.getElementById("mk1Display").innerHTML = `Mk1 factory: A simple, low tech factory that produces  $${num2txt(q.mk1.earn)} per second and costs $${num2txt(q.mk1.cost)}. You currently have ${num2txt(q.mk1.amount)}.`
+    document.getElementById("mk2Display").innerHTML = `Mk2 factory: A basic factory that makes  $${num2txt(q.mk2.earn)} and costs $${num2txt(q.mk2.cost)}. You currently have ${num2txt(q.mk2.amount)}.`
+    document.getElementById("mk3Display").innerHTML = `Mk3 factory: A average factory that makes $${num2txt(q.mk3.earn)} and costs $${num2txt(q.mk3.cost)}. You currently have ${num2txt(q.mk3.amount)}.`
+    document.getElementById("mk4Display").innerHTML = `Mk4 factory: A high tech factory that costs $${num2txt(q.mk4.cost)}. The price is worth it because it makes you $${num2txt(q.mk4.earn)}. You currently have ${num2txt(q.mk4.amount)}.`
+    document.getElementById("mk5Display").innerHTML = `Mk5 factory: A super high tech factory that is completely automated and makes  $${num2txt(q.mk5.earn)}. However it is not cheap and will cost you a fortune You currently have ${num2txt(q.mk5.amount)}.`
+    document.getElementById('managerDisplay').innerHTML = `Super Manager: A person who hires managers and builders for you every 5 mminutes. They are not cheap and cost $${num2txt(q.superManagers.cost)}. You currently have ${num2txt(q.superManagers.amount)}.`
+    document.getElementById("builderDisplay").innerHTML = `Manager: Somone who automatically hires builders so you can keep dreaming about being rich. They cost you $${num2txt(q.managers.cost)}. You have ${num2txt(q.managers.amount)} hired.`
+    document.getElementById('printerDisplay').innerHTML = `Builder: Somone who automatically builds factories every 15 seconds, so you dont have to. They cost $${num2txt(q.builders.cost)}. You currently have ${num2txt(q.builders.amount)}.`
+}
+
+function hire(thing) {
+    if (q.money < q[thing].cost) {window.alert(`You need $${num2txt(q[thing].cost - q.money)} more to do this.`);return false}
+    q.money -= q[thing].cost
+    q[thing].amount += 1
+    
+
+}
+
+function levelUp(thing) {
+    if (q.money < q[thing].cost*10) {window.alert(`You need $${(num2txt(q[thing].cost*10) - q.money)} more to do this.`);return false}
+
+    q.money -= q[thing].cost*10
+    q[thing].earn *= 2
+    q[thing].level += 1
+
+    if (q[thing].level >= 5) {
+        document.getElementById(thing+'Upgrade').style.display = "none"
+    }
+
+}
+
+
+setInterval(function() {
+    update()
+},1) 
+
+setInterval(function() {
+    q.money += q.mk1.earn * q.mk1.amount
+},1000)
+setInterval(function() {
+    q.money += q.mk2.earn * q.mk2.amount
+},1000)
+setInterval(function() {
+    q.money += q.mk3.earn * q.mk3.amount
+},1000)
+setInterval(function() {
+    q.money += q.mk4.earn * q.mk4.amount
+},1000)
+setInterval(function() {
+    q.money += q.mk5.earn * q.mk5.amount
+},1000)
+
+setInterval(function() {
+    if (q.superManagers.amount >= 1) {
+        if (q.money > q.managers.cost) {
+            var managers = Math.floor(q.money / q.managers.cost)
+
+            if (managers > q.superManagers.amount) {
+                managers = q.superManagers.amount
+            }
+
+            var cost = managers * q.managers.cost
+
+            q.money -= cost
+            q.managers.amount += managers
+
+            
+        }
+
+        if (q.money > q.builders.cost) {
+            var builders = Math.floor(q.money / q.builders.cost)
+
+            if (builders > q.superManagers.amount) {
+                builders = q.superManagers.amount
+            }
+
+            var cost = builders * q.builders.cost
+
+            q.money -= cost
+            q.builders.amount += builders
+
+            
+        }
+
+    }
+},300000)
+
+setInterval(function() {
+    if (q.managers.amount >= 1) {
+
+        if (q.money > q.builders.cost) {
+            var builders = Math.floor(q.money / q.builders.cost)
+
+            if (builders > q.managers.amount) {
+                builders = q.managers.amount
+            }
+
+            var cost = builders * q.builders.cost
+
+            q.money -= cost
+            q.builders.amount += builders
+
+            
+        }
+
+    }
+},60000)
+
+setInterval(function() {
+    if (q.builders.amount >= 1) {
+        
+        if (q.money > q.mk5.cost) {
+            var mk5 = Math.floor(q.money / q.mk5.cost)
+
+            if (mk5 > q.builders.amount) {
+                mk5 = q.builders.amount
+            }
+
+            var cost = mk5 * q.mk5.cost
+            q.money -= cost
+            q.mk5.amount += mk5
+        }
+        if (q.money > q.mk4.cost) {
+            var mk4 = Math.floor(q.money / q.mk4.cost)
+
+            if (mk4 > q.builders.amount) {
+                mk4 = q.builders.amount
+            }
+
+            var cost = mk4 * q.mk4.cost
+            q.money -= cost
+            q.mk4.amount += mk4
+        }
+        if (q.money > q.mk3.cost) {
+            var mk3 = Math.floor(q.money / q.mk3.cost)
+
+            if (mk3 > q.builders.amount) {
+                mk3 = q.builders.amount
+            }
+
+            var cost = mk3 * q.mk3.cost
+            q.money -= cost
+            q.mk3.amount += mk3
+        }
+        if (q.money > q.mk2.cost) {
+            var mk2 = Math.floor(q.money / q.mk2.cost)
+
+            if (mk2 > q.builders.amount) {
+                mk2 = q.builders.amount
+            }
+
+            var cost = mk2 * q.mk2.cost
+            q.money -= cost
+            q.mk2.amount += mk2
+        }
+        if (q.money > q.mk1.cost) {
+            var mk1 = Math.floor(q.money / q.mk1.cost)
+
+            if (mk1 > q.builders.amount) {
+                mk1 = q.builders.amount
+            }
+
+            var cost = mk1 * q.mk1.cost
+            q.money -= cost
+            q.mk1.amount += mk1
+        }
+
+    }
+},15000)
+
+
+function save() {
+    localStorage.setItem("EZ_money_1_save/"+difficulty,JSON.stringify(q))
+}
+
+function load() {
+    var data = JSON.parse(localStorage.getItem("EZ_money_1_save/"+difficulty))
+    q = JSON.parse(JSON.stringify(data))
+}
+
+function reset() {
+    q = JSON.parse(JSON.stringify(stock))
+}
+
