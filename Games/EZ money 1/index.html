@@ -2,16 +2,17 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <script src="script.js"></script>
+        <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
+        <script src="newScript.js" defer></script>
     </head>
-    <body onload="reload()" id="body">
+    <body id="body" onload="update()">
         <title id="title">EZ Money</title>
         <div class="container">
             <div class="game" id="game">
                 <label id="moneyDisplay">money</label>
                 <br>
                 <br>
-                <button onclick="change('money',stats.upgrade)">Print money!</button>
+                <button onclick="giveMoney()">Print money!</button>
                 <div class="upgrade">
                     <button class="upgradeButton">&darr; upgrades &darr;</button>
                     <div class="upgrades">
@@ -28,19 +29,23 @@
                             <button onclick="autoPrintMoney()" id="ez2">buy</button>
                             <label>Auto print money</label>
                         </div>
+                        <div class="autoPlay">
+                            <button onclick="autoPlay()" id="ez3">buy</button>
+                            <label>Auto play</label>
+                        </div>
                         <br>
                         <div class="printer">
-                            <button id="hirePrinter" onclick="hire('printer')">Hire</button>
+                            <button id="hirePrinter" onclick="hire('builders')">Hire</button>
                             <label id="printer"></label>
                             <label id="printerDisplay"></label>
                         </div>
                         <div class="builder">
-                            <button id="hireBuilder" onclick="hire('builder')">Hire</button>
+                            <button id="hireBuilder" onclick="hire('managers')">Hire</button>
                             <label id="builder"></label>
                             <label id="builderDisplay"></label>
                         </div>
                         <div class="manager">
-                            <button id="hireManager" onclick="hire('manager')">Hire</button>
+                            <button id="hireManager" onclick="hire('superManagers')">Hire</button>
                             <label id="manager"></label>
                             <label id="managerDisplay"></label>
                         </div>
@@ -75,7 +80,6 @@
                             <label id="mk5"></label>
                             <label id="mk5Display"></label>
                         </div>
-                        <!-- upgrades -->
                     </div>
                 </div>
             </div>
