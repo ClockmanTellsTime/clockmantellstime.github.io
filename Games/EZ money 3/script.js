@@ -282,7 +282,7 @@ function tidy(char) {
         const formatter = new Intl.NumberFormat('en', {
             notation: 'compact'
         })
-            char = String(formatter.format(char));
+            char = String(num2txt(char));
             return char
         }
         
@@ -361,7 +361,21 @@ function main() {
     amethyst = new ore("amethyst",100000000,minute*15)
     ruby = new ore("ruby",1000000000,hour)
     sapphire = new ore("sapphire",10000000000,hour*5)
-    emerald = new ore("emerald",100000000000)
+    emerald = new ore("emerald",100000000000, day)
+    pyrite = new ore("pyrite",1000000000000, day * 3)
+    zircon = new ore("zircon",10000000000000, week)
+    kyanite = new ore("kyanite",100000000000000,week*5)
+    garnet = new ore("garnet",1000000000000000, month * 2)
+    jade = new ore("jade",10000000000000000, month * 6)
+    beryl = new ore("beryl",100000000000000000, year)
+    citrine = new ore("citrine",1000000000000000000,year*2)
+    fluorite = new ore("fluorite",10000000000000000000,decade)
+    hyacinth = new ore("hyacinth",100000000000000000000,decade*2)
+    lolite = new ore("lolite",1000000000000000000000,decade*3)
+    labradorite = new ore("labradorite",10000000000000000000000, decade * 4)
+    malachite = new ore("malachite",100000000000000000000000, decade * 5)
+    quartz = new ore("quartz",1000000000000000000000000, decade *6)
+    obsidian  = new ore("obsidian",10000000000000000000000000, centery)
     
     dropDown()
 
@@ -542,7 +556,7 @@ function Error(err) {
 function check() {
     loggedIn = localStorage.getItem("logged_in")
     if (loggedIn == 'true') {
-        EA.spurts.items.money = 10000000000000
+        EA.spurts.items.money = 1000000000000000000
     }
 }
 check()
