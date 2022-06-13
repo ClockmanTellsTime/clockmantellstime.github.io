@@ -1,103 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
         <script src="script.js" defer></script>
     </head>
-    <body id="body" onload="update()">
-        <title id="title">EZ Money</title>
-        <div class="container">
-            <div class="game" id="game">
-                <label id="moneyDisplay">money</label>
-                <br>
-                <br>
-                <button onclick="giveMoney()">Print money!</button>
-                <div class="upgrade">
-                    <button class="upgradeButton">&darr; upgrades &darr;</button>
-                    <div class="upgrades">
-                        <div>
-                            <button onclick="upgrade()" id="upgrade">buy</button>
-                            <label id="upgradeDisplay"></label>
-                        </div>
-                        <br>
-                        <div>
-                            <button onclick="autoUpgrade()" id="ez1">buy</button>
-                            <label>auto upgrade</label>
-                        </div>
-                        <div class="AutoPrintMoney">
-                            <button onclick="autoPrintMoney()" id="ez2">buy</button>
-                            <label>Auto print money</label>
-                        </div>
-                        <div class="autoPlay">
-                            <button onclick="autoPlay()" id="ez3">buy</button>
-                            <label>Auto play</label>
-                        </div>
-                        <br>
-                        <div class="printer">
-                            <button id="hirePrinter" onclick="hire('builders')">Hire</button>
-                            <label id="printer"></label>
-                            <label id="printerDisplay"></label>
-                        </div>
-                        <div class="builder">
-                            <button id="hireBuilder" onclick="hire('managers')">Hire</button>
-                            <label id="builder"></label>
-                            <label id="builderDisplay"></label>
-                        </div>
-                        <div class="manager">
-                            <button id="hireManager" onclick="hire('superManagers')">Hire</button>
-                            <label id="manager"></label>
-                            <label id="managerDisplay"></label>
-                        </div>
-                        <br>
-                        <div class="mk1">
-                            <button id="mk1Upgrade" onclick="levelUp('mk1')">&uarr;</button>
-                            <button id="buildMk1" onclick="hire('mk1')">Build</button>
-                            <label id="mk1"></label>
-                            <label id="mk1Display"></label>
-                        </div>
-                        <div class="mk2">
-                            <button id="mk2Upgrade" onclick="levelUp('mk2')">&uarr;</button>
-                            <button id="buildMk2" onclick="hire('mk2')">Build</button>
-                            <label id="mk2"></label>
-                            <label id="mk2Display"></label>
-                        </div>
-                        <div class="mk3">
-                            <button id="mk3Upgrade" onclick="levelUp('mk3')">&uarr;</button>
-                            <button id="buildMk3" onclick="hire('mk3')">Build</button>
-                            <label id="mk3"></label>
-                            <label id="mk3Display"></label>
-                        </div>
-                        <div class="mk4">
-                            <button id="mk4Upgrade" onclick="levelUp('mk4')">&uarr;</button>
-                            <button id="buildMk4" onclick="hire('mk4')">Build</button>
-                            <label id="mk4"></label>
-                            <label id="mk4Display"></label>
-                        </div>
-                        <div class="mk5">
-                            <button id="mk5Upgrade" onclick="levelUp('mk5')">&uarr;</button>
-                            <button id="buildMk5" onclick="hire('mk5')">Build</button>
-                            <label id="mk5"></label>
-                            <label id="mk5Display"></label>
-                        </div>
+    <body>
+        <title class="title">EZ Money</title>
+        <div class="game">
+            <label class="moneyDisplay">money</label><br>
+            <label class="moneyPerSecondDisplay">Money per second: $0</label>
+            <br><br>
+
+            <button class="printMoney">Print money!</button>
+            <div class="upgradeButton">
+                <button class="upgradeButton">&darr; upgrades &darr;</button>
+                <div class="upgrades">
+                    
+                    <div>
+                        <button class="upgradePrinter">buy</button>
+                        <label class="upgradeDisplay"></label>
+                    </div>
+                    <br>
+                    <div class="autoUpgrade">
+                        <button class="ez1">buy</button>
+                        <label>Auto upgrade</label>
+                    </div>
+                    <div class="AutoPrintMoney">
+                        <button class="ez2">buy</button>
+                        <label>Auto print money</label>
+                    </div>
+                    <div class="autoPlay">
+                        <button class="ez3">buy</button>
+                        <label>Auto play</label>
+                    </div>
+                    <br>
+                    <div class="printer">
+                        <button class="hirePrinter">Hire</button>
+                        <label class="printer"></label>
+                        <label class="printerDisplay"></label>
+                    </div>
+                    <div class="builder">
+                        <button class="hireBuilder">Hire</button>
+                        <label class="builder"></label>
+                        <label class="builderDisplay"></label>
+                    </div>
+                    <div class="manager">
+                        <button class="hireManager">Hire</button>
+                        <label class="manager"></label>
+                        <label class="managerDisplay"></label>
+                    </div>
+                    <br>
+                    <div class="mk1">
+                        <button class="upgradeMk1">&uarr;</button>
+                        <button class="buildMk1">Build</button>
+                        <label class="mk1"></label>
+                        <label class="mk1Display"></label>
+                    </div>
+                    <div class="mk2">
+                        <button class="upgradeMk2">&uarr;</button>
+                        <button class="buildMk2">Build</button>
+                        <label class="mk2"></label>
+                        <label class="mk2Display"></label>
+                    </div>
+                    <div class="mk3">
+                        <button class="upgradeMk3">&uarr;</button>
+                        <button class="buildMk3">Build</button>
+                        <label class="mk3"></label>
+                        <label class="mk3Display"></label>
+                    </div>
+                    <div class="mk4">
+                        <button class="upgradeMk4">&uarr;</button>
+                        <button class="buildMk4">Build</button>
+                        <label class="mk4"></label>
+                        <label class="mk4Display"></label>
+                    </div>
+                    <div class="mk5">
+                        <button class="upgradeMk5">&uarr;</button>
+                        <button class="buildMk5">Build</button>
+                        <label class="mk5"></label>
+                        <label class="mk5Display"></label>
                     </div>
                 </div>
             </div>
-            <div class="start" id="start">
-                <div class="text-block" id="display1">EZ Money</div>
-                <p class="text-block-2">A simple game where you can earn some simple money</p>
-                <button onclick="start()" id="start1" class="prsTstrt">start!</button>
+        </div>
+        <div class="start" class="start">
+            <div class="text-block" class="display1">EZ Money</div>
+            <p class="text-block-2">A simple game where you can earn some simple money</p>
+            <button class="prsTstrt">start!</button>
+        </div>
+        <div class="difficulty" class="difficulty">
+            <p class="Select">Select difficulty</p>
+            <div class="buttons">
+                <button class="easy">easy</button>
+                <button class="medium">medium</button>
+                <button class="hard">hard</button>
+                <button class="insane">insane</button>
             </div>
-            <div class="difficulty" id="difficulty">
-                <p class="Select">Select difficulty</p>
-                <div class="buttons">
-                    <button id="easy" class="easy" onclick="setDifficulty('easy')">easy</button>
-                    <button id="medium" class="medium" onclick="setDifficulty('medium')" >medium</button>
-                    <button id="hard" class="hard" onclick="setDifficulty('hard')">hard</button>
-                    <button id="insane" class="insane" onclick="setDifficulty('insane')">insane</button>
-                </div>
-            </div>
-
         </div>
     </body>
 </html>
