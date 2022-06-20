@@ -52,10 +52,6 @@ body{
     border-width: 1px;
     position: center;
 }
-.prsTstrt:hover {
-    background-color: gray;
-    transition: .2s;
-}
 
 .start{
     visibility: visibility;
@@ -90,9 +86,7 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.upgradeButton:hover .upgrades{
-    display: block;  
-}
+
 .text-block{
     color: white;
     opacity: 1;
@@ -165,4 +159,42 @@ body{
     right: 0px;
     user-select: none;
     border-radius: 10px;
+}
+
+
+.up_arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid black;
+
+}
+
+.up,
+.down {
+    width: 25px;
+    height: 25px;
+}
+
+.down_arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 15px solid black;
+
+}
+
+.changePage {
+    text-align: center;
+}
+
+
+.page {
+    min-height: 325px
+}
+
+.moneyPopup {
+    position: absolute;
+}
+
+.page0 {
+    text-align: center;
 }
