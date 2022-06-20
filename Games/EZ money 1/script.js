@@ -1,25 +1,42 @@
-difficulties = ["easy","medium","hard","insane"]
+/*
+TODO:
+clean html class names
+clean up css
+clean up js
+make more factories up to mk 10
+ea.spurts.items.emerald.level +=+ 1 LOLOLOLOLLOLO
+
+*/
+
+class factory {
+    constructor(name, earn, text) {
+        //WORK
+    }
+}
+
+difficulties = ["easy", "medium", "hard", "insane"]
 difficulty = ""
 document.addEventListener("keydown", event => {
-    if (event.key.toLowerCase() == " "){
-        if (document.querySelector(".start").style.visibility == "") {
+    if (event.key.toLowerCase() == " ") {
+        if (document.querySelector(".start") != undefined && document.querySelector(".start").style.visibility == "") {
             start()
         }
     }
 
-    if (event.key.toLowerCase() == "r"){
+    if (event.key.toLowerCase() == "r") {
         if (window.confirm("Are you sure you want to reset, this is not able to be undone? ")) {
-            reset() 
+            reset()
         }
     }
 
-    if (event.key.toLowerCase() == "q"){
+    if (event.key.toLowerCase() == "q") {
         upgrade()
     }
 
     if (event.key.toLowerCase() == "a") {
         autoUpgrade()
     }
+
     if (event.key.toLowerCase() == "s") {
         autoPrintMoney()
     }
@@ -36,50 +53,32 @@ document.addEventListener("keydown", event => {
     if (event.key.toLowerCase() == "c") {
         hire("superManagers")
     }
+    if (event.key.toLowerCase() == "u") {
+        document.querySelector(".upgradeButton").click()
+    }
 
-    if (typeof(parseInt(event.key)) ==  "number") {
-        if (document.querySelector(".difficulty").style.visibility == "visible") {
-            if (parseInt(event.key) > 0 && parseInt(event.key) < 5) {
-                if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {
-                    setDifficulty(difficulties[parseInt(event.key)-1])
-                }
+    if (event.key== "ArrowUp") {
+        if(document.querySelector(".upgrades").style.display == "block" ) {
+            document.querySelector(".up_arrow").click()
+        }
+    }
+    if (event.key == "ArrowDown") {
+        if (document.querySelector(".upgrades").style.display == "block") {
+            document.querySelector(".down").click()
+        }
+    }
+
+    if (typeof (parseInt(event.key)) == "number") {
+        if (document.querySelector(".difficulty") != undefined && document.querySelector(".difficulty").style.visibility == "visible") {
+            if (parseInt(event.key) > 0 && parseInt(event.key) < difficulties.length + 1) {
+                    setDifficulty(difficulties[parseInt(event.key) - 1],true)
             }
         }
-        else if (parseInt(event.key) > 0) {     
+        else if (0 < parseInt(event.key) && parseInt(event.key) < 6) {
             hire(`mk${event.key}`)
         }
     }
 })
-
-document.querySelector(".upgradePrinter").onclick = function() {upgrade()}
-document.querySelector(".printMoney").onclick = function() {giveMoney()}
-document.querySelector(".ez1").onclick = function() {autoUpgrade()}
-document.querySelector(".ez2").onclick = function() {autoPrintMoney()}
-document.querySelector(".ez3").onclick = function() {autoPlay()}
-document.querySelector(".hirePrinter").onclick = function() {hire("builders")}
-document.querySelector(".hireBuilder").onclick = function() {hire("managers")}
-document.querySelector(".hireManager").onclick = function() {hire("superManagers")}
-document.querySelector(".upgradeMk1").onclick = function() {levelUp("mk1")}
-document.querySelector(".buildMk1").onclick = function() {hire("mk1")}
-document.querySelector(".upgradeMk2").onclick = function() {levelUp("mk2")}
-document.querySelector(".buildMk2").onclick = function() {hire("mk2")}
-document.querySelector(".upgradeMk3").onclick = function() {levelUp("mk3")}
-document.querySelector(".buildMk3").onclick = function() {hire("mk3")}
-document.querySelector(".upgradeMk4").onclick = function() {levelUp("mk4")}
-document.querySelector(".buildMk4").onclick = function() {hire("mk4")}
-document.querySelector(".upgradeMk5").onclick = function() {levelUp("mk5")}
-document.querySelector(".buildMk5").onclick = function() {hire("mk5")}
-document.querySelector(".prsTstrt").onclick = function() {start()}
-document.querySelector(".easy").onclick = function() {if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {setDifficulty(`easy`)}}
-document.querySelector(".medium").onclick = function() {if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {setDifficulty(`medium`)}}
-document.querySelector(".hard").onclick = function() {if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {setDifficulty(`hard`)}}
-document.querySelector(".insane").onclick = function() {if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {setDifficulty(`insane`)}}
-
-window.onunload = e => {
-    q.lastPlayed = Date.now()
-    q.claimed = false
-}
-
 
 var q = {
     money: 0,
@@ -135,16 +134,16 @@ var q = {
 
     easy: 1,
     medium: 5,
-    hard: 10,
-    insane: 25,
+    hard: 25,
+    insane: 100,
 
     autoPrint: {
         has: false,
-        cost:100000,
+        cost: 100000,
     },
     autoUpgrade: {
         has: false,
-        cost:10000,
+        cost: 10000,
     },
     autoPlay: {
         has: false,
@@ -152,23 +151,26 @@ var q = {
     },
 
     lastPlayed: undefined,
-    claimed: false,
 }
 
 const stock = JSON.parse(JSON.stringify(q))
 
+var page = 1
+var clicks = 0
+var moneyEarnedInASecond = 0
+var alertsOn = true
+
 
 function giveMoney() {
     q.money += q.print.earn;
+    clicks += q.print.earn
 }
 
 function upgrade() {
-    if (q.money < q.print.cost) {alertss(`You need $${num2txt(q.print.cost - q.money)} more to do this.`);return false}
+    if (q.money < q.print.cost) { alertss(`You need $${num2txt(q.print.cost - q.money)} more to do this.`); return false }
     q.money -= q.print.cost
     q.print.earn += 1;
 }
-
-
 
 function start() {
     if (window.confirm("Are you Sure? ")) {
@@ -177,81 +179,89 @@ function start() {
     }
 }
 
-function setDifficulty(difficult) {
-    document.querySelector(".difficulty").style.visibility = "hidden"
-    document.querySelector(".game").style.visibility = "visible"
-    document.querySelector("body").style.backgroundColor = "white"
-
-    difficulty = difficult
-    load()
-
-    if (q.lastPlayed != null &&  q.claimed == false) {
-        var a = Math.round((Date.now() - q.lastPlayed )/1000)
-
-        if (a >= 60) {
-            q.money += q.moneyPerSecond * a
-            window.alert(`You earned $${num2txt(q.moneyPerSecond * a)} while you were gone!`)
-        }
-        q.claimed = true
-    }
-    update()
-    
-    if (q.print.cost/1000 == 1) {
-        for (var i in q) {
-            
-            if(q[i].cost != undefined){
-                q[i].cost *= q[difficulty]
-            }
+function setDifficulty(difficult,c=false) {
+    var d = 1
+    if (c) {
+        if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {
+            d = true
         }
     }
-    setInterval(function() {save()},1)
+    else {
+        d = true
+    }
+
+    if (d) {
+        if (document.querySelector(".start") != undefined) {
+            document.querySelector("body").removeChild(document.querySelector(".start"))
+            document.querySelector("body").removeChild(document.querySelector(".difficulty"))
+        }
+        document.querySelector(".game").style.visibility = "visible"
+        document.querySelector("body").style.backgroundColor = "white"
+
+        difficulty = difficult
+        startGame()
+    }
 }
 
 function autoPrintMoney() {
-    if (q.money < q.autoPrint.cost) {alertss(`You need $${num2txt(q.autoPrint.cost - q.money)} more to do this.`);return false}
-    if (q.autoPrint.has) {return false}
+    if (q.money < q.autoPrint.cost) { alertss(`You need $${num2txt(q.autoPrint.cost - q.money)} more to do this.`); return false }
     q.money -= q.autoPrint.cost
     document.querySelector(".ez2").innerHTML = "on"
 
-    var ez = setInterval(function(){
+    var ez = setInterval(function () {
         q.money += q.print.earn
-        
-    },10)
-    
-    var hard = setTimeout(function() {
+
+    }, 10)
+
+    var hard = setTimeout(function () {
         clearInterval(ez)
         document.querySelector(".ez2").innerHTML = "buy"
-    },60000)
+    }, 60000)
 }
 
 function autoUpgrade() {
-    if (q.money < q.autoUpgrade.cost) {alertss(`You need $${num2txt(q.autoUpgrade.cost - q.money)} more to do this.`);return false}
-    if (q.autoUpgrade.has) {return false}
+    if (q.money < q.autoUpgrade.cost) { alertss(`You need $${num2txt(q.autoUpgrade.cost - q.money)} more to do this.`); return false }
+    if (q.autoUpgrade.has) { return false }
     q.money -= q.autoUpgrade.cost
     document.querySelector(".ez1").innerHTML = "on"
 
-    var ez = setInterval(function() {
+    var ez = setInterval(function () {
         if (q.money >= q.print.cost) {
             upgrade()
         }
-    },10)
+    }, 10)
 
-    var hard = setTimeout(function() {
+    var hard = setTimeout(function () {
         clearInterval(ez)
         document.querySelector(".ez1").innerHTML = "buy"
-    },60000)
+    }, 60000)
 }
 
 function autoPlay() {
-    if (q.money < q.autoPlay.cost) {alertss(`You need $${num2txt(q.autoPlay.cost - q.money)} more to do this.`);return false}
-    if (q.autoPlay.has) {return false}
+    if (q.money < q.autoPlay.cost) { alertss(`You need $${num2txt(q.autoPlay.cost - q.money)} more to do this.`); return false }
+    if (q.autoPlay.has) { return false }
     q.money -= q.autoPlay.cost
     alertss("Get trolled bozo")
 }
 
-function update(){
+function update() {
     updateStats()
+    displayStats()
     hideUpgradeButtons()
+    updatePage()
+}
+
+function updatePage() {
+    if (document.querySelector(`.page${page}`) != undefined) {
+        var pages = document.getElementsByClassName("page")
+        for (var i of pages) {
+            document.querySelector(`.${String(i.className).split(" ")[0]}`).style.display = "none"
+        }
+        document.querySelector(`.page${page}`).style.display = "block"
+    }
+    else {
+        page -= 1
+    }
 }
 
 function hideUpgradeButtons() {
@@ -271,13 +281,16 @@ function hideUpgradeButtons() {
         document.querySelector(".upgradeMk5").style.display = "none"
     }
 }
-
 function updateStats() {
     q.moneyPerSecond = q.mk1.earn * q.mk1.amount
     q.moneyPerSecond += q.mk2.earn * q.mk2.amount
     q.moneyPerSecond += q.mk3.earn * q.mk3.amount
     q.moneyPerSecond += q.mk4.earn * q.mk4.amount
     q.moneyPerSecond += q.mk5.earn * q.mk5.amount
+    q.lastPlayed = Date.now()
+    moneyEarnedInASecond = q.moneyPerSecond + clicks
+}
+function displayStats() {
     document.querySelector(".moneyDisplay").innerHTML = `Money: $${num2txt(q.money)}`
     document.querySelector(".upgradeDisplay").innerHTML = `Costs $${num2txt(q.print.cost)} to upgrade. You currently make $${num2txt(q.print.earn)} per click.`
     document.querySelector(".mk1Display").innerHTML = `Mk1 factory: A simple, low tech factory that produces  $${num2txt(q.mk1.earn)} per second and costs $${num2txt(q.mk1.cost)}. You currently have ${num2txt(q.mk1.amount)}.`
@@ -289,53 +302,126 @@ function updateStats() {
     document.querySelector(".builderDisplay").innerHTML = `Manager: Somone who automatically hires builders so you can keep dreaming about being rich. They cost you $${num2txt(q.managers.cost)}. You have ${num2txt(q.managers.amount)} hired.`
     document.querySelector(".printerDisplay").innerHTML = `Builder: Somone who automatically builds factories every 15 seconds, so you dont have to. They cost $${num2txt(q.builders.cost)}. You currently have ${num2txt(q.builders.amount)}.`
     document.querySelector(".moneyPerSecondDisplay").innerHTML = `Money per second: $${num2txt(q.moneyPerSecond)}`
+    document.querySelector(".pageDisplay").innerHTML = `Page: ${page}`
 }
 
+function moneyPopup(amount) {
+    if (amount > 0) {
+        var label = document.createElement("label")
+        label.innerHTML = `+$${num2txt(amount)}`
+        label.className = `moneyPopup`
+        document.querySelector(".money").appendChild(label)
+
+        $(".moneyPopup").fadeOut(0).fadeIn(400).fadeOut(0, function () {
+            document.querySelector(".money").removeChild(document.querySelector(".moneyPopup"))
+        })
+    }
+}
+
+
 function hire(thing) {
-    if (q.money < q[thing].cost) {alertss(`You need $${num2txt(q[thing].cost - q.money)} more to do this.`);return false}
+    if (q.money < q[thing].cost) { alertss(`You need $${num2txt(q[thing].cost - q.money)} more to do this.`); return false }
     q.money -= q[thing].cost
     q[thing].amount += 1
-    
+
 
 }
 
 function levelUp(thing) {
-    if (q.money < q[thing].cost*10) {alertss(`You need $${num2txt((q[thing].cost*10) - q.money)} more to do this.`);return false}
-    if (q[thing].level >= 5) {document.getElementById(thing+"Upgrade").style.display = "none"; return false}
+    if (q.money < q[thing].cost * 10) { alertss(`You need $${num2txt((q[thing].cost * 10) - q.money)} more to do this.`); return false }
+    if (q[thing].level >= 5) { document.getElementById(thing + "Upgrade").style.display = "none"; return false }
 
-    q.money -= q[thing].cost*10
+    q.money -= q[thing].cost * 10
     q[thing].earn *= 2
     q[thing].level += 1
 
 }
 
 
-setInterval(function() {
-    update()
-},1) 
+function save() {
+    localStorage.setItem("EZ_money_1_save/" + difficulty, JSON.stringify(q))
+}
 
-setInterval(function() {
+function load() {
+    if (localStorage.getItem("EZ_money_1_save/" + difficulty) != undefined) {
+        var data = JSON.parse(localStorage.getItem("EZ_money_1_save/" + difficulty))
+        q = JSON.parse(JSON.stringify(data))
+    }
+}
+
+function reset() {
+    q = JSON.parse(JSON.stringify(stock))
+    save()
+    setDifficulty(difficulty)
+}
+
+function alertss(message) {
+    if (alertsOn) {
+        window.alert(message)
+    }
+}
+
+function startGame() {
+    load()
+
+    if (q.lastPlayed != null) {
+        var a = Math.round((Date.now() - q.lastPlayed) / 1000)
+
+        if (a >= 60) {
+            if (q.moneyPerSecond > 0) {
+                var factories = parseInt(a / 15)
+                var managers = parseInt(a / 300)
+                var builders = parseInt(a / 60)
+
+
+                window.alert(`while you were gone: \nYou earned $${num2txt(q.moneyPerSecond * a)},\nYou earned ${num2txt(q.managers.amount * builders)} builders,\nYou earned ${num2txt(q.superManagers.amount * managers)} managers,\nYou earned ${num2txt(q.builders.amount * factories)} factories,`)
+
+                q.money += q.moneyPerSecond * a
+                q.mk1.amount += q.builders.amount * factories
+                q.mk2.amount += q.builders.amount * factories
+                q.mk3.amount += q.builders.amount * factories
+                q.mk4.amount += q.builders.amount * factories
+                q.mk5.amount += q.builders.amount * factories
+                q.builders.amount += q.managers.amount * builders
+                q.managers.amount += q.superManagers.amount * managers
+            }
+        }
+    }
+    if (q.print.cost / 1000 == 1) {
+        for (var i in q) {
+            if (q[i].cost != undefined) {
+                q[i].cost *= q[difficulty]
+            }
+        }
+    }
+    setInterval(function () { save() }, 1)
+}
+
+setInterval(function () {
+    update()
+}, 1)
+setInterval(function () {
     try {
         q.money += q.mk1.earn * q.mk1.amount
     }
-    catch(err) {
+    catch (err) {
         reset()
     }
-},1000)
-setInterval(function() {
+}, 1000)
+setInterval(function () {
     q.money += q.mk2.earn * q.mk2.amount
-},1000)
-setInterval(function() {
+}, 1000)
+setInterval(function () {
     q.money += q.mk3.earn * q.mk3.amount
-},1000)
-setInterval(function() {
+}, 1000)
+setInterval(function () {
     q.money += q.mk4.earn * q.mk4.amount
-},1000)
-setInterval(function() {
+}, 1000)
+setInterval(function () {
     q.money += q.mk5.earn * q.mk5.amount
-},1000)
+}, 1000)
 
-setInterval(function() {
+setInterval(function () {
     if (q.superManagers.amount >= 1) {
         if (q.money > q.managers.cost) {
             var managers = Math.floor(q.money / q.managers.cost)
@@ -349,7 +435,7 @@ setInterval(function() {
             q.money -= cost
             q.managers.amount += managers
 
-            
+
         }
 
         if (q.money > q.builders.cost) {
@@ -364,13 +450,13 @@ setInterval(function() {
             q.money -= cost
             q.builders.amount += builders
 
-            
+
         }
 
     }
-},300000)
+}, 300000)
 
-setInterval(function() {
+setInterval(function () {
     if (q.managers.amount >= 1) {
 
         if (q.money > q.builders.cost) {
@@ -385,15 +471,15 @@ setInterval(function() {
             q.money -= cost
             q.builders.amount += builders
 
-            
+
         }
 
     }
-},60000)
+}, 60000)
 
-setInterval(function() {
+setInterval(function () {
     if (q.builders.amount >= 1) {
-        
+
         if (q.money > q.mk5.cost) {
             var mk5 = Math.floor(q.money / q.mk5.cost)
 
@@ -451,33 +537,58 @@ setInterval(function() {
         }
 
     }
-},15000)
+}, 15000)
+setInterval(function () {moneyPopup(moneyEarnedInASecond);clicks = 0},1000)
 
-
-function save() {
-    localStorage.setItem("EZ_money_1_save/"+difficulty,JSON.stringify(q))
-}
-
-function load() {
-    if (localStorage.getItem("EZ_money_1_save/"+difficulty) != undefined) {
-        var data = JSON.parse(localStorage.getItem("EZ_money_1_save/"+difficulty))
-        q = JSON.parse(JSON.stringify(data))
+document.querySelector(".upgradePrinter").onclick = function () { upgrade() }
+document.querySelector(".printMoney").onclick = function () { giveMoney() }
+document.querySelector(".ez1").onclick = function () { autoUpgrade() }
+document.querySelector(".ez2").onclick = function () { autoPrintMoney() }
+document.querySelector(".ez3").onclick = function () { autoPlay() }
+document.querySelector(".hirePrinter").onclick = function () { hire("builders") }
+document.querySelector(".hireBuilder").onclick = function () { hire("managers") }
+document.querySelector(".hireManager").onclick = function () { hire("superManagers") }
+document.querySelector(".upgradeMk1").onclick = function () { levelUp("mk1") }
+document.querySelector(".buildMk1").onclick = function () { hire("mk1") }
+document.querySelector(".upgradeMk2").onclick = function () { levelUp("mk2") }
+document.querySelector(".buildMk2").onclick = function () { hire("mk2") }
+document.querySelector(".upgradeMk3").onclick = function () { levelUp("mk3") }
+document.querySelector(".buildMk3").onclick = function () { hire("mk3") }
+document.querySelector(".upgradeMk4").onclick = function () { levelUp("mk4") }
+document.querySelector(".buildMk4").onclick = function () { hire("mk4") }
+document.querySelector(".upgradeMk5").onclick = function () { levelUp("mk5") }
+document.querySelector(".buildMk5").onclick = function () { hire("mk5") }
+document.querySelector(".prsTstrt").onclick = function () { start() }
+document.querySelector(".easy").onclick = function () {setDifficulty(`easy`,true) }
+document.querySelector(".medium").onclick = function () { setDifficulty(`medium`, true) }
+document.querySelector(".hard").onclick = function () { setDifficulty(`hard`,true) }
+document.querySelector(".insane").onclick = function () { setDifficulty(`insane`, true) }
+document.querySelector(".alerts").onclick = function () {
+    if (alertsOn) {
+        alertsOn = false
+        document.querySelector(".alerts").innerHTML = "Alerts: off"
+    }
+    else {
+        alertsOn = true
+        document.querySelector(".alerts").innerHTML = "Alerts: on"
     }
 }
 
-function reset() {
-    q = JSON.parse(JSON.stringify(stock))
-    save()
-    setDifficulty(difficulty)
+
+x = 0
+displays = ["block", "none"]
+document.querySelector(".upgradeButton").onclick = () => {
+    document.querySelector(".upgrades").style.display = displays[x]
+    if (x == 0) { x = 1 }
+    else if (x == 1) { x = 0 }
 }
 
+document.querySelector(".up").onclick = () => {
+    page += 1
+}
 
-function alertss(message) {
-    window.alert(message)
-} 
-
-
-function e() {
-    var e = localStorage.getItem("hacks_enabled")
-    console.log(e)
+document.querySelector(".down").onclick = () => {
+    if (page > 0) {
+        page -= 1
+    }
 }
