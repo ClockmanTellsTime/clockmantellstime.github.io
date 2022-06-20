@@ -1,103 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <title class="title">EZ Money</title>
-        <div class="game">
-            <label class="moneyDisplay">money</label><br>
-            <label class="moneyPerSecondDisplay">Money per second: $0</label>
-            <br><br>
 
-            <button class="printMoney">Print money!</button>
-            <div class="upgradeButton">
-                <button class="upgradeButton">&darr; upgrades &darr;</button>
-                <div class="upgrades">
-                    
-                    <div>
-                        <button class="upgradePrinter">buy</button>
-                        <label class="upgradeDisplay"></label>
-                    </div>
-                    <br>
-                    <div class="autoUpgrade">
-                        <button class="ez1">buy</button>
-                        <label>Auto upgrade</label>
-                    </div>
-                    <div class="AutoPrintMoney">
-                        <button class="ez2">buy</button>
-                        <label>Auto print money</label>
-                    </div>
-                    <div class="autoPlay">
-                        <button class="ez3">buy</button>
-                        <label>Auto play</label>
-                    </div>
-                    <br>
-                    <div class="printer">
-                        <button class="hirePrinter">Hire</button>
-                        <label class="printer"></label>
-                        <label class="printerDisplay"></label>
-                    </div>
-                    <div class="builder">
-                        <button class="hireBuilder">Hire</button>
-                        <label class="builder"></label>
-                        <label class="builderDisplay"></label>
-                    </div>
-                    <div class="manager">
-                        <button class="hireManager">Hire</button>
-                        <label class="manager"></label>
-                        <label class="managerDisplay"></label>
-                    </div>
-                    <br>
-                    <div class="mk1">
-                        <button class="upgradeMk1">&uarr;</button>
-                        <button class="buildMk1">Build</button>
-                        <label class="mk1"></label>
-                        <label class="mk1Display"></label>
-                    </div>
-                    <div class="mk2">
-                        <button class="upgradeMk2">&uarr;</button>
-                        <button class="buildMk2">Build</button>
-                        <label class="mk2"></label>
-                        <label class="mk2Display"></label>
-                    </div>
-                    <div class="mk3">
-                        <button class="upgradeMk3">&uarr;</button>
-                        <button class="buildMk3">Build</button>
-                        <label class="mk3"></label>
-                        <label class="mk3Display"></label>
-                    </div>
-                    <div class="mk4">
-                        <button class="upgradeMk4">&uarr;</button>
-                        <button class="buildMk4">Build</button>
-                        <label class="mk4"></label>
-                        <label class="mk4Display"></label>
-                    </div>
-                    <div class="mk5">
-                        <button class="upgradeMk5">&uarr;</button>
-                        <button class="buildMk5">Build</button>
-                        <label class="mk5"></label>
-                        <label class="mk5Display"></label>
-                    </div>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <title class="title">EZ Money</title>
+    <div class="game">
+        <div class="money">
+            <label class="moneyDisplay">money</label>
+        </div>
+        <label class="moneyPerSecondDisplay">Money per second: $0</label>
+        <br><br>
+        <button class="printMoney">Print money!</button>
+        <br>
+        <button class="upgradeButton">&darr; upgrades &darr;</button>
+        <div class="upgrades">
+            <div class="page0 page">
+                <h1>Settings</h1>
+                <button class="alerts">Alerts: on</button>
+            </div>
+            <div class="page1 page">
+                <div>
+                    <button class="upgradePrinter">buy</button>
+                    <label class="upgradeDisplay"></label>
+                </div>
+                <br>
+                <div class="autoUpgrade">
+                    <button class="ez1">buy</button>
+                    <label>Auto upgrade</label>
+                </div>
+                <div class="AutoPrintMoney">
+                    <button class="ez2">buy</button>
+                    <label>Auto print money</label>
+                </div>
+                <div class="autoPlay">
+                    <button class="ez3">buy</button>
+                    <label>Auto play</label>
+                </div>
+                <br>
+                <div class="printer">
+                    <button class="hirePrinter">Hire</button>
+                    <label class="printer"></label>
+                    <label class="printerDisplay"></label>
+                </div>
+                <div class="builder">
+                    <button class="hireBuilder">Hire</button>
+                    <label class="builder"></label>
+                    <label class="builderDisplay"></label>
+                </div>
+                <div class="manager">
+                    <button class="hireManager">Hire</button>
+                    <label class="manager"></label>
+                    <label class="managerDisplay"></label>
+                </div>
+                <br>
+                <div class="mk1">
+                    <button class="upgradeMk1">&uarr;</button>
+                    <button class="buildMk1">Build</button>
+                    <label class="mk1"></label>
+                    <label class="mk1Display"></label>
+                </div>
+                <div class="mk2">
+                    <button class="upgradeMk2">&uarr;</button>
+                    <button class="buildMk2">Build</button>
+                    <label class="mk2"></label>
+                    <label class="mk2Display"></label>
+                </div>
+                <div class="mk3">
+                    <button class="upgradeMk3">&uarr;</button>
+                    <button class="buildMk3">Build</button>
+                    <label class="mk3"></label>
+                    <label class="mk3Display"></label>
+                </div>
+                <div class="mk4">
+                    <button class="upgradeMk4">&uarr;</button>
+                    <button class="buildMk4">Build</button>
+                    <label class="mk4"></label>
+                    <label class="mk4Display"></label>
+                </div>
+                <div class="mk5">
+                    <button class="upgradeMk5">&uarr;</button>
+                    <button class="buildMk5">Build</button>
+                    <label class="mk5"></label>
+                    <label class="mk5Display"></label>
                 </div>
             </div>
-        </div>
-        <div class="start" class="start">
-            <div class="text-block" class="display1">EZ Money</div>
-            <p class="text-block-2">A simple game where you can earn some simple money</p>
-            <button class="prsTstrt">start!</button>
-        </div>
-        <div class="difficulty" class="difficulty">
-            <p class="Select">Select difficulty</p>
-            <div class="buttons">
-                <button class="easy">easy</button>
-                <button class="medium">medium</button>
-                <button class="hard">hard</button>
-                <button class="insane">insane</button>
+            <div class="changePage">
+                <label class="pageDisplay">Page: 0</label>
+                <button class="up">
+                    <div class="up_arrow"></div>
+                </button>
+                <button class="down">
+                    <div class="down_arrow"></div>
+                </button>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    </div>
+    <div class="start" class="start">
+        <div class="text-block" class="display1">EZ Money</div>
+        <p class="text-block-2">A simple game where you can earn some simple money</p>
+        <button class="prsTstrt">start!</button>
+    </div>
+    <div class="difficulty" class="difficulty">
+        <p class="Select">Select difficulty</p>
+        <div class="buttons">
+            <button class="easy">easy</button>
+            <button class="medium">medium</button>
+            <button class="hard">hard</button>
+            <button class="insane">insane</button>
+        </div>
+    </div>
+</body>
 
+</html>
