@@ -1,12 +1,4 @@
-/*
-TODO:
-clean html class names
-clean up css
-clean up js
-make more factories up to mk 10
-ea.spurts.items.emerald.level +=+ 1 LOLOLOLOLLOLO
 
-*/
 
 class factory {
     constructor(name, earn, text) {
