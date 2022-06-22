@@ -166,8 +166,10 @@ function upgrade() {
 
 function start() {
     if (window.confirm("Are you Sure? ")) {
-        document.querySelector(".start").style.visibility = "hidden"
-        document.querySelector(".difficulty").style.visibility = "visible"
+        $(".start").fadeOut(800,function() {
+            document.querySelector(".difficulty").style.visibility = "visible"
+        })
+        
     }
 }
 
@@ -184,11 +186,13 @@ function setDifficulty(difficult,c=false) {
 
     if (d) {
         if (document.querySelector(".start") != undefined) {
-            document.querySelector("body").removeChild(document.querySelector(".start"))
-            document.querySelector("body").removeChild(document.querySelector(".difficulty"))
+            $(".difficulty").slideUp(1000,function() {
+                document.querySelector("body").removeChild(document.querySelector(".start"))
+                document.querySelector("body").removeChild(document.querySelector(".difficulty"))
+                document.querySelector(".game").style.visibility = "visible"
+                document.querySelector("body").style.backgroundColor = "white"
+            })
         }
-        document.querySelector(".game").style.visibility = "visible"
-        document.querySelector("body").style.backgroundColor = "white"
 
         difficulty = difficult
         startGame()
