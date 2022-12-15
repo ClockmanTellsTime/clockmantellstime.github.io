@@ -1,0 +1,103 @@
+
+body {
+    background-color: black;
+}
+.container{
+    text-align: center;         
+}
+
+
+
+/* Main game*/
+.buttons {
+    visibility: hidden;
+}
+
+button:hover{
+    color: white;
+    background-color: black;
+}
+
+button{
+    width: 120px;
+    color: black;
+    background-color: darkgrey;
+    font-size: 12px;
+}
+
+
+.startScreen {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 1000px; 
+}
+.glow{
+    font-size: 150px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.glow1{
+    position: relative;
+    top: -100px;
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+}
+.press2start{
+    position: relative;
+    height: 35px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    font-style: normal;
+    text-decoration: none;
+    cursor:pointer;
+    font-size: 20px;
+    border: white;
+}
+.press2start:hover {
+    background-color: darkgrey;
+    color: black;
+    width: 100px;
+}
+
+
+/* Trolling */
+.box {
+    position: absolute; 
+    width: 100px;
+    height: 100px;
+}
+
+
+/* animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000;
+    }
+}
+
+
+@keyframes ea {
+    0% { color: red; }
+    25% {color: orange;};
+    50% {color: yellow; }
+    75% {color: green;}
+    100% {color: blue; }
+}  
+
+@keyframes sports {
+    0% { background-color: red; }
+    25% {background-color: orange;};
+    50% { background-color: yellow; }
+    75% {background-color: green;}
+    100% { background-color: blue; }
+}  
