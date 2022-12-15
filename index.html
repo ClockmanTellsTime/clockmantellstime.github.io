@@ -1,0 +1,207 @@
+<html>
+    <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521437865819581"
+     crossorigin="anonymous"></script>
+        <style>
+            * {
+                margin: auto;
+                padding: 0;
+            }
+            body{   
+                background-color: black;
+                color: white;
+            }
+            button {
+                cursor: pointer;
+                width: 50px;
+                border-radius: 5px;
+                display: inline-block;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+
+            }
+            .links,.Updates, .creators{
+                position: relative;
+                background: gray;
+                width: 1000px; 
+                padding: 5px;
+                border-radius: 10px;
+            }
+            .Updates:hover {
+                width: 980px;
+                border-left: 10px solid orange;
+                border-right: 10px solid orange;
+            }
+            .links:hover {
+                width: 980px;
+                border-left: 10px solid red;
+                border-right: 10px solid red;
+                
+            }
+            .creators:hover {
+                width: 980px;
+                border-left: 10px solid gold;
+                border-right: 10px solid gold;
+            }
+            .content, .content1, .content2 {
+                position: relative;
+                left: 10px;
+            }
+            #title {
+                font-size: 100px;
+                color: black;
+                text-shadow: 5px 3px red;
+                margin: auto;
+            }
+            #info {
+                font-size: 25px;
+                color: black;
+                text-shadow: 2px 2px red;
+            }
+            .top {
+                text-align: center;
+            }
+            section {
+                right: 50%;
+            }
+            ::-webkit-scrollbar {
+                width: 0px;
+            }
+            #scrollPath {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 10px;
+                height: 100%;
+                background: rgba(255, 255, 255, 0,05);
+            }
+
+            #progressbar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 10px;
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                animation: animate 5s linear infinite;
+            }
+
+            @keyframes animate {
+                0%,100% {
+                    filter: hue-rotate(0deg);
+                }
+                50% {
+                    filter: hue-rotate(360deg);
+                }
+            }
+
+            #progressbar::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                filter: blur(10px);
+            }
+            #progressbar::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to top, #008aff,#00ffe7);
+                filter: blur(30px);
+            }
+        </style> 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HD5HHZHW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-E9HD5HHZHW');
+        </script>
+        <script>
+            window.onscroll = function() {
+                let z = document.body.scrollHeight - window.innerHeight
+                let x = (window.pageYOffset/z) * 100
+                document.getElementById("progressbar").style.height = x + "%"
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script>
+            var j = $.noConflict()
+            j(document).ready(function() {
+                //j(".container").css("width",window.innerHeight/1000 + "px")
+                j(".links").click(function(){
+                    j(".content").slideToggle(500);
+                })
+                j(".Updates").click(function(){
+                    j(".content1").slideToggle(500);
+                })
+                j(".creators").click(function() {
+                    j(".content2").slideToggle(500)
+                })
+            })
+            
+            function sendMail() {
+                var link = "mailto:noisyman546@example.com"
+                         + "?cc=myCCaddress@example.com"
+                         + "&subject=" + encodeURIComponent("This is my subject")
+                         + "&body=" + encodeURIComponent("message")
+                ;
+
+                window.location.href = link;
+            }
+        </script>
+        <script src="file:///G:/My%20Drive/backups/game/github%20pages/script.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="progressbar"></div>
+        <div id="scrollPath"></div>
+
+        <section>
+            <div class="top">
+                <p id="title">EZ money game collection</p>
+                <p id="info">bookmark this tab to keep an eye on when updates and new games get released</p><br>
+            </div>
+            <div class="container">
+                <div class="links">
+                    Game links:<br>
+                    <div class="content">
+                    EZ money 0:   
+                    <a href="https://clockmantellstime.github.io/Games/EZ%20money%200/" ><button class="btn">Go</button></a><br>
+                    EZ money 1:   
+                    <a href="https://clockmantellstime.github.io/Games/EZ%20money%201/" ><button class="btn">Go</button></a><br>
+                    EZ money 2:   
+                    <a href="https://clockmantellstime.github.io/Games/EZ%20money%202/" ><button class="btn">Go</button></a><br>
+                    EZ money 3:   
+                    <a href="https://clockmantellstime.github.io/Games/EZ%20money%203/" ><button class="btn">Go</button></a><br>
+                    </div>
+                </div>  
+                <br>    
+                <div class="Updates">
+                    Recent Updates: <br>
+                    (6/12/22) EZ money 1: bug fixes, offline earning (broken)<br>
+                    (6/12/22) EZ money 3: 10+ new ores
+                </div>
+                <br>
+                <div class="creators">
+                    Creators:<br>
+                    <div class="content2">
+                        all: <a href="https://github.com/ClockmanTellsTime">clockmantellstime</a>
+                    </div>
+                </div>                
+            </div>
+        </section>
+    </body>
+</html>
+
+
+
+
+ 
