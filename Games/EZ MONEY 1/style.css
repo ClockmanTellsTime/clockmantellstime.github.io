@@ -1,0 +1,264 @@
+body{
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+}
+.Select{
+    font-size: 140px;
+    line-height: 10px;
+    font-weight: 700;
+} 
+.buttons{
+    padding: 25px;
+    word-spacing: 10px;
+}  
+.easy{
+    background-color: green;
+} 
+.medium{
+    background-color: goldenrod;
+}
+.hard{
+    background-color: red;
+}
+.insane{
+    background-color: purple;
+}
+
+.difficulty{
+    background-color: #b3531a;
+    color: #a52424;
+    position: relative;
+    bottom: 50%;
+    visibility: hidden;
+}
+
+.prsTstrt{
+    position: relative;
+    top: 75px;
+    height: 35px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    font-style: normal;
+    text-align: justify;
+    text-decoration: none;
+    text-align: center;
+    cursor:pointer;
+    border: white;
+}
+.upgradeButton{
+    border-width: 1px;
+    position: center;
+}
+.prestigeUpgradesButton {
+    border-width: 1px;
+    position: center;
+}
+
+.start{
+    visibility: visibility;
+    position: relative;
+    top: 100px;
+    
+}
+
+.container{
+    text-align: center;                
+}
+
+.game{
+    visibility: hidden;
+}
+.text-block-2{
+    color: white;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 10px;
+    font-weight: 700;
+}
+
+.upgrades {
+    position:absolute;
+    display: none;
+    text-align: left;
+    background-color: #c7c7c7;
+    width: 100%;
+    left: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.prestigeUpgrades {
+    position:absolute;
+    display: none;
+    text-align: left;
+    background-color: #c7c7c7;
+    width: 100%;
+    left: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+.text-block{
+    color: white;
+    opacity: 1;
+    font-size: 175px;
+    line-height: 100px;
+    cursor: auto;
+}
+@keyframes e {
+    0% { color: red; }
+    25% {color: orange;};
+    50% { color: yellow; }
+    75% {color: green;}
+    100% { color: blue; }
+}  
+@keyframes a {
+    0% { background-color: red; }
+    25% {background-color: orange;};
+    50% { background-color: yellow; }
+    75% {background-color: green;}
+    100% { background-color: blue; }
+} 
+@keyframes sports {
+    0% { color: red; }
+    25% {color: orange;};
+    50% { color: yellow; }
+    75% {color: green;}
+    100% { color: blue; }
+}  
+
+.text-block{
+    color: red;
+    animation: sports 5s 0s infinite alternate none;
+}
+.text-block-2{
+    color: red;
+    animation: e 5s 0s infinite alternate none;
+}
+
+.prsTstrt{
+    color: black;
+    animation: a 5s 0s infinite alternate none;
+}
+
+.alert {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    background-color:grey;
+    width: 40%;
+    height: 50%;
+    display: none;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.menu_title {
+    position: relative;
+    font-size: 35px;
+    padding: 20px;
+    color: white;
+}
+
+.exit1{
+    position: absolute;
+    background-color: red;
+    top: 0px;
+    right: 0px;
+    user-select: none;
+    border-radius: 10px;
+}
+
+
+.up_arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid black;
+
+}
+
+.up,
+.down {
+    width: 25px;
+    height: 25px;
+}
+
+.down_arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 15px solid black;
+
+}
+
+.changePage {
+    text-align: center;
+}
+
+
+.page {
+    min-height: 325px
+}
+
+.moneyPopup {
+    position: absolute;
+}
+
+.page0 {
+    text-align: center;
+}
+
+.prestige {
+    text-align: center;
+}
+
+.prestigeButton {
+    width: 150px;
+    height: 50px;
+}
+
+.settingsBtn{
+    width: 150px;
+}
+
+
+.what {
+    width: 155px;
+}
+
+.prestigeUpgrade {
+    position: relative;
+}
+
+.printMoney {
+    text-align: center;
+    border-width: 1px;
+}
+
+button:hover {
+    background-color: rgba(70, 70, 70, 0.611);
+}
+
+.prestigeProgress {
+    position: relative;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    width: 100px;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.prestigeProgressFill {
+    width: 0%;
+    height: 100%;
+    background-color: green;
+}
