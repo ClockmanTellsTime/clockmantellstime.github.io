@@ -1,0 +1,253 @@
+button {
+    cursor: pointer;
+}
+
+:root {
+    --blue: #288BE3;
+}
+
+div {
+    display: inline-block;
+}
+
+br {
+    user-select:none;
+}
+
+sup {
+    font-size: 10px;
+}
+
+@font-face{
+    src: url(font.otf);
+    font-family: font;
+}
+
+
+::selection {
+    background-color: var(--blue);
+    color: black;   
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+
+
+/* Class lists */
+.unlocked {
+    display: block
+}
+
+.locked {
+    display: none
+}
+
+
+
+/* Sets */
+.sets {
+    width: 79.125%;
+}
+
+.set {
+    z-index: -1;
+    width: 100%;
+}
+
+
+
+
+/* Displays */
+.click_display {
+    position: absolute;
+    font-size: 25px;
+    bottom: 10px;
+    left: 50%;
+    color: white;
+    text-shadow: 2px 2px black;
+
+}
+.upgrade_cost_display {
+    position: relative;
+    left: 5px;
+}
+
+/* Titles */
+.menu_title {
+    position: relative;
+    font-size: 35px;
+    padding: 20px;
+    color: white;
+}
+
+/* Buttons */
+.give_money {
+    width: 50px;
+    height: 50px;
+}
+.give_manager {
+    position: relative;
+    width: 80%;
+    padding: 20px;
+    font-size: 20px;
+
+}
+._3X_upgrade {
+    position: relative;
+    padding: 20px;
+    width: 80%;
+    font-size: 20px;
+}
+.upgrade_button {
+    position: relative;
+    left: 11px;
+    border-radius: 5px;
+    width: 25px;
+    border-color: black;
+}
+
+.toggle_menu {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: rotate(90deg);
+    width: 100px;
+    z-index: 0;
+}
+
+.menu_options_button{
+    width: 99%;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.exit1{
+    position: absolute;
+    background-color: red;
+    top: 0px;
+    right: 0px;
+    user-select: none;
+    border-radius: 10px;
+}
+
+/* Menus */
+
+.upgrade_cost_background {
+    background-color: grey;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    left: 15px;
+    top: 20px;
+    visibility: hidden;
+    overflow: hidden; 
+    border-radius: 5px;
+}
+.menu {
+    position: fixed;
+    top: 0px;
+    right: -25%;
+    width: 25%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+}
+.menu_options {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: scroll;
+    background-color: #3A3736;
+    text-align: center;
+    width: 40%;
+    height: 75%;
+    position: fixed ; 
+    left: 30%;
+    z-index: 1;
+    display: none;
+    border-radius: 10px;
+
+}  
+
+
+.upgrade_amount_menu {
+    text-align: center;
+    color: white;
+    width: 97%;
+    padding: 20px 0px;
+}
+
+.alert {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    background-color:grey;
+    width: 40%;
+    height: 50%;
+    display: none;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+/* Progress bars */
+
+.progress {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    background-color: black;
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress_fill {
+    width: 0%;
+    height: 100%;
+    background-color: gray;
+}
+
+/* Start Screen */
+body {
+    background: var(--blue);
+}
+
+.startScreen{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.info {
+    position: relative;
+    font-size: 20px;
+    opacity : 0; 
+}
+
+.title{
+    position: relative;
+    color: var(--blue);
+    font-size: 90px;
+}
+
+.fonta {
+    position: relative;
+    font-family: font;
+
+}
+
+.sets, .menus, .stats {
+    visibility: hidden;
+}
+
+
+
