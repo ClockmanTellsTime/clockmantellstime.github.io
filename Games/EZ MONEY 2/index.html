@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="title">EZ money 2</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body class="this" id="body" onload="startGame();if(mainGame.data.controls.StartScreenHidden) {start()}">
+        <div class="container">
+            <div class="startScreen" id="startScreen">
+                <h1 class="glow" id="glow">EZ money 2</h1>
+                <p id="glow1" class="glow1"></p>
+                <button class="press2start" id="press2start" onclick="if(confirm('Are you sure?')){start()}">start</button>
+            </div>
+            <div id="box" class="box"></div>    
+            <div class="stats" id="stats">
+            </div>
+            <div class="buttons" id="buttons">
+            </div>
+        </div> 
+    </body>
+</html>
