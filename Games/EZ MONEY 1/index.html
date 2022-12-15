@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <title class="title">EZ Money</title>
+    <div class="game">
+        <div class="money">
+            <label class="moneyDisplay">money</label>
+            <label class="moneyPopup"></label>
+        </div>
+        <label class="moneyPerSecondDisplay">Money per second: $0</label>
+        <br><br>
+        <button class="printMoney what">Print money!</button>
+        <br>
+        <button class="upgradeButton what">upgrades</button><br>
+        <div class="upgrades">
+            <div class="page0 page">
+                <h1>Settings</h1>
+                <button class="alerts settingsBtn">Alerts: on</button><br>
+                <button class="automations settingsBtn">Automations: on</button>
+                <br><br>
+                To reset progress, press r
+            </div>
+            <div class="page1 page">
+                <div class="printer">
+                    <button class="upgradePrinter">buy</button>
+                    <label class="upgradeDisplay"></label>
+                </div>
+                <br>
+                <div class="autoUpgrade">
+                    <button class="ez1">buy</button>
+                    <label>Auto upgrade</label>
+                </div>
+                <div class="AutoPrintMoney">
+                    <button class="ez2">buy</button>
+                    <label>Auto print money</label>
+                </div>
+                <div class="autoPlay">
+                    <button class="ez3">buy</button>
+                    <label>Auto play</label>
+                </div>
+                <br>
+                <div class="builder">
+                    <button class="hireBuilder">Hire</button>
+                    <label class="builderDisplay"></label>
+                </div>
+                <div class="manager">
+                    <button class="hireManager">Hire</button>
+                    <label class="managerDisplay"></label>
+                </div>
+                <div class="superManager">
+                    <button class="hireSuperManager">Hire</button>
+                    <label class="superManagerDisplay"></label>
+                </div>
+                <br>
+                <div class="page1factories"></div>
+            </div>
+            <div class="page2 page">
+                <div class="engineer">
+                    <button class="hireEngineer">Hire</button>
+                    <label class="engineerDisplay"></label>
+                </div>
+                <br><div class="page2factories"></div>
+                <div class="prestige">
+
+                    <br><button class="prestigeButton">
+                    Prestige                    
+                    <div class="prestigeProgress">
+                        <div class="prestigeProgressFill"></div>
+                    </div>
+                    </button><br>
+                    <label for="">Prestige: Restart your game, but earn prestige tokens which can be used for OP upgrades</label><br>
+                    <label class="prestigeDisplay">Prestiges: 0</label>
+                </div><br>
+            </div>
+            <div class="changePage">
+                <label class="pageDisplay">Page: 0</label>
+                <button class="up">
+                    <div class="up_arrow"></div>
+                </button>
+                <button class="down">
+                    <div class="down_arrow"></div>
+                </button>
+            </div>
+        </div>
+        <button class="prestigeUpgradesButton what">prestige upgrades</button>
+
+        <div class="prestigeUpgrades">
+            <label class="tokenDisplay">PT$:100</label><br><br>
+
+            <div class="wizzard">
+                <button class="hireWizzard">Hire</button>
+                <label class="wizzardDisplay">eeeeee</label>
+            </div>
+            <div class="hackerMan">
+                <button class="hireHackerMan">Hire</button>
+                <label class="hackerManDisplay">eeeeee</label>
+            </div>
+            <div class="artist">
+                <button class="hireArtist">Hire</button>
+                <label class="artistDisplay">eeeeee</label>
+            </div>
+            <div class="nasaEngineer">
+                <button class="hireNasaEngineer">Hire</button>
+                <label class="nasaEngineerDisplay">eeeeee</label>
+            </div>
+            <div class="buisnessManager">
+                <button class="hireBuisnessManager">Hire</button>
+                <label class="buisnessManagerDisplay">eeeeee</label>
+            </div>
+
+            <br><br>
+
+            <div class="nuclearFactories prestigeUpgrade">
+                <button class="buyNuclearFactories">buy</button>
+                <label class="nuclearFactoriesDisplay">Increase production and speed by nuclear power. Cost: PT$69 Level: 10</label>
+            </div>
+            <div class="taxCuts prestigeUpgrade">
+                <button class="buyTaxCuts">buy</button>
+                <label class="taxCutsDisplay">Reduce the prices of everything. Cost: PT$69 Tax cuts: 10%</label>
+            </div>
+            <div class="buyOneGetOneFree prestigeUpgrade">
+                <button class="buyBuyOneGetOneFree">buy</button>
+                <label class="BOGOFDisplay">Increase the amount of free factories you get when BUYING. Cost: PT$69 Level: 10</label>
+            </div>
+            <div class="moreMoney prestigeUpgrade">
+                <button class="buyMoreMoney">buy</button>
+                <label class="moreMoneyDisplay">The more you buy, the more you multiplier you get. Cost: PT$69 Multiplier: 10</label>
+            </div>
+            <div class="moreTokens prestigeUpgrade">
+                <button class="buyMoreTokens">buy</button>
+                <label class="moreTokensDisplay">The more you buy, the more you tokens you get per prestige. Cost: PT$69 Extra Tokens: 10</label>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="start" class="start">
+        <div class="text-block" class="display1">EZ Money</div>
+        <p class="text-block-2">A simple game where you can earn some simple money</p>
+        <button class="prsTstrt">start!</button>
+    </div>
+    <div class="difficulty" class="difficulty">
+        <p class="Select">Select difficulty</p>
+        <div class="buttons">
+            <button class="easy">easy</button>
+            <button class="medium">medium</button>
+            <button class="hard">hard</button>
+            <button class="insane">insane</button>
+        </div>
+    </div>
+</body>
+
+</html>
