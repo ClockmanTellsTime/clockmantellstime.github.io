@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="https://clockmantellstime.github.io/other/num2txt.js"></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet"  href="style.css">
+    </head>
+    <body id="body" onload="main()">
+        <div class="startScreen" id="startScreen">
+            <lable class="title" id="title">EZ </lable>
+            <label class="title fontA" id="title1">MONEY 3</label><br>
+            <label class="info" id="info">the best game about making some simple money</label>
+        </div>
+        
+        <div class="stats" id="stats">
+            <label class="moneyDisplay" id="moneyDisplay">Money: $0</label>
+        </div>
+        <div class="menus" id="menus"> 
+            <div class="menu" id="menu">
+                <div class="menu_title">Menu</div>
+                <br>
+                <br>
+                <button class="toggle_menu" id="toggle" onclick="toggle()">MENU</button>
+                <div class="upgrade_amount_menu">
+                    Upgrade amount:
+                    <select id="upgrade_amount">
+                        <option value=1>1</option>
+                        <option value=10>10</option>
+                        <option value=50>50</option>
+                        <option value=100>100</option>
+                    </select>
+                </div>
+                <button class="menu_options_button" id="manager" onclick="toggle_manager()">Managers</button>
+                <button class="menu_options_button" id="upgrade" onclick="toggle_upgrades()"" >Upgrades</button>
+            </div>
+    
+            <div class="managers menu_options" id="managers">
+                <div class="menu_title">Managers</div>
+            </div>
+            <div class="upgrades menu_options" id="upgrades" ">
+                <div class="menu_title">Upgrades</div>
+            </div>
+                
+
+            <div class="prestiges" id="prestiges"></div>
+    
+        </div>
+
+        <br>
+        <div class="sets" id="sets"></div>
+        <br>
+
+        <div class="alert" id="alert">
+            <div class="menu_title" id="alert_title"></div><br>
+            <button class="exit1" id="alert_button" onclick="hide_alert()">X</button>
+            <label class="words" id="words"></label>
+        </div>
+        
+    </body>
+</html>
+
+
+
