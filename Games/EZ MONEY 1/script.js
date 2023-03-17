@@ -734,6 +734,17 @@ function prestige() {
             q.prestige.prestigeTokens += q.prestige.tokensAdd.amount * q.prestige.multiplier.amount
             q.prestige.amount += 1
             q.prestige.cost *= 10
+            
+            for (var i in q) {
+                if (q[i] != null && q[i].cost != undefined) {
+                    // probably to not do prestige upgrades
+                    if (q[i].prestigeTokens != undefined) {}
+                    else {
+                        q[i].cost = stock[i].cost * ((100-q.prestige.taxCuts.amount)/100)
+                    }
+                }
+            }
+            
             setTimeout(function() {
                 document.querySelector("body").style.backgroundColor = "white"
                 $(".game").fadeIn(500)
