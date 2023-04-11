@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <label for="" class="moneyDisplay">Money: $100</label>
+    <div class="content">
+        <div class="myPlanes page">
+            <button class="flyAll" onclick="flyAllPlanes()">Depart All</button>
+        </div>
+        <div class="buyPlanes page"></div>
+        <div class="myRoutes page"></div>
+        <div class="buyRoutes page"></div>
+    </div>
+
+    <div class="routeSetPopup">
+        <button class="cancel">cancel</button><br><br   >
+        <div class="myRoutes2">h</div>
+    </div>
+    <div class="menu">
+        <button class="myAirplanes menuButton" onclick="page='myPlanes';updatePage()">my airplanes</button>
+        <button class="buyAirplanes menuButton" onclick="page ='buyPlanes';updatePage()">buy airplanes</button>
+        <button class="myRoutes menuButton" onclick="page = 'myRoutes';updatePage()">my routes</button>
+        <button class="buyRoutes menuButton" onclick="page = 'buyRoutes';updatePage()">buy routes</button>
+    </div>
+</body>
+</html>
