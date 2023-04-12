@@ -10,10 +10,7 @@ var game = {
 var data = {
     money: 0,
     costForRoute: 1000,
-    planes: {
-        "123": {model: 'b737', wear: 0, results: 0, position: 0,range: 2500,route: 'Los Angeles', status: "grounded", timeForAssignedRoute: 14000, flying: false,},
-        "1234": {model: 'b737', wear: 0, results: 0, position: 0,range: 2500,route: 'Los Angeles', status: "grounded",timeForAssignedRoute: 14000, flying: false,}
-    },
+    planes: {},
     routes: {},
 }
 
@@ -58,7 +55,17 @@ class route {
     }
 }
 
-var s = new plane("b737",128,2,850,2500,1500)
+const b737 = new plane("b737", 189, 2, 528, 3000,1500);
+const b747 = new plane("b747", 516, 5, 614, 8000,10000);
+const b757 = new plane("b757", 239, 3, 540, 4100,4500);
+const b767 = new plane("b767", 275, 3, 530, 6385,5000);
+const b777 = new plane("b777", 396, 4, 560, 7370,6000);
+const b787 = new plane("b787", 350, 4, 593, 7635,7500);
+
+const aa330 = new plane("aa330", 385, 4, 541, 6350,6000);
+const aa340 = new plane("aa340", 375, 4, 567, 7400,5900);
+const aa350 = new plane("aa350", 440, 4, 567, 8100,6000);
+const aa380 = new plane("aa380", 853, 5, 634, 8000,12000);
 
 
 { /* airports*/
@@ -204,15 +211,21 @@ function buyPlane(name) {
     }
 }
 
-function sellPlane(name) {
+function sellPlane(name,a=true) {
     data.money += game.planes[data.planes[name].model].cost
 
+    try {
     data.routes[data.planes[name].route].remainingDemand += game.planes[data.planes[name].model].pax
 
     data.routes[data.planes[name].route].planesOnThisRoute.splice(data.routes[data.planes[name].route].planesOnThisRoute.indexOf(name),1)
+    }
+    catch(err){}
     clearInterval(data.planes[name].interval)
     delete data.planes[name]
-    window.alert(`Successfully sold plane ${name}`)
+
+    if (a) {
+        window.alert(`Successfully sold plane ${name}`)
+    }
 }
 
 
@@ -269,11 +282,20 @@ function setRouteForPlane(planeName, routeName) {
     data.planes[planeName].timeForAssignedRoute = timeForRoute;
     data.planes[planeName].position = 0
 
+
     data.routes[routeName].planesOnThisRoute.push(planeName)
 
     data.routes[routeName].remainingDemand -= game.planes[data.planes[planeName].model].pax
+
+    data.planes[planeName].demandWhenRouted = data.routes[routeName].remainingDemand
     console.log(data.routes[routeName].planesOnThisRoute)
     document.querySelector(".routeSetPopup").style.display = "none"
+
+
+
+    if (data.routes[routeName].remainingDemand < 0) {
+        window.alert("WARNING: If demand goes below 0, you will not get any profits from that flight!")
+    }
 }
 
 
@@ -305,10 +327,21 @@ function flyPlane(name, alert = true) {
                 clearInterval(data.planes[name].interval)
                 data.planes[name].interval = 0
                 data.planes[name].wear += game.planes[data.planes[name].model].fuelEfficiency;
-                data.money += game.routes[data.planes[name].route].earn + game.planes[data.planes[name].model].pax * 2
+
+                if (data.planes[name].demandWhenRouted < 0) {
+                    var m = 0
+                }
+                else {
+                    var m = 1
+                }
+                
+                data.money += (game.routes[data.planes[name].route].earn + game.planes[data.planes[name].model].pax * 2) * m
                 data.planes[name].flying = false
                 data.planes[name].status = "Grounded"
-                data.planes[name].results += game.routes[data.planes[name].route].earn + game.planes[data.planes[name].model].pax * 2
+                data.planes[name].results += (game.routes[data.planes[name].route].earn + game.planes[data.planes[name].model].pax * 2) * m
+                
+
+                data.money -= getIncident(name)
             } else {
                 data.planes[name].position += 1000;
 
@@ -333,16 +366,15 @@ function flyAllPlanes() {
 }
 
 function updatePlanes() {
-    document.querySelector(".myPlanes").innerHTML = '<button class="flyAll" onclick="flyAllPlanes()">Depart All</button><br><br>'
-    
+    document.querySelector(".myPlanes").innerHTML = '<button class="flyAll" onclick="flyAllPlanes()">Depart All</button><button class="flyAll" onclick="fixAllPlanes()">Maintain All</button><br><br>'
     for (var i in data.planes) {
         document.querySelector(".myPlanes").innerHTML += `
-            <div class="plane"> <img src="airplane images/${data.planes[i].model}.png" alt="Description of the image" width="200px" height="75px"> ${data.planes[i].model} / ${i}  wear: ${data.planes[i].wear} range: ${data.planes[i].range} results: $${data.planes[i].results} seats: ${game.planes[data.planes[i].model].pax} route: ${data.planes[i].route} <button onclick="setRouteForPlanePopup('${i}')">set route</buttom>  <button class="sellPlane" onclick="sellPlane('${i}')">sell plane</button>  <button onclick="flyPlane('${i}')">depart</button> ${data.planes[i].status}</div><br>
+            <div class="plane"> <img src="airplane images/${data.planes[i].model}.png" alt="Description of the image" width="200px" height="75px"> ${data.planes[i].model} / ${i}  wear: ${data.planes[i].wear} range: ${data.planes[i].range} results: $${data.planes[i].results} seats: ${game.planes[data.planes[i].model].pax} route: ${data.planes[i].route} <button onclick="setRouteForPlanePopup('${i}')">set route</buttom>  <button class="sellPlane" onclick="sellPlane('${i}')">sell plane</button>  <button onclick="flyPlane('${i}')">depart</button> <button onclick="fixPlane('${i}')">Fix Plane</button>${data.planes[i].status}</div><br>
         `
     }   
 }
 
-
+//
 
 function updateRoutes() {
     document.querySelector(".myRoutes").innerHTML = ""
@@ -369,8 +401,84 @@ function setRouteForPlanePopup(plane) {
     }
 }
 
+function fixPlane(name,c=true) {
+    var cost = (game.planes[data.planes[name].model].cost/100) * data.planes[name].wear
+
+    var e = 0
+
+    if (c) {
+        if (confirm(`Are you sure you want to maintain plane ${name} for $${cost}`)) {
+            e = true
+        }
+    }
+    else {
+        e = true
+    }
+
+    if (e == true) {
+        data.planes[name].wear = 0
+        data.money -= cost
+    }
+
+}
+
+function fixAllPlanes() {
+    totalCost = 0
+    for (var name in data.planes) {
+        var cost = (game.planes[data.planes[name].model].cost/100) * data.planes[name].wear
+        totalCost += cost
+    }
+
+    if (confirm(`Are you sure you want to maintain all planes for $${cost}`)) {
+        for (var name in data.planes) {
+            fixPlane(name,c=false)
+        }
+    }
+}
 
 
+function getIncident(plane) {
+    var wear = data.planes[plane].wear
+    if (wear >= 100) {
+        //plane blew up and got destoryed and you lose all your money from law suits
+        window.alert("Your plane blew up mid flight...your airlines funds got comprimised...")
+        sellPlane(plane,false)
+        return data.money + 100000
+    }
+    else if (wear >= 90) {
+        //both engines blew up and you had to emergancy land. - plane cost + 20000
+        window.alert("All of the engines blew up and your plane had to make an emergancy landing in the ocean.")
+        return 20000
+    }
+    else if (wear >= 80) {
+        //one engines had blew up, but everytging fine. - plane cost / 2 + 10000
+        window.alert("One of the engines blew up mid flight but still landed safely.")
+        return 10000
+    }
+    else if (wear >= 70) {
+        //False bomb alert and the cops had to come - 5000
+        window.alert("False bomb alert, and the cops had to come.")
+        return 5000
+    }
+    else if (wear >= 60) {
+        //the plane had a bird strike - 1000
+        window.alert("One of the engines had a birdstrike.")
+        return 1000
+    }
+    else if (wear >= 50) {
+        //the toilot broke - 500
+        window.alert("The toilet broke.")
+        return 500
+    }
+    else if (wear >= 40) {
+        //The fridge broke so no food or drnks - 200
+        window.alert("The fridge broje so passengers could not have food or drinks.")
+        return 200
+    }
+    else {
+        return 0
+    }
+}
 
 
 function updateRoutesShop() {
@@ -412,18 +520,34 @@ function update() {
     document.querySelector(".moneyDisplay").innerHTML = `Money: $${data.money}`
 }
 
+function save() {
+    localStorage.setItem("AIRLINE MANAGER TYCOON SAVE",JSON.stringify(data))
+}
+
+function load() {
+    if (JSON.parse(localStorage.getItem("AIRLINE MANAGER TYCOON SAVE")) == undefined) {return false}
+
+    data = JSON.parse(localStorage.getItem("AIRLINE MANAGER TYCOON SAVE"))
+    for (var i in data.planes) {
+        data.planes[i].flying = false
+        data.planes[i].interval = 0
+        data.planes[i].status = "Grounded"
+        data.planes[i].position = 0
+    }
+}
+
 
 data.money = 2183892139832
 buyRoute("Los Angeles");
-setRouteForPlane("123","Los Angeles");
-setRouteForPlane("1234","Los Angeles");
-
 data.money = 2000
 
+load()
+update()
 
 
 setInterval(() => {
     update()
+    save()
 }, (1000));
 
 console.log(`Money ${data.money}`)
