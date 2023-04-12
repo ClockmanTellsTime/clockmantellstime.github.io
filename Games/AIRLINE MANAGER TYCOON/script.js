@@ -1,6 +1,10 @@
 //every hour is a minute
 
-
+document.addEventListener("keypress",(e) => {
+    if (e.key.toLowerCase() == "r") {
+        reset()
+    }
+})
 
 var game = {
     planes: {},
@@ -366,6 +370,8 @@ function flyAllPlanes() {
 }
 
 function updatePlanes() {
+    if (JSON.stringify(data.planes) == "{}"){document.querySelector(".myPlanes").innerHTML = "You need to buy some planes from the shop!";return false;}
+
     document.querySelector(".myPlanes").innerHTML = '<button class="flyAll" onclick="flyAllPlanes()">Depart All</button><button class="flyAll" onclick="fixAllPlanes()">Maintain All</button><br><br>'
     for (var i in data.planes) {
         document.querySelector(".myPlanes").innerHTML += `
@@ -536,10 +542,19 @@ function load() {
     }
 }
 
+function reset() {
+    data = {
+        money: 1500,
+        costForRoute: 1000,
+        planes: {},
+        routes: {},
+    }
+    save()
+}
 
 data.money = 2183892139832
 buyRoute("Los Angeles");
-data.money = 2000
+data.money = 1500
 
 load()
 update()
