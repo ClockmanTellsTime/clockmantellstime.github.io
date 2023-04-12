@@ -2,7 +2,7 @@
 
 document.addEventListener("keypress",(e) => {
     if (e.key.toLowerCase() == "r") {
-        reset()
+        if (confirm("Are you sure you want to reset your progress?")) {reset()}
     }
 })
 
@@ -12,7 +12,7 @@ var game = {
 }
 
 var data = {
-    money: 0,
+    money: 2500,
     costForRoute: 1000,
     planes: {},
     routes: {},
@@ -544,17 +544,14 @@ function load() {
 
 function reset() {
     data = {
-        money: 1500,
+        money: 2500,
         costForRoute: 1000,
         planes: {},
         routes: {},
     }
+
     save()
 }
-
-data.money = 2183892139832
-buyRoute("Los Angeles");
-data.money = 1500
 
 load()
 update()
