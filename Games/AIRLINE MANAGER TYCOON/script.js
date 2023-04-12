@@ -383,6 +383,8 @@ function updatePlanes() {
 //
 
 function updateRoutes() {
+    if (JSON.stringify(data.routes) == "{}") {document.querySelector(".myRoutes").innerHTML = "You need to buy some routes!";return false}
+
     document.querySelector(".myRoutes").innerHTML = ""
     for (var i in data.routes) {
         document.querySelector(".myRoutes").innerHTML += `
@@ -393,6 +395,7 @@ function updateRoutes() {
 
 function setRouteForPlanePopup(plane) {
     document.querySelector(".routeSetPopup").style.display = "block"
+    if (JSON.stringify(data.routes) == "{}") {document.querySelector(".myRoutes2").innerHTML = "You need to buy some routes!";return false}
     document.querySelector(".myRoutes2").innerHTML = ""
     document.querySelector(".myRoutes2").innerHTML += `
     <div class="route"><button class="setRoute" onclick="removeRouteFromPlane('${plane}', '${data.planes[plane].route}')">remove route</button></div>`
@@ -401,10 +404,6 @@ function setRouteForPlanePopup(plane) {
             <div class="route">${i} - Remaining demand: ${data.routes[i].remainingDemand}, distance: ${game.routes[i].distance} <button class="setRoute" onclick="setRouteForPlane('${plane}', '${i}')">set route</button></div>
         `
     } 
-
-    document.querySelector(".cancel").onclick = () => {
-        document.querySelector(".routeSetPopup").style.display = "none"
-    }
 }
 
 function fixPlane(name,c=true) {
@@ -561,5 +560,10 @@ setInterval(() => {
     update()
     save()
 }, (1000));
+
+
+document.querySelector(".cancel").onclick = () => {
+    document.querySelector(".routeSetPopup").style.display = "none"
+}
 
 console.log(`Money ${data.money}`)
