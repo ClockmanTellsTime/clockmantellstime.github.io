@@ -992,15 +992,7 @@ function reset() {
     setDifficulty(difficulty)
     page = 1
     planet = 0
-    try {
-        document.querySelector(".earthPrestigeUpgrades").style.display = "none"
-        document.querySelector(".earthUpgrades").style.display = "none"
-        x= 0
-        y= 0
-    }
-    catch(err){
-        //location.reload()
-    }
+    location.reload()
 }
 
 function customAlert(message) {
