@@ -1,5 +1,5 @@
     function giveMoonMoney() {
-        q.moon.moonMoney += q.moon.click.amount
+        q.moon.money += q.moon.click.amount
     }
 
 
@@ -27,11 +27,11 @@
     }
 
     function buyMoon() {
-        if (q.earth.earthMoney < q.moon.cost ) {customAlert(`You need $${q.moon.cost - q.earth.earthMoney} more to do this!`);return false;}
+        if (q.earth.money < q.moon.cost ) {customAlert(`You need $${q.moon.cost - q.earth.money} more to do this!`);return false;}
         if (q.earth.prestige.prestigeTokens < q.moon.costP) {customAlert(`You need PT$${q.moon.costP - q.earth.prestige.prestigeTokens} more to do this!`);return false}
         if (confirm("Are you sure, the Moon is expensive, and you don't get refunds!") && confirm("Are you actually sure, you can lose everything buying the Moon?")) {
             q.moon.purchased = true
-            q.earth.earthMoney -= q.moon.cost
+            q.earth.money -= q.moon.cost
             q.earth.prestige.prestigeTokens -= q.moon.costP
             customAlert("You have bought the Moon...")
         }
@@ -75,18 +75,18 @@
             what()
         }
         else {
-            if (q.moon.moonMoney < q.moon.autoPrint.cost) {
-                customAlert(`You need $${num2txt(q.moon.autoPrint.cost - q.moon.moonMoney)} more to do this.`)
+            if (q.moon.money < q.moon.autoPrint.cost) {
+                customAlert(`You need $${num2txt(q.moon.autoPrint.cost - q.moon.money)} more to do this.`)
                 return false 
             }
 
-            q.moon.moonMoney -= q.moon.autoPrint.cost
+            q.moon.money -= q.moon.autoPrint.cost
             document.querySelector(".buyAutoPrintMoonTokens").innerHTML = "on"
             q.moon.autoPrint.on = true
             clearInterval(ez1)
             clearTimeout(hard)
             ez1 = setInterval(function () {
-                q.moon.moonMoney += q.moon.click.amount
+                q.moon.money += q.moon.click.amount
             }, 1)
 
 
@@ -109,17 +109,17 @@
         }
 
         else{
-            if (q.moon.moonMoney < q.moon.autoUpgrade.cost) { 
-                customAlert(`You need $${num2txt(q.moon.autoUpgrade.cost - q.moon.moonMoney)} more to do this.`); 
+            if (q.moon.money < q.moon.autoUpgrade.cost) { 
+                customAlert(`You need $${num2txt(q.moon.autoUpgrade.cost - q.moon.money)} more to do this.`); 
                 return false 
             }
-            q.moon.moonMoney -= q.moon.autoUpgrade.cost
+            q.moon.money -= q.moon.autoUpgrade.cost
             document.querySelector(".buyAutoUpgradeMoonPrinter").innerHTML = "on"
             q.moon.autoUpgrade.on = true
             clearInterval(ez)
             clearTimeout(hard)
             ez = setInterval(function () {
-                if (q.moon.moonMoney >= q.moon.click.cost) {
+                if (q.moon.money >= q.moon.click.cost) {
                     upgrade("moon")
                 }
             }, 1)
