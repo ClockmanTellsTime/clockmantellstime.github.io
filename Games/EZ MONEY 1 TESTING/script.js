@@ -992,7 +992,6 @@ function reset() {
     setDifficulty(difficulty)
     page = 1
     planet = 0
-    location.reload()
 }
 
 function customAlert(message) {
