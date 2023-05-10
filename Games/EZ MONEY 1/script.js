@@ -1,341 +1,284 @@
 document.addEventListener("keydown", event => {
-
-    if (event.shiftKey) {
-        part1 = true
-        setTimeout(function() {part1=false},1000)
-    }
-    if (event.key.toLowerCase() == "g") {
-        if (part1) {
-            part2 = true
-            setTimeout(function() {part2=false},1000)
-        }
-    }
-    if (event.key.toLowerCase() == "h") {
-        if (part2) {
-            part3 = true
-            setTimeout(function() {part3=false},1000)
-        }
-    }
-    if (event.ctrlKey) {
-        if (part3) {
-            part4 = true
-            setTimeout(function() {part4=false},1000)
-        }
-    }
-    if (event.key.toLowerCase() == "n") {
-        if (part4) {
-            part5 = true
-        }
-    }
-
-    if (gameLoaded && part5) {
-
-        if (event.key.toLowerCase() == "1" && event.altKey) {
-            hire("mk1")
-        }
-        else if (event.key.toLowerCase() == "!" && event.altKey && event.shiftKey) {
-            levelUp("mk1")
-        }
-        else if (event.key.toLowerCase() == "2" && event.altKey) {
-            hire("mk2")
-        }
-        else if (event.key.toLowerCase() == "@" && event.shiftKey && event.altKey) {
-            levelUp("mk2")
-        }
-        else if (event.key.toLowerCase() == "3" && event.altKey) {
-            hire("mk3")
-        }
-        else if (event.key.toLowerCase() == "#" && event.altKey && event.shiftKey) {
-            levelUp("mk3")
-        }
-        else if (event.key.toLowerCase() == "4" && event.altKey) {
-            hire("mk4")
-        }
-        else if (event.key.toLowerCase() == "$" && event.altKey && event.shiftKey) {
-            levelUp("mk4")
-        }
-        else if (event.key.toLowerCase() == "5" && event.altKey) {
-            hire("mk5")
-        }
-        else if (event.key.toLowerCase() == "%" && event.altKey && event.shiftKey) {
-            levelUp("mk5")
-        }
-        else if (event.key.toLowerCase() == "6" && event.altKey) {
-            hire("mk6")
-        }
-        else if (event.key.toLowerCase() == "^" && event.altKey && event.shiftKey) {
-            levelUp("mk6")
-        }
-        else if (event.key.toLowerCase() == "7" && event.altKey) {
-            hire("mk7")
-        }
-        else if (event.key.toLowerCase() == "&" && event.altKey && event.shiftKey) {
-            levelUp("mk7")
-        }
-        else if (event.key.toLowerCase() == "8" && event.altKey) {
-            hire("mk8")
-        }
-        else if (event.key.toLowerCase() == "*" && event.altKey && event.shiftKey) {
-            levelUp("mk8")
-        }
-        else if (event.key.toLowerCase() == "9" && event.altKey) {
-            hire("mk9")
-        }
-        else if (event.key.toLowerCase() == "(" && event.altKey && event.shiftKey) {
-            levelUp("mk9")
-        }
-        else if (event.key.toLowerCase() == "0" && event.altKey) {
-            hire("mk10")
-        }
-        else if (event.key.toLowerCase() == ")" && event.altKey && event.shiftKey) {
-            levelUp("mk10")
-        }
-
-        else if (event.key.toLowerCase() == "q" && event.altKey) {
-            event.preventDefault()
-            prestigeUpgrade("nuclearPower")
-        }
-        else if (event.key.toLowerCase() == "w" && event.altKey) {
-            event.preventDefault()
-            prestigeUpgrade("taxCuts")
-        }
-        else if (event.key.toLowerCase() == "e" && event.altKey) {
-            event.preventDefault()
-            prestigeUpgrade("BOGOF")
-        }
-        else if (event.key.toLowerCase() == "r" && event.altKey) {
-            event.preventDefault()
-            prestigeUpgrade("multiplier")
-        }
-        else if (event.key.toLowerCase() == "t" && event.altKey) {
-            event.preventDefault()
-            prestigeUpgrade("tokensAdd")
-        }
-
-        else if (event.key.toLowerCase() == "p" ) {
-            prestige()
-        }
-
-        else if (event.key.toLowerCase() == "q" && event.shiftKey) {
-            document.querySelector(".alerts").click()
-        }
-        else if (event.key.toLowerCase() == "w" && event.shiftKey) {
-            document.querySelector(".automations").click()
-        }
-
-        else if (event.key.toLowerCase() == "z" && event.altKey) {
-            Phire("wizzard")
-        }
-        else if (event.key.toLowerCase() == "x" && event.altKey) {
-            Phire("hackerman")
-        }
-        else if (event.key.toLowerCase() == "c" && event.altKey) {
-            Phire("artist")
-        }
-        else if (event.key.toLowerCase() == "v" && event.altKey) {
-            Phire("nasaEngineer")
-        }
-
-        else if (event.key.toLowerCase() == "q") {
-            upgrade()
-        }
-
-        else if (event.key.toLowerCase() == "a") {
-            autoUpgrade()
-        }
-
-        else if (event.key.toLowerCase() == "s") {
-            autoPrintMoney()
-        }
-        else if (event.key.toLowerCase() == "d") {
-            autoPlay()
-        }
-
-        else if (event.key.toLowerCase() == "z") {
-            hire("builders")
-        }
-        else if (event.key.toLowerCase() == "x") {
-            hire("managers")
-        }
-        else  if (event.key.toLowerCase() == "c") {
-            hire("superManagers")
-        }
-        else  if (event.key.toLowerCase() == "2") {
-            document.querySelector(".prestigeUpgradesButton").click()
-        }
-        else if (event.key.toLowerCase() == "1") {
-            document.querySelector(".upgradeButton").click()
-        }
-
-        else if (event.key== "ArrowUp") {
-            if(document.querySelector(".upgrades").style.display == "block" ) {
-                document.querySelector(".up_arrow").click()
-            }
-        }
-        else if (event.key == "ArrowDown") {
-            if (document.querySelector(".upgrades").style.display == "block") {
-                document.querySelector(".down").click()
-            }
-        }
-
-        if (event.key.toLowerCase() == "l" && event.shiftKey) {
-            part5 = false
-        }
-        else if (event.key.toLowerCase() == "r") {
-            if (window.confirm("Are you sure you want to reset, this is not able to be undone? ")) {
-                reset()
-            }
-        }
-    }
-
-    else if (gameLoaded) {
+    if (gameLoaded) {
         if (event.key.toLowerCase() == "r") {
             if (window.confirm("Are you sure you want to reset, this is not able to be undone? ")) {
                 reset()
             }
-        }
-    }
-
-    
-
-    if (String(parseInt(event.key)) != "NaN") {
-        if (document.querySelector(".difficulty") != undefined && setDifficultyPageLoaded) {
-            if (parseInt(event.key) > 0 && parseInt(event.key) < difficulties.length + 1) {
-                    setDifficulty(difficulties[parseInt(event.key) - 1],true)
-            }
-        }
-    }
-    if (event.key.toLowerCase() == " ") {
-        if (document.querySelector(".start") != undefined && startScreenLoaded) {
-            start()
-        }
+        }   
     }
 })
 
 
 var q = {
-    money: 0,
-    moneyPerSecond: 0,
-    print: {
-        earn: 1,
-        cost: 1000
+
+    earth: {
+        purchased: true,
+        factories: [],
+        money: 0,
+        moneyPerSecond: 0,
+        click: {
+            amount: 1,
+            cost: 1000
+        },
+
+        builder: {
+            amount: 0,
+            cost: 50000
+        },
+        engineer: {
+            amount: 0,
+            cost: 1000000
+        },
+        manager: {
+            amount: 0,
+            cost: 25000000
+        },
+        superManager: {
+            amount: 0,
+            cost: 150000000
+        },
+
+        autoPrint: {
+            on: false,
+            cost: 100000,
+        },
+        autoUpgrade: {
+            on: false,
+            cost: 10000,
+        },
+        autoPlay: {
+            on: false,
+            cost: 500000000,
+        },
+
+        prestige: {
+            amount: 0,
+            cost: 10000000000000000,
+            prestigeTokens: 0,
+            multiplier: {
+                amount: 1,
+                cost: 1,
+                max: 99999999999999999999999,
+                add: 5,
+                level: 0,
+            },
+            tokensAdd: {
+                amount: 1,
+                cost: 1,
+                max: 99999999999999999999999,
+                add: 1,
+                level: 0,
+            },
+            nuclearPower: {
+                amount: 1000,
+                cost: 1,
+                max: 19,
+                add: -50,
+                level: 0,
+            },
+            taxCuts: {
+                amount: 0,
+                cost: 1,
+                max: 19,
+                add: 5,
+                level: 0,
+            },
+            BOGOF: {
+                amount: 0,
+                cost: 1,
+                max: 5,
+                add: 1,
+                level: 0,
+            },
+
+            wizzard: {
+                amount: 0,
+                cost: 10000,
+            },
+            artist: {
+                amount: 0,
+                cost: 10,
+            },
+            hackerman: {
+                amount: 0,
+                cost: 1000,
+            },
+            nasaEngineer: {
+                amount: 0,
+                cost: 100,
+            },
+            buisnessManager: {
+                amount: 0,
+                cost: 5000,
+            },
+        },
     },
 
-    builders: {
-        amount: 0,
-        cost: 50000
-    },
-    engineers: {
-        amount: 0,
-        cost: 1000000
-    },
-    managers: {
-        amount: 0,
-        cost: 25000000
-    },
-    superManagers: {
-        amount: 0,
-        cost: 150000000
+    moon: {
+        factories: [],
+        purchased: false,
+        costP: 1000,
+        cost: 1000000000000,
+        money: 0,
+        click: {
+            amount: 1,
+            cost: 1500,
+        },
+        money: 0,
+
+        colonists: {
+            amount: 0,
+            cost: 10,
+        },
+        builder: {
+            amount: 0,
+            cost: 100000,
+        },
+        engineer: {
+            amount: 0,
+            cost: 150000,
+        },
+        manager: {
+            amount: 0,
+            cost: 2500000,
+        },
+        superManager: {
+            amount: 0,
+            cost: 100000000,
+        },
+
+
+        food: 0,
+        water: 0,
+        energy: 0,
+        populationCapacity: 0,
+        population: 0,
+        Econsumption: 0,
+
+        moneyPerSecond: 0,
+
+        factories: [],
+        farms: [],
+        waterMakers: [],
+        reactors: [],
+        habs: [],
+        things: [],
+
+        autoPrint: {
+            on: false,
+            cost: 120000,
+        },
+        autoUpgrade: {
+            on: false,
+            cost: 25000,
+        },
+
+        prestige: {
+            amount: 0,
+            cost: 25000000000000000,
+            prestigeTokens: 0,
+            multiplier: {
+                amount: 1,
+                cost: 1,
+                max: 99999999999999999999999,
+                add: 5,
+                level: 0,
+            },
+            tokensAdd: {
+                amount: 1,
+                cost: 1,
+                max: 99999999999999999999999,
+                add: 1,
+                level: 0,
+            },
+            nuclearPower: {
+                amount: 1000,
+                cost: 1,
+                max: 19,
+                add: -50,
+                level: 0,
+            },
+            taxCuts: {
+                amount: 0,
+                cost: 1,
+                max: 19,
+                add: 5,
+                level: 0,
+            },
+            BOGOF: {
+                amount: 0,
+                cost: 1,
+                max: 5,
+                add: 1,
+                level: 0,
+            },
+
+            wizzard: {
+                amount: 0,
+                cost: 10000,
+            },
+            artist: {
+                amount: 0,
+                cost: 10,
+            },
+            hackerman: {
+                amount: 0,
+                cost: 1000,
+            },
+            nasaEngineer: {
+                amount: 0,
+                cost: 100,
+            },
+            buisnessManager: {
+                amount: 0,
+                cost: 5000,
+            },
+        },
+
+
+
     },
 
     easy: 1,
     medium: 5,
     hard: 25,
     insane: 100,
+    impossible: 500,
 
-    autoPrint: {
-        on: false,
-        cost: 100000,
-    },
-    autoUpgrade: {
-        on: false,
-        cost: 10000,
-    },
-    autoPlay: {
-        on: false,
-        cost: 500000000,
-    },
-
-    prestige: {
-        amount: 0,
-        cost: 10000000000000000,
-        prestigeTokens: 0,
-        multiplier: {
-            amount: 1,
-            cost: 1,
-            max: 99999999999999999999999,
-            add: 5,
-            level: 0,
-        },
-        tokensAdd: {
-            amount: 1,
-            cost: 1,
-            max: 99999999999999999999999,
-            add: 1,
-            level: 0,
-        },
-        nuclearPower: {
-            amount: 1000,
-            cost: 1,
-            max: 19,
-            add: -50,
-            level: 0,
-        },
-        taxCuts: {
-            amount: 0,
-            cost: 1,
-            max: 19,
-            add: 5,
-            level: 0,
-        },
-        BOGOF: {
-            amount: 0,
-            cost: 1,
-            max: 5,
-            add: 1,
-            level: 0,
-        },
-
-        wizzard: {
-            amount: 0,
-            cost: 10000,
-        },
-        artist: {
-            amount: 0,
-            cost: 10,
-        },
-        hackerman: {
-            amount: 0,
-            cost: 1000,
-        },
-        nasaEngineer: {
-            amount: 0,
-            cost: 100,
-        },
-        buisnessManager: {
-            amount: 0,
-            cost: 5000,
-        },
-    },
-
-
-    lastPlayed: undefined,
-    factories: [],
-
-    
-    
+    lastPlayed: NaN,
+    planets: ["earth","moon"]
 
 }
 
+var menus = {
+    moonUpgradesDisplay:0,
+    moonPrestigeUpgradesDisplay:0,
+    earthUpgradesDisplay:0,
+    earthPrestigeUpgradesDisplay:0
+}
+
+var intervals = {
+    earthAutoPrintInterval: null,
+    earthAutoPrintInterval: null,
+    moonAutoPrintInterval: null,
+    moonAutoPrintInterval: null,
+    
+    earthGiveMoney: null,
+    moonGiveMoney: null
+}
+
+
 class factory {
-    constructor(name, earn,page="page1") {
+    constructor(name, earn,planet,page="page1") {
         this.name = name
         this.earn = earn
         this.cost = earn * 25
+        this.planet = planet
 
         this.page = page
-        q.factories.push(this.name)
-        q[this.name] = {
+        //console.log(this.name)
+        q[this.planet].factories.push(this.name)
+        q[this.planet][this.name] = {
             amount: 0,
             cost: this.cost,
             level: 0,
@@ -348,51 +291,232 @@ class factory {
         arr.shift()
         var other = String(arr).replaceAll(",", "")
         var finalString = capital + other
+
         var factoryHTML = document.createElement("div")
         factoryHTML.className = this.name
         factoryHTML.innerHTML = `
             <button class="upgrade${finalString}">&uarr;</button>
             <button class="build${finalString}">Build</button>
-            <label class="${this.name}Display">${this.text}a</label>
+            <label class="${this.name}Display"></label>
         `
-        document.querySelector(`.${this.page}factories`).appendChild(factoryHTML)
-        document.querySelector(`.upgrade${finalString}`).onclick =  () => {levelUp(this.name)}
-        document.querySelector(`.build${finalString}`).onclick =  ()  => { hire(this.name) }
-
+        ////console.log( this.page + "factories")
+        //console.log(`.${this.planet}${this.page}factories`)
+        document.querySelector(`.${this.planet}${this.page}factories`).appendChild(factoryHTML)
+        
+        document.querySelector(`.upgrade${finalString}`).onclick =  () => {levelUp(this.name,this.planet)}
+        document.querySelector(`.build${finalString}`).onclick =  ()  => { hire(this.name,this.planet) }
     }
 }
 
-var difficulties = ["easy", "medium", "hard", "insane"]
+class hab {
+    constructor(name, cost, pop, planet,page,energy){
+        this.name = name
+        this.cost = cost
+        this.planet = planet
+        this.page = page
+        this.energy = energy
+
+        q[planet][name] = {
+            amount: 0,
+            cost: cost,
+            population: pop,
+            Econsumption: energy
+        }
+
+        var capital = String(String(this.name).split("")[0].toUpperCase())
+        var arr = String(this.name).split("")
+        arr.shift()
+        var other = String(arr).replaceAll(",", "")
+        var finalString = capital + other
+
+        //console.log(finalString)
+
+        q[planet].habs.push(this.name)
+        q[planet].things.push(this.name)
+
+        var factoryHTML = document.createElement("div")
+        factoryHTML.className = this.name
+        factoryHTML.innerHTML = `
+            <button class="build${finalString}">Build</button>
+            <label class="${this.name}Display">Lorem ipsum</label>
+        `
+        document.querySelector(`.${this.planet}${this.page}habitats`).appendChild(factoryHTML)
+        document.querySelector(`.build${finalString}`).onclick =  ()  => { hire(this.name,this.planet) }
+    }
+}
+
+class farm {
+    constructor(name, cost, produce, energy,planet,page){
+        this.name = name
+        this.cost = cost
+        this.planet = planet
+        this.page = page
+        this.produce = produce
+        this.energy = energy
+
+        q[planet][name] = {
+            amount: 0,
+            cost: cost,
+            produce: produce,
+            Econsumption: energy,
+        }
+
+        var capital = String(String(this.name).split("")[0].toUpperCase())
+        var arr = String(this.name).split("")
+        arr.shift()
+        var other = String(arr).replaceAll(",", "")
+        var finalString = capital + other
+
+        //console.log(finalString)
+
+        q[planet].farms.push(this.name)
+        q[planet].things.push(this.name)
+
+        var factoryHTML = document.createElement("div")
+        factoryHTML.className = this.name
+        factoryHTML.innerHTML = `
+            <button class="build${finalString}">Build</button>
+            <label class="${this.name}Display">Lorem ipsum</label>
+        `
+        document.querySelector(`.${this.planet}${this.page}farms`).appendChild(factoryHTML)
+        document.querySelector(`.build${finalString}`).onclick =  ()  => { hire(this.name,this.planet) }
+    }
+}
+
+class waterMaker {
+    constructor(name, cost, produce, energy,planet,page){
+        this.name = name
+        this.cost = cost
+        this.planet = planet
+        this.page = page
+        this.produce = produce
+        this.energy = energy
+
+        q[planet][name] = {
+            amount: 0,
+            cost: cost,
+            produce: produce,
+            Econsumption: energy,
+        }
+
+        var capital = String(String(this.name).split("")[0].toUpperCase())
+        var arr = String(this.name).split("")
+        arr.shift()
+        var other = String(arr).replaceAll(",", "")
+        var finalString = capital + other
+
+        //console.log(finalString)
+
+        q[planet].waterMakers.push(this.name)
+        q[planet].things.push(this.name)
+
+        var factoryHTML = document.createElement("div")
+        factoryHTML.className = this.name
+        factoryHTML.innerHTML = `
+            <button class="build${finalString}">Build</button>
+            <label class="${this.name}Display">Lorem ipsum</label>
+        `
+        document.querySelector(`.${this.planet}${this.page}watermakers`).appendChild(factoryHTML)
+        document.querySelector(`.build${finalString}`).onclick =  ()  => {hire(this.name,this.planet) }
+    }
+}
+
+class reactor {
+    constructor(name, cost, produce, planet,page){
+        this.name = name
+        this.cost = cost
+        this.planet = planet
+        this.page = page
+        this.produce = produce
+
+        q[planet][name] = {
+            amount: 0,
+            cost: cost,
+            produce: produce,
+        }
+
+        var capital = String(String(this.name).split("")[0].toUpperCase())
+        var arr = String(this.name).split("")
+        arr.shift()
+        var other = String(arr).replaceAll(",", "")
+        var finalString = capital + other
+
+        //console.log(finalString)
+
+        q[planet].reactors.push(this.name)
+
+        var factoryHTML = document.createElement("div")
+        factoryHTML.className = this.name
+        factoryHTML.innerHTML = `
+            <button class="build${finalString}">Build</button>
+            <label class="${this.name}Display">Lorem ipsum</label>
+        `
+        document.querySelector(`.${this.planet}${this.page}reactors`).appendChild(factoryHTML)
+        document.querySelector(`.build${finalString}`).onclick =  ()  => { hire(this.name,this.planet)  }
+    }
+}
+
+
+var difficulties = ["easy", "medium", "hard", "insane","impossible"]
 var difficulty = ""
 
-var mk1 = new factory("mk1", 50000) 
-var mk2 = new factory("mk2", 7500000)
-var mk3 = new factory("mk3", 50000000) 
-var mk4 = new factory("mk4", 7500000000) 
-var mk5 = new factory("mk5", 50000000000) 
+var mk1 = new factory("mk1", 50000,"earth") 
+var mk2 = new factory("mk2", 7500000,"earth")
+var mk3 = new factory("mk3", 50000000,"earth") 
+var mk4 = new factory("mk4", 7500000000,"earth") 
+var mk5 = new factory("mk5", 50000000000,"earth") 
+var mk6 = new factory("mk6",1500000000000,"earth","page2")
+var mk7 = new factory("mk7", 270000000000000,"earth", "page2")
+var mk8 = new factory("mk8", 1500000000000000,"earth", "page2")
+var mk9 = new factory("mk9", 27000000000000000,"earth", "page2")
+var mk10 = new factory("mk10", 1500000000000000000,"earth", "page2")
 
-var mk6 = new factory("mk6",1500000000000,"page2")
-var mk7 = new factory("mk7", 270000000000000, "page2")
-var mk8 = new factory("mk8", 1500000000000000, "page2")
-var mk9 = new factory("mk9", 27000000000000000, "page2")
-var mk10 = new factory("mk10", 1500000000000000000, "page2")
+var habmk1 = new hab("hab_mk1", 10000,100,"moon","page2",1)
+var habmk2 = new hab("hab_mk2", 100000,500,"moon","page2",50)
+var habmk3 = new hab("hab_mk3", 2500000,1000,"moon","page2",250)
+var habmk4 = new hab("hab_mk4", 50000000,2500,"moon","page2",5000)
+var habmk5 = new hab("hab_mk5", 1000000000,10000,"moon","page2",100000)
+
+var farmmk1 = new farm("farm_mk1",10000,5,1,"moon","page3")
+var farmmk2 = new farm("farm_mk2",100000,100,50,"moon","page3")
+var farmmk3 = new farm("farm_mk3",2500000,2500,250,"moon","page3")
+var farmmk4 = new farm("farm_mk4",50000000,10000,5000,"moon","page3")
+var farmmk5 = new farm("farm_mk5",1000000000,50000,25000,"moon","page3")
+
+var watermakermk1 = new waterMaker("watermaker_mk1",10000,5,1,"moon","page3")
+var watermakermk2 = new waterMaker("watermaker_mk2",100000,100,50,"moon","page3")
+var watermakermk3 = new waterMaker("watermaker_mk3",2500000,2500,250,"moon","page3")
+var watermakermk4 = new waterMaker("watermaker_mk4",50000000,10000,5000,"moon","page3")
+var watermakermk5 = new waterMaker("watermaker_mk5",1000000000,50000,25000,"moon","page3")
+
+var reactormk1 = new reactor("reactor_mk1",1000,5,"moon","page2")
+var reactormk2 = new reactor("reactor_mk2",10000,250,"moon","page2")
+var reactormk3 = new reactor("reactor_mk3",250000,1500,"moon","page2")
+var reactormk4 = new reactor("reactor_mk4",5100000,50000,"moon","page2")
+var reactormk5 = new reactor("reactor_mk5",150000000,175000,"moon","page2")
+
+var moonmk1 = new factory("moon_mk1",100000,"moon","page4")
+var moonmk2 = new factory("moon_mk2",7500000,"moon","page4")
+var moonmk3 = new factory("moon_mk3",50000000,"moon","page4")
+var moonmk4 = new factory("moon_mk4",7500000000,"moon","page4")
+var moonmk5 = new factory("moon_mk5",50000000000,"moon","page4")
+var moonmk6 = new factory("moon_mk6",1500000000000,"moon","page4")
+var moonmk7 = new factory("moon_mk7",270000000000000,"moon","page4")
+var moonmk8 = new factory("moon_mk8",1500000000000000,"moon","page4")
+var moonmk9 = new factory("moon_mk9",27000000000000000,"moon","page4")
+var moonmk10 = new factory("moon_mk10",1500000000000000000,"moon","page4")
+
 
 var br = document.createElement("br")
-document.querySelector(".page2factories").appendChild(br)
-
-var part1;
-var part2;
-var part3;
-var part4;
-var part5;
-
-
+document.querySelector(".earthpage2factories").appendChild(br)
 
 const stock = JSON.parse(JSON.stringify(q))
 
 var page = 1
-var clicks = 0
-var moneyEarnedInASecond = 0
+var moonPage = 1
+var planet = 0
+var planets = ["earth","moon"]
+
 var gameLoaded = false
 var setDifficultyPageLoaded = false
 var startScreenLoaded = true
@@ -402,19 +526,20 @@ var settings = {
     automationsOn: true
 }
 
-var giveMonee = 0
-
 /*Function*/ {
 
 function giveMoney() {
-    q.money += q.print.earn * q.prestige.multiplier.amount;
-    clicks += q.print.earn
+    q.earth.money += q.earth.click.amount * q.earth.prestige.multiplier.amount;
 }
 
-function upgrade() {
-    if (q.money < q.print.cost) { customAlert(`You need $${num2txt(q.print.cost - q.money)} more to do this.`); return false }
-    q.money -= q.print.cost
-    q.print.earn += 1;
+function upgrade(p="earth") {
+    if (q[p].money >= q[p].click.cost) {
+        q[p].money -= q[p].click.cost
+        q[p].click.amount += 1;
+    }
+    else {
+        customAlert(`You need ${num2txt(q[p].click.cost - q[p].money)} more money to do this! `)
+    }
 }
 
 function start() {
@@ -430,7 +555,7 @@ function start() {
 function setDifficulty(difficult,ask=false) {
     var d = false
     if (ask) {
-        if (confirm("Are you sure about this, you will not be able to change the difficulty later????")) {
+        if (confirm(`Are you sure you want to continue with ${difficult} mode????`)) {
             d = true
         }
     }
@@ -455,33 +580,34 @@ function setDifficulty(difficult,ask=false) {
     }
 }
 
-var ez = null
-var ez1 = null
+var earthAutoUpgradeInterval = null
+var earthAutoPrintInterval = null
 
 function autoPrintMoney() {
     function what() {
-        clearInterval(ez1)
-        document.querySelector(".ez2").innerHTML = "buy"
-        q.autoPrint.on = false;
+        clearInterval(earthAutoPrintInterval)
+        clearTimeout(hard)
+        document.querySelector(".earthAutoPrintMoneyBuy").innerHTML = "buy"
+        q.earth.autoPrint.on = false;
     }
 
-    if (q.autoPrint.on  && confirm("Are you sure you want to stop this?")) {
+    if (q.earth.autoPrint.on  && confirm("Are you sure you want to stop this?")) {
         what()
     }
     else {
-        if (q.money < q.autoPrint.cost) {
-            customAlert(`You need $${num2txt(q.autoPrint.cost - q.money)} more to do this.`)
+        if (q.earth.money < q.earth.autoPrint.cost) {
+            customAlert(`You need $${num2txt(q.earth.autoPrint.cost - q.earth.money)} more to do this.`)
             return false 
         }
 
-        q.money -= q.autoPrint.cost 
-        document.querySelector(".ez2").innerHTML = "on"
-        q.autoPrint.on = true
-        clearInterval(ez1)
-        ez1 = setInterval(function () {
-            q.money += q.print.earn * q.prestige.multiplier.amount
-            clicks += q.print.earn
-        }, 10)
+        q.earth.money -= q.earth.autoPrint.cost 
+        document.querySelector(".earthAutoPrintMoneyBuy").innerHTML = "on"
+        q.earth.autoPrint.on = true
+        clearInterval(earthAutoPrintInterval)
+        clearTimeout(hard)
+        earthAutoPrintInterval = setInterval(function () {
+            q.earth.money += q.earth.click.amount * q.earth.prestige.multiplier.amount
+        }, 0)
 
 
         var hard = setTimeout(function () {
@@ -492,26 +618,28 @@ function autoPrintMoney() {
 
 function autoUpgrade() {
     function what() {
-        clearInterval(ez)
-        document.querySelector(".ez1").innerHTML = "buy"
-        q.autoUpgrade.on = false;
+        clearInterval(earthAutoUpgradeInterval)
+        clearTimeout(hard)
+        document.querySelector(".earthAutoUpgradeBuy").innerHTML = "buy"
+        q.earth.autoUpgrade.on = false;
     }
 
-    if (q.autoUpgrade.on && confirm("Are you sure you want to stop this?")) {
+    if (q.earth.autoUpgrade.on && confirm("Are you sure you want to stop this?")) {
         what()
     }
 
     else{
-        if (q.money < q.autoUpgrade.cost) { 
-            customAlert(`You need $${num2txt(q.autoUpgrade.cost - q.money)} more to do this.`); 
+        if (q.earth.money < q.earth.autoUpgrade.cost) { 
+            customAlert(`You need $${num2txt(q.earth.autoUpgrade.cost - q.earth.money)} more to do this.`); 
             return false 
         }
-        q.money -= q.autoUpgrade.cost
-        document.querySelector(".ez1").innerHTML = "on"
-        q.autoUpgrade.on = true
-        clearInterval(ez)
-        ez = setInterval(function () {
-            if (q.money >= q.print.cost) {
+        q.earth.money -= q.earth.autoUpgrade.cost
+        document.querySelector(".earthAutoUpgradeBuy").innerHTML = "on"
+        q.earth.autoUpgrade.on = true
+        clearInterval(earthAutoUpgradeInterval)
+        clearTimeout(hard)
+        earthAutoUpgradeInterval = setInterval(function () {
+            if (q.earth.money >= q.earth.click.cost) {
                 upgrade()
             }
         }, 10)
@@ -523,41 +651,167 @@ function autoUpgrade() {
 }
 
 function autoPlay() {
-    if (q.money < q.autoPlay.cost) { customAlert(`You need $${num2txt(q.autoPlay.cost - q.money)} more to do this.`); return false }
-    if (q.autoPlay.has) { return false }
-    q.money -= q.autoPlay.cost
-    window.alert("Get trolled bozo")
+    if (q.earth.money < q.earth.autoPlay.cost) { customAlert(`You need $${num2txt(q.earth.autoPlay.cost - q.earth.money)} more to do this.`); return false }
+    if (q.earth.autoPlay.has) { return false }
+    q.earth.money -= q.earth.autoPlay.cost
+    customAlert2("Get trolled bozo")
 }
 
 function update() {
-    updateStats()
-    displayStats()
+    if (gameLoaded) {
+        updateStats()
+        displayStats()
+        updatePage()
+        updateMoon()
+        moonUpdatePage()
+    }
     hideUpgradeButtons()
-    updatePage()
+    updatePlanet()
 }
 
 function updatePage() {
-    if (document.querySelector(`.page${page}`) != undefined) {
+    if (document.querySelector(`.earthPage${page}`) != undefined) {
         var pages = document.getElementsByClassName("page")
         for (var i of pages) {
             document.querySelector(`.${String(i.className).split(" ")[0]}`).style.display = "none"
         }
-        document.querySelector(`.page${page}`).style.display = "block"
+        document.querySelector(`.earthPage${page}`).style.display = "block"
     }
     else {
         page -= 1
     }
 }
 
+
+
+function moonAutoPrintMoney() {
+    function what() {
+        clearInterval(moonAutoPrintInterval)
+        clearTimeout(hard)
+        document.querySelector(".moonAutoPrintMoneyBuy").innerHTML = "buy"
+        q.moon.autoPrint.on = false;
+    }
+
+    if (q.moon.autoPrint.on  && confirm("Are you sure you want to stop this?")) {
+        what()
+    }
+    else {
+        if (q.moon.money < q.moon.autoPrint.cost) {
+            customAlert(`You need $${num2txt(q.moon.autoPrint.cost - q.moon.money)} more to do this.`)
+            return false 
+        }
+
+        q.moon.money -= q.moon.autoPrint.cost
+        document.querySelector(".moonAutoPrintMoneyBuy").innerHTML = "on"
+        q.moon.autoPrint.on = true
+        clearInterval(moonAutoPrintInterval)
+        clearTimeout(hard)
+        moonAutoPrintInterval = setInterval(function () {
+            q.moon.money += q.moon.click.amount * q.moon.prestige.multiplier.amount
+        }, 1)
+
+
+        var hard = setTimeout(function () {
+            what()
+        }, 60000)
+    }
+}
+
+function moonAutoUpgrade() {
+    function what() {
+        clearInterval(moonAutoUpgradeInterval)
+        clearTimeout(hard)
+        document.querySelector(".moonAutoUpgradeBuy").innerHTML = "buy"
+        q.moon.autoUpgrade.on = false;
+    }
+
+    if (q.moon.autoUpgrade.on && confirm("Are you sure you want to stop this?")) {
+        what()
+    }
+
+    else{
+        if (q.moon.money < q.moon.autoUpgrade.cost) { 
+            customAlert(`You need $${num2txt(q.moon.autoUpgrade.cost - q.moon.money)} more to do this.`); 
+            return false 
+        }
+        q.moon.money -= q.moon.autoUpgrade.cost
+        document.querySelector(".moonAutoUpgradeBuy").innerHTML = "on"
+        q.moon.autoUpgrade.on = true
+        clearInterval(moonAutoUpgradeInterval)
+        clearTimeout(hard)
+        moonAutoUpgradeInterval = setInterval(function () {
+            if (q.moon.money > q.moon.click.cost) {
+                upgrade("moon")
+            }
+        }, 1)
+    
+        var hard = setTimeout(function () {
+            what()
+        }, 60000)
+    }
+}
+
+
+function giveMoonMoney() {
+    q.moon.money += q.moon.click.amount * q.moon.prestige.multiplier.amount
+}
+
+
+
+
+
+
+function updatePlanet() {
+    try {
+        var pl = planets[planet]
+        if (document.querySelector(`.${pl}`) != undefined) {
+            for (var p of planets) {
+                document.querySelector(`.${p}`).style.display = "none"
+            }
+            document.querySelector(`.${pl}`).style.display = "block"
+        }
+        else {
+            if (planet < 0) {
+                planet = 0
+            }
+            else {
+                planet -= 1
+            }
+        }
+        if (planet == 0) {
+            document.querySelector(".changeWorldDown").style.display = "none"
+        }
+        else {
+            document.querySelector(".changeWorldDown").style.display = "block"
+        }
+        if (planet == (planets.length-1)) {
+            document.querySelector(".changeWorldUp").style.display = "none"
+        }
+        else {
+            document.querySelector(".changeWorldUp").style.display = "block"
+        }
+
+        if (q.earth.prestige.amount >= 1) {
+            document.querySelector(".changeWorldUp").style.display = "block"
+        }
+        else {
+            document.querySelector(".changeWorldUp").style.display = "none"
+        }
+    }
+    catch(err) {
+        reset()
+    }
+}
+
 function hideUpgradeButtons() {
     try {
-        for (var i of q.factories) {
+        for (var i of q.earth.factories) {
             var capital = String(String(i).split("")[0].toUpperCase())
             var arr = String(i).split("")
             arr.shift()
             var other = String(arr).replaceAll(",", "")
             var finalString = capital + other
-            if (q[i].level >= 5) {
+            if (q.earth[i].level >= 5) {
                 document.querySelector(`.upgrade${finalString}`).style.display = "none"
             }
             else {
@@ -567,192 +821,387 @@ function hideUpgradeButtons() {
             
         }
 
-        if (q.prestige.taxCuts.level == q.prestige.taxCuts.max){
-            document.querySelector(".buyTaxCuts").style.display = "none"
+        for (var i of q.moon.factories) {
+            var capital = String(String(i).split("")[0].toUpperCase())
+            var arr = String(i).split("")
+            arr.shift()
+            var other = String(arr).replaceAll(",", "")
+            var finalString = capital + other
+            if (q.moon[i].level >= 5) {
+                document.querySelector(`.upgrade${finalString}`).style.display = "none"
+            }
+            else {
+                document.querySelector(`.upgrade${finalString}`).style.display = ""
+            }
+
+            
+        }
+
+        if (q.earth.prestige.taxCuts.level == q.earth.prestige.taxCuts.max){
+            document.querySelector(".earthBuyTaxCuts").style.display = "none"
         }
         else {
-            document.querySelector(".buyTaxCuts").style.display = ""
+            document.querySelector(".earthBuyTaxCuts").style.display = ""
         }
-        if (q.prestige.nuclearPower.level == q.prestige.nuclearPower.max){
-            document.querySelector(".buyNuclearFactories").style.display = "none"
-        }
-        else {
-            document.querySelector(".buyNuclearFactories").style.display = ""
-        }
-        if (q.prestige.BOGOF.level == q.prestige.BOGOF.max){
-            document.querySelector(".buyBuyOneGetOneFree").style.display = "none"
+        if (q.earth.prestige.nuclearPower.level == q.earth.prestige.nuclearPower.max){
+            document.querySelector(".earthBuyNuclearFactories").style.display = "none"
         }
         else {
-            document.querySelector(".buyBuyOneGetOneFree").style.display = ""
+            document.querySelector(".earthBuyNuclearFactories").style.display = ""
+        }
+        if (q.earth.prestige.BOGOF.level == q.earth.prestige.BOGOF.max){
+            document.querySelector(".earthBuyBuyOneGetOneFree").style.display = "none"
+        }
+        else {
+            document.querySelector(".earthBuyBuyOneGetOneFree").style.display = ""
+        }
+
+        if (q.moon.prestige.taxCuts.level == q.moon.prestige.taxCuts.max){
+            document.querySelector(".moonBuyTaxCuts").style.display = "none"
+        }
+        else {
+            document.querySelector(".moonBuyTaxCuts").style.display = ""
+        }
+        if (q.moon.prestige.nuclearPower.level == q.moon.prestige.nuclearPower.max){
+            document.querySelector(".moonBuyNuclearFactories").style.display = "none"
+        }
+        else {
+            document.querySelector(".moonBuyNuclearFactories").style.display = ""
+        }
+        if (q.moon.prestige.BOGOF.level == q.moon.prestige.BOGOF.max){
+            document.querySelector(".moonBuyBuyOneGetOneFree").style.display = "none"
+        }
+        else {
+            document.querySelector(".moonBuyBuyOneGetOneFree").style.display = ""
         }
     }
     catch(err) {
-        console.log(err)
+        //console.log(err)
         reset()
     }
 }
 function updateStats() {
     try {
-        for (const iterator of q.factories) {
-            if (q.factories.indexOf(iterator) == 0) {
-                q.moneyPerSecond = q[iterator].earn * q[iterator].amount
-            }
-            else {
-                q.moneyPerSecond += q[iterator].earn * q[iterator].amount
-            }
+        q.earth.moneyPerSecond = 0
+        for (const iterator of q.earth.factories) {
+            q.earth.moneyPerSecond += q.earth[iterator].earn * q.earth[iterator].amount
+        }
+
+        q.moon.moneyPerSecond = 0
+        for (const iterator of q.moon.factories) {
+            q.moon.moneyPerSecond += q.moon[iterator].earn * q.moon[iterator].amount
         }
 
         q.lastPlayed = Date.now()
-        moneyEarnedInASecond = q.moneyPerSecond + clicks
         
         
 
 
-        if (q.prestige.amount >= 1) {
+        if (q.earth.prestige.amount >= 1) {
             if (document.querySelector(".game").style.visibility == "visible") {
-                document.querySelector(".prestigeUpgradesButton").style.visibility = "visible"
+                document.querySelector(".earthPrestigeUpgradesButton").style.visibility = "visible"
             }
         }
         else {
-            document.querySelector(".prestigeUpgradesButton").style.visibility = "hidden"
-        }
-        if (settings.alertsOn) {
-            document.querySelector(".alerts").innerHTML = "Alerts: on"
-        }
-        else {
-            document.querySelector(".alerts").innerHTML = "Alerts: off"
+            document.querySelector(".earthPrestigeUpgradesButton").style.visibility = "hidden"
         }
 
-        if (settings.automationsOn) {
-            document.querySelector(".automations").innerHTML = "Automations: on"
+
+        if (q.moon.prestige.amount >= 1) {
+            if (document.querySelector(".game").style.visibility == "visible") {
+                document.querySelector(".moonPrestigeUpgradesButton").style.visibility = "visible"
+            }
         }
         else {
-            document.querySelector(".automations").innerHTML = "Automations: off"
+            document.querySelector(".moonPrestigeUpgradesButton").style.visibility = "hidden"
         }
     }   
     catch(err) {
-        console.log(err)
+        //console.log(err)
         reset()
     }
 }
+
+
+function updateMoon() {
+    if (q.moon.purchased) {
+        document.querySelector(".moonLockScreen").style.display = "none"
+        document.querySelector(".moonContent").style.display = "block"
+    }
+    else {
+        document.querySelector(".moonLockScreen").style.display = "block"
+        document.querySelector(".moonContent").style.display = "none"
+    }
+}
+
+function buyMoon() {
+    if (q.earth.money < q.moon.cost ) {customAlert(`You need $${q.moon.cost - q.earth.money} more to do this!`);return false;}
+    if (q.earth.prestige.prestigeTokens < q.moon.costP) {customAlert(`You need PT$${q.moon.costP - q.earth.prestige.prestigeTokens} more to do this!`);return false}
+    if (confirm("Are you sure, the Moon is expensive, and you don't get refunds!") && confirm("Are you actually sure, you can lose everything buying the Moon?")) {
+        q.moon.purchased = true
+        q.earth.money -= q.moon.cost
+        q.earth.prestige.prestigeTokens -= q.moon.costP
+        customAlert("You have bought the Moon...")
+    }
+}
+
+function moonUpdatePage() {
+    if (document.querySelector(`.moonPage${moonPage}`) != undefined) {
+        var pages = document.getElementsByClassName("moonpage")
+        for (var i of pages) {
+            document.querySelector(`.${String(i.className).split(" ")[0]}`).style.display = "none"
+        }
+        document.querySelector(`.moonPage${moonPage}`).style.display = "block"
+    }
+    else {
+        moonPage -= 1
+    }
+
+    document.querySelector(".moonPageDisplay").innerHTML = `Page: ${moonPage}`
+}
+
+
 function displayStats() {
     try {
-        var ef= q.prestige.multiplier.amount
-        var ek = (1000/q.prestige.nuclearPower.amount)
-        document.querySelector(".moneyDisplay").innerHTML = `Money: $${num2txt(q.money)}`
-        document.querySelector(".upgradeDisplay").innerHTML = `Costs $${num2txt(q.print.cost)} to upgrade. You currently make $${num2txt(q.print.earn * ef)} per click.`
-        document.querySelector(".prestigeDisplay").innerHTML = `Prestiges: ${q.prestige.amount}`
-        document.querySelector(".tokenDisplay").innerHTML = `PT$:${num2txt(q.prestige.prestigeTokens)}`
-        document.querySelector(".moreMoneyDisplay").innerHTML = `The more you buy, the more you multiplier you get. Cost: PT$${num2txt(q.prestige.multiplier.cost)} Multiplier: ${q.prestige.multiplier.amount}`
-        document.querySelector(".moreTokensDisplay").innerHTML = `The more you buy, the more you tokens you get per prestige. Cost: PT$${num2txt(q.prestige.tokensAdd.cost)} Extra Tokens: ${q.prestige.tokensAdd.amount - 1}`
-        document.querySelector(".nuclearFactoriesDisplay").innerHTML = `Increase production and speed by nuclear power. Cost: PT$${num2txt(q.prestige.nuclearPower.cost)} production is now every ${q.prestige.nuclearPower.amount} ms`
-        document.querySelector(".taxCutsDisplay").innerHTML = `Reduce the prices of everything. Cost: PT$${num2txt(q.prestige.taxCuts.cost)} Tax cuts: ${q.prestige.taxCuts.amount}%`
-        document.querySelector(".BOGOFDisplay").innerHTML = `Increase the amount of free factories you get when BUYING. Cost: PT$${num2txt(q.prestige.BOGOF.cost)} free stuff: ${q.prestige.BOGOF.amount}`
+        var ef= q.earth.prestige.multiplier.amount
+        var ek = (1000/q.earth.prestige.nuclearPower.amount)
+        document.querySelector(".earthMoneyDisplay").innerHTML = `Money: $${num2txt(q.earth.money)}`
+        document.querySelector(".earthUpgradeDisplay").innerHTML = `Costs $${num2txt(q.earth.click.cost)} to upgrade. You currently make $${num2txt(q.earth.click.amount * ef)} per click.`
+        document.querySelector(".earthPrestigeDisplay").innerHTML = `Prestiges: ${num2txt(q.earth.prestige.amount)}`
+        document.querySelector(".moonPrestigeDisplay").innerHTML = `Prestiges: ${num2txt(q.moon.prestige.amount)}`
+        document.querySelector(".earthTokenDisplay").innerHTML = `PT$:${num2txt(q.earth.prestige.prestigeTokens)}`
+        document.querySelector(".earthMoreMoneyDisplay").innerHTML = `The more you buy, the more you multiplier you get. Cost: PT$${num2txt(q.earth.prestige.multiplier.cost)} Multiplier: ${q.earth.prestige.multiplier.amount}`
+        document.querySelector(".earthMoreTokensDisplay").innerHTML = `The more you buy, the more you tokens you get per prestige. Cost: PT$${num2txt(q.earth.prestige.tokensAdd.cost)} Extra Money: ${q.earth.prestige.tokensAdd.amount - 1}`
+        document.querySelector(".earthNuclearFactoriesDisplay").innerHTML = `Increase production and speed by nuclear power. Cost: PT$${num2txt(q.earth.prestige.nuclearPower.cost)} production is now every ${q.earth.prestige.nuclearPower.amount} ms`
+        document.querySelector(".earthTaxCutsDisplay").innerHTML = `Reduce the prices of everything. Cost: PT$${num2txt(q.earth.prestige.taxCuts.cost)} Tax cuts: ${q.earth.prestige.taxCuts.amount}%`
+        document.querySelector(".earthBOGOFDisplay").innerHTML = `Increase the amount of free factories you get when BUYING. Cost: PT$${num2txt(q.earth.prestige.BOGOF.cost)} free stuff: ${q.earth.prestige.BOGOF.amount}`
 
-        document.querySelector(".mk1Display").innerHTML = `Mk1 factory: A simple, low tech factory that produces  $${num2txt(q.mk1.earn * ef)} per second and costs $${num2txt(q.mk1.cost)}. You currently have ${num2txt(q.mk1.amount)}.`
-        document.querySelector(".mk2Display").innerHTML = `Mk2 factory: A basic factory that makes  $${num2txt(q.mk2.earn* ef)} and costs $${num2txt(q.mk2.cost)}. You currently have ${num2txt(q.mk2.amount)}.`
-        document.querySelector(".mk3Display").innerHTML = `Mk3 factory: An average factory that makes $${num2txt(q.mk3.earn* ef)} and costs $${num2txt(q.mk3.cost)}. You currently have ${num2txt(q.mk3.amount)}.`
-        document.querySelector(".mk4Display").innerHTML = `Mk4 factory: A high tech factory that costs $${num2txt(q.mk4.cost)}. The price is worth it because it makes you $${num2txt(q.mk4.earn* ef)}. You currently have ${num2txt(q.mk4.amount)}.`
-        document.querySelector(".mk5Display").innerHTML = `Mk5 factory: A super high tech factory that is completely automated and makes  $${num2txt(q.mk5.earn* ef)}. However it is not cheap and will cost you a fortune. You currently have ${num2txt(q.mk5.amount)}.`
-        document.querySelector(".mk6Display").innerHTML = `mk6 factory: A crazy factory that creates money out of thin air. It makes you $${num2txt(q.mk6.earn* ef)}, but cost you $${num2txt(q.mk6.cost)}. You have ${num2txt(q.mk6.amount)}.`
-        document.querySelector(".mk7Display").innerHTML =  `mk7 factory: This factory is so good, the presedent wanted it for himself. It makes you $${num2txt(q.mk7.earn* ef)}, and costs you $${num2txt(q.mk7.cost)}. You own ${num2txt(q.mk7.amount)}.`
-        document.querySelector(".mk8Display").innerHTML =  `mk8 factory: This factory is better then its predesesor, and makes $${num2txt(q.mk8.earn* ef)}. It costs $${num2txt(q.mk8.cost)}, and you have ${num2txt(q.mk8.amount)}.`
-        document.querySelector(".mk9Display").innerHTML =  `mk9 factory: This amazing brilliant insane epic factory costs $${num2txt(q.mk9.cost)}. It is worth it because it makes you $${num2txt(q.mk9.earn* ef)}. You have ${num2txt(q.mk9.amount)} of them.`
-        document.querySelector(".mk10Display").innerHTML = `mk10 factory: This top of the market factory makes all of your other ones useless. It comes with a high price tag of $${num2txt(q.mk10.cost)}. You can flex ${num2txt(q.mk10.amount)} of them.`
+        document.querySelector(".moonTokenDisplay").innerHTML = `PT$:${num2txt(q.moon.prestige.prestigeTokens)}`
+        document.querySelector(".moonMoreMoneyDisplay").innerHTML = `The more you buy, the more you multiplier you get. Cost: PT$${num2txt(q.moon.prestige.multiplier.cost)} Multiplier: ${q.moon.prestige.multiplier.amount}`
+        document.querySelector(".moonMoreTokensDisplay").innerHTML = `The more you buy, the more you tokens you get per prestige. Cost: PT$${num2txt(q.moon.prestige.tokensAdd.cost)} Extra Money: ${q.moon.prestige.tokensAdd.amount - 1}`
+        document.querySelector(".moonNuclearFactoriesDisplay").innerHTML = `Increase production and speed by nuclear power. Cost: PT$${num2txt(q.moon.prestige.nuclearPower.cost)} production is now every ${q.moon.prestige.nuclearPower.amount} ms`
+        document.querySelector(".moonTaxCutsDisplay").innerHTML = `Reduce the prices of everything. Cost: PT$${num2txt(q.moon.prestige.taxCuts.cost)} Tax cuts: ${q.moon.prestige.taxCuts.amount}%`
+        document.querySelector(".moonBOGOFDisplay").innerHTML = `Increase the amount of free factories you get when BUYING. Cost: PT$${num2txt(q.moon.prestige.BOGOF.cost)} free stuff: ${q.moon.prestige.BOGOF.amount}`
 
-        document.querySelector(".superManagerDisplay").innerHTML = `Super Manager: A person who hires managers and builders for you every 5 minutes. They are not cheap and cost $${num2txt(q.superManagers.cost)}. You currently have ${num2txt(q.superManagers.amount)}.`
-        document.querySelector(".managerDisplay").innerHTML = `Manager: Somone who automatically hires builders so you can keep dreaming about being rich. They cost you $${num2txt(q.managers.cost)}. You have ${num2txt(q.managers.amount)} hired.`
-        document.querySelector(".builderDisplay").innerHTML = `Builder: Somone who automatically builds factories every 15 seconds, so you dont have to. They cost $${num2txt(q.builders.cost)}. You currently have ${num2txt(q.builders.amount)}.`
-        document.querySelector(".engineerDisplay").innerHTML = `Engineer: A big brain person who slowly makes your factories more advanced. They cost you $${num2txt(q.engineers.cost)}. You have ${num2txt(q.engineers.amount)} engineers at the moment.`
+        document.querySelector(".mk1Display").innerHTML = `Mk1 factory: A simple, low tech factory that produces  $${num2txt(q.earth.mk1.earn * ef)} per second and costs $${num2txt(q.earth.mk1.cost)}. You currently have ${num2txt(q.earth.mk1.amount)}.`
+        document.querySelector(".mk2Display").innerHTML = `Mk2 factory: A basic factory that makes  $${num2txt(q.earth.mk2.earn* ef)} and costs $${num2txt(q.earth.mk2.cost)}. You currently have ${num2txt(q.earth.mk2.amount)}.`
+        document.querySelector(".mk3Display").innerHTML = `Mk3 factory: An average factory that makes $${num2txt(q.earth.mk3.earn* ef)} and costs $${num2txt(q.earth.mk3.cost)}. You currently have ${num2txt(q.earth.mk3.amount)}.`
+        document.querySelector(".mk4Display").innerHTML = `Mk4 factory: A high tech factory that costs $${num2txt(q.earth.mk4.cost)}. The price is worth it because it makes you $${num2txt(q.earth.mk4.earn* ef)}. You currently have ${num2txt(q.earth.mk4.amount)}.`
+        document.querySelector(".mk5Display").innerHTML = `Mk5 factory: A super high tech factory that is completely automated and makes  $${num2txt(q.earth.mk5.earn* ef)}. However it is not cheap and will cost you a fortune. You currently have ${num2txt(q.earth.mk5.amount)}.`
+        document.querySelector(".mk6Display").innerHTML = `mk6 factory: A crazy factory that creates money out of thin air. It makes you $${num2txt(q.earth.mk6.earn* ef)}, but cost you $${num2txt(q.earth.mk6.cost)}. You have ${num2txt(q.earth.mk6.amount)}.`
+        document.querySelector(".mk7Display").innerHTML =  `mk7 factory: This factory is so good, the presedent wanted it for himself. It makes you $${num2txt(q.earth.mk7.earn* ef)}, and costs you $${num2txt(q.earth.mk7.cost)}. You own ${num2txt(q.earth.mk7.amount)}.`
+        document.querySelector(".mk8Display").innerHTML =  `mk8 factory: This factory is better then its predesesor, and makes $${num2txt(q.earth.mk8.earn* ef)}. It costs $${num2txt(q.earth.mk8.cost)}, and you have ${num2txt(q.earth.mk8.amount)}.`
+        document.querySelector(".mk9Display").innerHTML =  `mk9 factory: This amazing brilliant insane epic factory costs $${num2txt(q.earth.mk9.cost)}. It is worth it because it makes you $${num2txt(q.earth.mk9.earn* ef)}. You have ${num2txt(q.earth.mk9.amount)} of them.`
+        document.querySelector(".mk10Display").innerHTML = `mk10 factory: This top of the market factory makes all of your other ones useless. It comes with a high price tag of $${num2txt(q.earth.mk10.cost)}. You can flex ${num2txt(q.earth.mk10.amount)} of them.`
+
+        // Moon factories
+        document.querySelector(".moon_mk1Display").innerHTML = `Moon Mk1: The first factory on the moon. Cost: $${num2txt(q.moon.moon_mk1.cost)}. You own ${num2txt(q.moon.moon_mk1.amount)} of them. It's a small step for a factory, but a giant leap for your empire.`;
+        document.querySelector(".moon_mk2Display").innerHTML = `Moon Mk2: This upgraded factory generates ${num2txt(q.moon.moon_mk2.earn)} per second. Cost: $${num2txt(q.moon.moon_mk2.cost)}. You have ${num2txt(q.moon.moon_mk2.amount)} of them.`;
+        document.querySelector(".moon_mk3Display").innerHTML = `Moon Mk3: The moon's weak radiation amplifies this factory to generate ${num2txt(q.moon.moon_mk3.earn)} per second. Cost: $${num2txt(q.moon.moon_mk3.cost)}. You have ${num2txt(q.moon.moon_mk3.amount)} of them.`;
+        document.querySelector(".moon_mk4Display").innerHTML = `Moon Mk4: Generates ${num2txt(q.moon.moon_mk4.earn)} per second. Cost: $${num2txt(q.moon.moon_mk4.cost)}. You own ${num2txt(q.moon.moon_mk4.amount)} of them.`;
+        document.querySelector(".moon_mk5Display").innerHTML = `Moon Mk5: Produces ${num2txt(q.moon.moon_mk5.earn)} per second. Cost: $${num2txt(q.moon.moon_mk5.cost)}. You own ${num2txt(q.moon.moon_mk5.amount)} of them.`;
+        document.querySelector(".moon_mk6Display").innerHTML = `Moon Mk6: This top of the line factory generates ${num2txt(q.moon.moon_mk6.earn)} per second. Cost: $${num2txt(q.moon.moon_mk6.cost)}. You own ${num2txt(q.moon.moon_mk6.amount)} of them.`;
+        document.querySelector(".moon_mk7Display").innerHTML = `Moon Mk7: A game-changing moon factory that's revolutionizing the industry. Generates ${num2txt(q.moon.moon_mk7.earn)} per second. Cost: $${num2txt(q.moon.moon_mk7.cost)}. You own ${num2txt(q.moon.moon_mk7.amount)} of them.`;
+        document.querySelector(".moon_mk8Display").innerHTML = `Moon Mk8: An industry-leading moon factory that's setting the bar for all others. ${num2txt(q.moon.moon_mk8.earn)} per second. Cost: $${num2txt(q.moon.moon_mk8.cost)}. You own ${num2txt(q.moon.moon_mk8.amount)} of them. You're unstoppable.`;
+        document.querySelector(".moon_mk9Display").innerHTML = `Moon Mk9: This factory generates ${num2txt(q.moon.moon_mk9.earn)} per second. Cost: $${num2txt(q.moon.moon_mk9.cost)}. You own ${num2txt(q.moon.moon_mk9.amount)} of them. You're on top of the world.`;
+        document.querySelector(".moon_mk10Display").innerHTML = `Moon Mk10: An impressive moon factory that's making waves across the galaxy! Cost: $${num2txt(q.moon.moon_mk10.cost)}. You own ${num2txt(q.moon.moon_mk10.amount)} of them. It's the crown jewel of your empire.`;
+        document.querySelector(".hab_mk1Display").innerHTML = `Habitat Mk1 Factory: This simple and cozy habitat is perfect for starting your lunar colony. It costs $${num2txt(q.moon.hab_mk1.cost)} and can house ${num2txt(q.moon.hab_mk1.population)} colonists. You own ${q.moon.hab_mk1.amount} of them.`;
+        document.querySelector(".hab_mk2Display").innerHTML = `Habitat Mk2 Factory: With a bit more space and amenities, this habitat can house ${num2txt(q.moon.hab_mk2.population)} colonists. It costs $${num2txt(q.moon.hab_mk2.cost)} to build. You own ${q.moon.hab_mk2.amount} of them.`;
+        document.querySelector(".hab_mk3Display").innerHTML = `Habitat Mk3 Factory: This spacious and luxurious habitat can house ${num2txt(q.moon.hab_mk3.population)} colonists. It costs $${num2txt(q.moon.hab_mk3.cost)} to build and comes with a built-in moon garden. You own ${q.moon.hab_mk3.amount} of them.`;
+        document.querySelector(".hab_mk4Display").innerHTML = `Habitat Mk4 Factory: This top-of-the-line habitat can house ${num2txt(q.moon.hab_mk4.population)} colonists and comes with a personal cinema and gym. It costs $${num2txt(q.moon.hab_mk4.cost)} to build. You own ${q.moon.hab_mk4.amount} of them.`;
+        document.querySelector(".hab_mk5Display").innerHTML = `Habitat Mk5 Factory: The ultimate in lunar living, and comes with a private moon beach and lunar jacuzzi. It costs $${num2txt(q.moon.hab_mk5.cost)} to build. You can flex ${q.moon.hab_mk5.amount} of them.`;
+        document.querySelector(".reactor_mk1Display").innerHTML = `Fusion Reactor Mk1: produces ${num2txt(q.moon.reactor_mk1.produce)} electricity for a cost of $${num2txt(q.moon.reactor_mk1.cost)}. You have ${num2txt(q.moon.reactor_mk1.amount)} of them.`;
+        document.querySelector(".reactor_mk2Display").innerHTML = `Fusion Reactor Mk2: produces ${num2txt(q.moon.reactor_mk2.produce)} electricity for a cost of $${num2txt(q.moon.reactor_mk2.cost)}. You can operate ${num2txt(q.moon.reactor_mk2.amount)} reactors.`;
+        document.querySelector(".reactor_mk3Display").innerHTML = `Fusion Reactor Mk3: produces ${num2txt(q.moon.reactor_mk3.produce)} electricity for a cost of $${num2txt(q.moon.reactor_mk3.cost)}. Your energy supply will never be the same with ${num2txt(q.moon.reactor_mk3.amount)} reactors in use!`;
+        document.querySelector(".reactor_mk4Display").innerHTML = `Fusion Reactor Mk4: produces ${num2txt(q.moon.reactor_mk4.produce)} electricity for a cost of $${num2txt(q.moon.reactor_mk4.cost)}. You own ${num2txt(q.moon.reactor_mk4.amount)} of these advanced reactors.`;
+        document.querySelector(".reactor_mk5Display").innerHTML = `Fusion Reactor Mk5: produces ${num2txt(q.moon.reactor_mk5.produce)} electricity for a cost of $${num2txt(q.moon.reactor_mk5.cost)}. With ${num2txt(q.moon.reactor_mk5.amount)} of these powerful reactors, you will never run out of energy!`;
+        document.querySelector(".farm_mk1Display").innerHTML = `Lunar Farm Mk1: produces ${num2txt(q.moon.farm_mk1.produce)} food for a cost of $${num2txt(q.moon.farm_mk1.cost)}. With ${num2txt(q.moon.farm_mk1.amount)} of these farms, your population will never go hungry!`;
+        document.querySelector(".farm_mk2Display").innerHTML = `Lunar Farm Mk2: produces ${num2txt(q.moon.farm_mk2.produce)} food for a cost of $${num2txt(q.moon.farm_mk2.cost)}. With ${num2txt(q.moon.farm_mk2.amount)} of these advanced farms, your people will be well-fed!`;
+        document.querySelector(".farm_mk3Display").innerHTML = `Lunar Farm Mk3: produces ${num2txt(q.moon.farm_mk3.produce)} food for a cost of $${num2txt(q.moon.farm_mk3.cost)}. With ${num2txt(q.moon.farm_mk3.amount)} of these high-tech farms, you'll be able to feed a growing population!`;
+        document.querySelector(".farm_mk4Display").innerHTML = `Lunar Farm Mk4: produces ${num2txt(q.moon.farm_mk4.produce)} food for a cost of $${num2txt(q.moon.farm_mk4.cost)}. With ${num2txt(q.moon.farm_mk4.amount)} of these state-of-the-art farms, your people will thrive!`;
+        document.querySelector(".farm_mk5Display").innerHTML = `Lunar Farm Mk5: produces ${num2txt(q.moon.farm_mk5.produce)} food for a cost of $${num2txt(q.moon.farm_mk5.cost)}. With ${num2txt(q.moon.farm_mk5.amount)} of these cutting-edge farms, your lunar colony will become a breadbasket!`;
+        document.querySelector('.watermaker_mk1Display').innerHTML = `Water Maker Mk1: produces ${num2txt(q.moon.watermaker_mk1.produce)} water for a cost of $${num2txt(q.moon.watermaker_mk1.cost)}. With ${num2txt(q.moon.watermaker_mk1.amount)} of these, your colony will never go thirsty!`;
+        document.querySelector('.watermaker_mk2Display').innerHTML = `Water Maker Mk2: produces ${num2txt(q.moon.watermaker_mk2.produce)} water for a cost of $${num2txt(q.moon.watermaker_mk2.cost)}. With ${num2txt(q.moon.watermaker_mk2.amount)} of these, your colony will have all the water it needs!`;
+        document.querySelector('.watermaker_mk3Display').innerHTML = `Water Maker Mk3: produces ${num2txt(q.moon.watermaker_mk3.produce)} water for a cost of $${num2txt(q.moon.watermaker_mk3.cost)}. With ${num2txt(q.moon.watermaker_mk3.amount)} of these, you'll have plenty of water to spare!`;
+        document.querySelector('.watermaker_mk4Display').innerHTML = `Water Maker Mk4: produces ${num2txt(q.moon.watermaker_mk4.produce)} water for a cost of $${num2txt(q.moon.watermaker_mk4.cost)}. With ${num2txt(q.moon.watermaker_mk4.amount)} of these, you'll have water in abundance!`;
+        document.querySelector('.watermaker_mk5Display').innerHTML = `Water Maker Mk5: produces ${num2txt(q.moon.watermaker_mk5.produce)} water for a cost of $${num2txt(q.moon.watermaker_mk5.cost)}. With ${num2txt(q.moon.watermaker_mk5.amount)} of these, your colony will have an unlimited supply of water!`;
+        document.querySelector(".earthSuperManagerDisplay").innerHTML = `Super Manager: A person who hires manager and builder for you every 5 minutes. They are not cheap and cost $${num2txt(q.earth.superManager.cost)}. You currently have ${num2txt(q.earth.superManager.amount)}.`
+        document.querySelector(".earthManagerDisplay").innerHTML = `Manager: Somone who automatically hires builder so you can keep dreaming about being rich. They cost you $${num2txt(q.earth.manager.cost)}. You have ${num2txt(q.earth.manager.amount)} hired.`
+        document.querySelector(".earthBuilderDisplay").innerHTML = `Builder: Somone who automatically builds factories every 15 seconds, so you dont have to. They cost $${num2txt(q.earth.builder.cost)}. You currently have ${num2txt(q.earth.builder.amount)}.`
+        document.querySelector(".earthEngineerDisplay").innerHTML = `Engineer: A big brain person who slowly makes your factories more advanced. They cost you $${num2txt(q.earth.engineer.cost)}. You have ${num2txt(q.earth.engineer.amount)} engineer at the moment.`
         
-        document.querySelector(".nasaEngineerDisplay").innerHTML = `NASA Engineer: This person worked at NASA, and has so much to offer. He will cost you PT$${num2txt(q.prestige.nasaEngineer.cost)}. You have a crew of ${num2txt(q.prestige.nasaEngineer.amount)}. `
-        document.querySelector(".wizzardDisplay").innerHTML = `Wizzard: A magical person who makes money appear out of thin air. His services will cost you PT$${num2txt(q.prestige.wizzard.cost)}. You have ${num2txt(q.prestige.wizzard.amount)} of them.`
-        document.querySelector(".hackerManDisplay").innerHTML = `Hacker Man: He will hack into bank accounts and steal money. He charges PT$${num2txt(q.prestige.hackerman.cost)}. You have ${num2txt(q.prestige.hackerman.amount)} of them.`
-        document.querySelector(".artistDisplay").innerHTML = `Artist: They will paint pictiures of your money and factories. You can hire them for PT$${num2txt(q.prestige.artist.cost)}, and you have ${num2txt(q.prestige.artist.amount)} of them.`
-        document.querySelector(".buisnessManagerDisplay").innerHTML = `Buisness Manager: He will take care of everything you have. He is going to cost you PT$${num2txt(q.prestige.buisnessManager.cost)}. You have ${num2txt(q.prestige.buisnessManager.amount)} of them.`
-        
-        document.querySelector(".moneyPerSecondDisplay").innerHTML = `Money per second: $${num2txt(Math.floor((q.moneyPerSecond* ef * ek) + clicks))}`
-        document.querySelector(".pageDisplay").innerHTML = `Page: ${page}`
+        document.querySelector(".earthNasaEngineerDisplay").innerHTML = `NASA Engineer: This person worked at NASA, and has so much to offer. He will cost you PT$${num2txt(q.earth.prestige.nasaEngineer.cost)}. You have a crew of ${num2txt(q.earth.prestige.nasaEngineer.amount)}. `
+        document.querySelector(".earthWizzardDisplay").innerHTML = `Wizzard: A magical person who makes money appear out of thin air. His services will cost you PT$${num2txt(q.earth.prestige.wizzard.cost)}. You have ${num2txt(q.earth.prestige.wizzard.amount)} of them.`
+        document.querySelector(".earthHackerManDisplay").innerHTML = `Hacker Man: He will hack into bank accounts and steal money. He charges PT$${num2txt(q.earth.prestige.hackerman.cost)}. You have ${num2txt(q.earth.prestige.hackerman.amount)} of them.`
+        document.querySelector(".earthArtistDisplay").innerHTML = `Artist: They will paint pictiures of your money and factories. You can hire them for PT$${num2txt(q.earth.prestige.artist.cost)}, and you have ${num2txt(q.earth.prestige.artist.amount)} of them.`
+        document.querySelector(".earthBuisnessManagerDisplay").innerHTML = `Buisness Manager: He will take care of everything you have. He is going to cost you PT$${num2txt(q.earth.prestige.buisnessManager.cost)}. You have ${num2txt(q.earth.prestige.buisnessManager.amount)} of them.`
 
-        document.querySelector(".prestigeProgressFill").style.width = Math.floor((q.money/q.prestige.cost) * 100) + "%"
+        document.querySelector(".moonNasaEngineerDisplay").innerHTML = `NASA Engineer: This person worked at NASA, and has so much to offer. He will cost you PT$${num2txt(q.moon.prestige.nasaEngineer.cost)}. You have a crew of ${num2txt(q.moon.prestige.nasaEngineer.amount)}. `
+        document.querySelector(".moonWizzardDisplay").innerHTML = `Wizzard: A magical person who makes money appear out of thin air. His services will cost you PT$${num2txt(q.moon.prestige.wizzard.cost)}. You have ${num2txt(q.moon.prestige.wizzard.amount)} of them.`
+        document.querySelector(".moonHackerManDisplay").innerHTML = `Hacker Man: He will hack into bank accounts and steal money. He charges PT$${num2txt(q.moon.prestige.hackerman.cost)}. You have ${num2txt(q.moon.prestige.hackerman.amount)} of them.`
+        document.querySelector(".moonArtistDisplay").innerHTML = `Artist: They will paint pictiures of your money and factories. You can hire them for PT$${num2txt(q.moon.prestige.artist.cost)}, and you have ${num2txt(q.moon.prestige.artist.amount)} of them.`
+        document.querySelector(".moonBuisnessManagerDisplay").innerHTML = `Buisness Manager: He will take care of everything you have. He is going to cost you PT$${num2txt(q.moon.prestige.buisnessManager.cost)}. You have ${num2txt(q.moon.prestige.buisnessManager.amount)} of them.`
+
+        document.querySelector(".earthPageDisplay").innerHTML = `Page: ${page}`
+
+        document.querySelector(".earthAutoPlayDisplay").innerHTML = `Auto play: Automatically plays the entire game for you, so you can sit back and relax. It will cost you $${num2txt(q.earth.autoPlay.cost)}!`
+        document.querySelector(".earthAutoPrintMoneyDisplay").innerHTML = `Auto print money: This will automatically print money from your printer. It will cost you $${num2txt(q.earth.autoPrint.cost)}!`
+        document.querySelector(".earthAutoUpgradeDisplay").innerHTML = `Auto upgrade: Automatically upgrades your printer and factories for you. It will cost you $${num2txt(q.earth.autoUpgrade.cost)}!`
+
+        document.querySelector(".earthPrestigeProgressFill").style.width = Math.floor((q.earth.money/q.earth.prestige.cost) * 100) + "%"
+        document.querySelector(".moonPrestigeProgressFill").style.width = Math.floor((q.moon.money/q.moon.prestige.cost) * 100) + "%"
+        
+        document.querySelector(".moonMoneyDisplay").innerHTML = `Moon Money: M$${num2txt(q.moon.money)}`
+        document.querySelector(".moonColonistsDisplay").innerHTML = `Moon Colonists: Necessary for making money on the moon. You need to keep them alive however. They cost M$${num2txt(q.moon.colonists.cost)} to train, and you have ${num2txt(q.moon.population)}`
+
+        document.querySelector(".moonBuilderDisplay").innerHTML = `Builder: A person who automatically builds factories, reactors, habs, farms, and water makers, so you can sit down and relax. They cost M$${num2txt(q.moon.builder.cost)}! You have ${num2txt(q.moon.builder.amount)}!`
+        document.querySelector(".moonManagerDisplay").innerHTML = `Manager: A person who hires builders,engineers,and colonists so you can work hard, or hardly work. They cost M$${num2txt(q.moon.manager.cost)} and you have ${num2txt(q.moon.manager.amount)}!`
+        document.querySelector(".moonEngineerDisplay").innerHTML = `Engineer: A person who upgrades factories for you. They are important, if you want to increase profits steadily. They cost M$${num2txt(q.moon.engineer.cost)} and you have ${num2txt(q.moon.engineer.amount)} hires.`
+        document.querySelector(".moonSuperManagerDisplay").innerHTML = `Super Manager: An upgraded version of a manager who also hires managers. This makes profits sky rocket. They cost you a ridiculous M$${num2txt(q.moon.superManager.cost)}!!!!!`
+
+        document.querySelector(".moonUpgradeDisplay").innerHTML = `Costs ${num2txt(q.moon.click.cost)} to upgrade. You currently make ${num2txt(q.moon.click.amount)} per click.`
+
+        document.querySelector(".moonFoodDisplay").innerHTML = `Food: ${num2txt(q.moon.food)}`
+        document.querySelector(".moonWaterDisplay").innerHTML = `Water: ${num2txt(q.moon.water)}`
+        document.querySelector(".moonEnergyDisplay").innerHTML = `Energy: ${num2txt(q.moon.energy)}`
+        document.querySelector(".moonPopulationDisplay").innerHTML = `Population: ${num2txt(q.moon.population)}`
+
+
+        document.querySelector(".moonAutoPrintMoneyDisplay").innerHTML = `Auto Print: Automatically print money $$$ Costs M$${num2txt(q.moon.autoPrint.cost)} to activate!`
+        document.querySelector(".moonAutoUpgradeDisplay").innerHTML = `Auto Upgrade: Automatically upgrades your printer, so you can keep on printing. It costs M$${num2txt(q.moon.autoUpgrade.cost)} to start!`
+
+        document.querySelector(".purchaseMoonLabelBest").innerHTML = `
+        Money: $${num2txt(q.moon.cost)} <br>
+        Prestige Tokens: PT$${num2txt(q.moon.costP)}
+        `
     }
     catch(err) {
-        console.log(err)
+        //console.log(err)
         clearInterval(crazyUpdate)
-        location.reload()
+        //location.reload()
     }
 }
 
-function moneyPopup(amount) {
-    if (amount > 0) {
-        var label = document.querySelector(".moneyPopup")
-        label.innerHTML = `+$${num2txt(amount)}`
-        label.className = `moneyPopup`
-        document.querySelector(".money").appendChild(label)
 
-        $(".moneyPopup").fadeOut(0).fadeIn(400).fadeOut(0)
+function hire(thing,planet="moon") {
+    //console.log(thing,planet)
+    var things = ["builder","manager","engineer","superManager"]
+
+    if (q[planet].money < q[planet][thing].cost) { customAlert(`You need $${num2txt(q[planet][thing].cost - q[planet].money)} more to do this.`); return false }
+    q[planet].money -= q[planet][thing].cost
+    q[planet][thing].amount += 1 * (q[planet].prestige.BOGOF.amount + 1)
+    
+    //if it is on other planets
+    if ((things.includes(thing) && q[planet].population >= 1)) {
+        q[planet].population -= 1
+    }
+    else if ((things.includes(thing) && q[planet].population < 1)){
+        customAlert("You need more colonists!")
+    }
+
+    if (q[planet][thing].Econsumption != undefined){
+        q[planet].Econsumption += q[planet][thing].Econsumption
+    }
+
+    if (String(thing).startsWith("hab")) {
+        q[planet].populationCapacity += q[planet][thing].population
+    }
+
+}
+
+
+function hireColonists(p) {
+    if (q[p].population >= q[p].populationCapacity) {
+        customAlert(`You need to build more habs to do this!`)
+        return false
+    }
+    if (q[p].money >= q[p].colonists.cost) {
+        q[p].money -= q[p].colonists.cost
+        q[p].population += 1
+    }
+    else {
+        customAlert(`You need ${q[p].colonists.cost - q[p].money} more ${p+" token(s)"} to do this!`)
     }
 }
 
-function hire(thing) {
-    if (q.money < q[thing].cost) { customAlert(`You need $${num2txt(q[thing].cost - q.money)} more to do this.`); return false }
-    q.money -= q[thing].cost
-    q[thing].amount += 1 * (q.prestige.BOGOF.amount + 1)
-}
-function Phire(thing) {
-    if (q.prestige.prestigeTokens < q.prestige[thing].cost) { customAlert(`You need PT$${num2txt(q.prestige[thing].cost - q.prestige.prestigeTokens)} more to do this.`); return false }
-    if (thing == "buisnessManager") {q.prestige.prestigeTokens -= q.prestige[thing].cost; window.alert("lol bozo you fell for that again!!!"); return false}
-    q.prestige.prestigeTokens -= q.prestige[thing].cost
-    q.prestige[thing].amount += 1 * (q.prestige.BOGOF.amount + 1)
+function prestigeHire(thing,planet) {
+    console.log(q[planet].prestige.prestigeTokens, q[planet].prestige[thing].cost)
+    if (q[planet].prestige.prestigeTokens < q[planet].prestige[thing].cost) { customAlert(`You need PT$${num2txt(q[planet].prestige[thing].cost - q[planet].prestige.prestigeTokens)} more to do this.`); return false }
+    if (thing == "buisnessManager") {q[planet].prestige.prestigeTokens -= q[planet].prestige[thing].cost; customAlert2("lmao bozo you fell for that again!!!"); return false}
+    q[planet].prestige.prestigeTokens -= q[planet].prestige[thing].cost
+    q[planet].prestige[thing].amount += 1 * (q[planet].prestige.BOGOF.amount + 1)
 }
 
-function levelUp(thing) {
-    if (q.money < q[thing].cost * 10) { customAlert(`You need $${num2txt((q[thing].cost * 10) - q.money)} more to do this.`); return false }
-    if (q[thing].level >= 5) {return false }
-    q.money -= q[thing].cost * 10
-    q[thing].earn *= 2
-    q[thing].level += 1
-
+function levelUp(thing,planet) {
+    if (q[planet].money < q[planet][thing].cost * 10) { customAlert(`You need $${num2txt((q[planet][thing].cost * 10) - q[planet].money)} more to do this.`); return false }
+    if (q[planet][thing].level >= 5) {return false }
+    q[planet].money -= q[planet][thing].cost * 10
+    q[planet][thing].earn *= 2  
+    q[planet][thing].level += 1
 }
 
-function prestige() {
-    if (q.money >= q.prestige.cost && confirm("Are you sure you want to prestige, this cannot be undone?")) {
-        document.querySelector(".prestigeUpgrades").style.display = displays[1]
-        document.querySelector(".upgrades").style.display = displays[1]
-        x=0
-        y=0
+function prestige(p) {
+    if (q[p].money < q[p].prestige.cost) {customAlert(`You need $${num2txt(q[p].prestige.cost - q[p].money)} more to do this.`); return false}
+    
+    if (confirm("Are you sure you want to prestige, this cannot be undone?")) {
+    
+        document.querySelector(`.${p}PrestigeUpgrades`).style.display = displays[1]
+        document.querySelector(`.${p}Upgrades`).style.display = displays[1]
+
+        menus[p+"UpgradesDisplay"] = 0
+        menus[p+"PrestigeUpgradesDisplay"] = 0
+
         page = 1
+
         $(".game").fadeOut(1000,function() {
             document.querySelector("body").style.backgroundColor = "black"
-            prestigeStats = q.prestige
-            clearInterval(ez1)
-            clearInterval(ez)
-            document.querySelector(".ez1").innerHTML = "buy"
-            document.querySelector(".ez2").innerHTML = "buy"
-            reset() 
-            q.prestige = prestigeStats
-            q.prestige.prestigeTokens += q.prestige.tokensAdd.amount * q.prestige.multiplier.amount
-            q.prestige.amount += 1
-            q.prestige.cost *= 10
+            var prestigeStats = q[p].prestige
+            clearInterval(intervals[p+"AutoPrintInterval"])
+            clearInterval(intervals[p+"AutoUpgradeInterval"])
+
+            document.querySelector(`.${p}AutoUpgradeBuy`).innerHTML = "buy"
+            document.querySelector(`.${p}AutoPrintMoneyBuy`).innerHTML = "buy"
             
-            for (var i in q) {
-                if (q[i] != null && q[i].cost != undefined) {
-                    // probably to not do prestige upgrades
-                    if (q[i].prestigeTokens != undefined) {}
-                    else {
-                        q[i].cost = stock[i].cost * ((100-q.prestige.taxCuts.amount)/100)
+            q[p] = JSON.parse(JSON.stringify(stock[p]))
+            q[p].prestige = prestigeStats
+            q[p].prestige.prestigeTokens += q[p].prestige.tokensAdd.amount * q[p].prestige.multiplier.amount
+            q[p].prestige.amount += 1
+            q[p].prestige.cost *= 10
+
+            q[p].purchased = true
+
+            if (q[p].click.cost / stock[p].click.cost == 1) {
+                for (var i in q[p]) {
+                    if (q[p][i] != null && q[p][i].cost != undefined) {
+                        q[p][i].cost *= q[difficulty]
                     }
                 }
+                q[p].prestige.cost /= q[difficulty]
             }
-            
+
+            //set costs from prestige discount
+            for (var i in q[p]) {
+                if (q[p][i] != null && q[p][i].cost != undefined) {
+                    // probably to not do prestige upgrades
+                    if (q[p][i].prestigeTokens != undefined) {}
+                    else {
+                        q[p][i].cost = stock[p][i].cost  * q[difficulty] * ((100-q[p].prestige.taxCuts.amount)/100)
+                    }
+                }
+                //console.log(i)
+            }
+
+            clearInterval(intervals[p+"GiveMoney"])
+            intervals[p+"GiveMoney"] = setInterval(function () {
+                q[p].money += q[p].moneyPerSecond * q[p].prestige.multiplier.amount
+            }, q[p].prestige.nuclearPower.amount)
+
+
             setTimeout(function() {
                 document.querySelector("body").style.backgroundColor = "white"
                 $(".game").fadeIn(500)
             },1000)
         })
-    }
-    else {
-        window.alert(`You need $${num2txt(q.prestige.cost - q.money)} more to do this.`)
     }
 }
 
@@ -766,157 +1215,126 @@ function setIntervall(callback, timeout,key) {
 
 
 function save() {
-    localStorage.setItem("EZ_money_1_save/" + difficulty, JSON.stringify(q))
+    if (gameLoaded){    
+        localStorage.setItem("EZ_money_1_save/" + difficulty, JSON.stringify(q))
 
-    localStorage.setItem("EZ_money_1_settings", JSON.stringify(settings))
+        localStorage.setItem("EZ_money_1_settings", JSON.stringify(settings))
+    }
 }
 
 function load() {
     if (localStorage.getItem("EZ_money_1_save/" + difficulty) != undefined) {
         var data = JSON.parse(localStorage.getItem("EZ_money_1_save/" + difficulty))
         for (var i in data) {
-            q[i] = data[i]
+            q [i] = data[i]
         }
     }
-    if (localStorage.getItem("EZ_money_1_settings") != undefined) {
-        var data = JSON.parse(localStorage.getItem("EZ_money_1_settings"))
-        settings = JSON.parse(JSON.stringify(data))
-    }
+    setInterval(function () { save() }, 1000)
 }
 
 function reset() {
     q = JSON.parse(JSON.stringify(stock))
     save()
     setDifficulty(difficulty)
+    page = 1
+    planet = 0
 }
 
 function customAlert(message) {
     if (settings.alertsOn) {
-        window.alert(message)
+        document.querySelector(".message").innerHTML = message
+        document.querySelector(".alert").showModal()
     }
 }
+
+function customAlert2(message) {
+    document.querySelector(".message").innerHTML = message
+    document.querySelector(".alert").showModal()
+}
+
 
 function startGame() {
     load()
-    if (q.lastPlayed != null) {
-        var a = Math.round((Date.now() - q.lastPlayed) / 1000)
-
-        if (a >= 60 && q.moneyPerSecond >= 1) {
-            var factories = parseInt(a / 15)
-            var managers = parseInt(a / 300)
-            var builders = parseInt(a / 60)
-            var engineers = parseInt(a / 60)
-
-            var minutes = parseInt(a/60)
-            
-            var factories2 = 0
-            var builders2 = 0
-            var engineers2 = 0
-            var managers2 = 0
-
-            q.money += q.moneyPerSecond * a * q.prestige.multiplier.amount
-
-            for (var i = 0; i < factories; i++) {
-                q.factories.reduceRight((_, elem) => {
-                    if(elem != undefined) {
-                        if (q.money > q[elem].cost) {
-                            var ek = Math.floor(q.money / q[elem].cost)
-        
-                            if (ek > q.builders.amount) {
-                                ek = q.builders.amount
-                            }
-        
-                            var cost = ek * q[elem].cost
-                            q.money -= cost
-                            q[elem].amount += ek
-                            factories2 += ek
-                        }
-                    }
-                }, null)
-            }
-            if (q.money >= q.builders.cost * q.managers.amount * builders) {
-                q.builders.amount += q.managers.amount * builders * (q.prestige.BOGOF.amount + 1)
-                q.money -= q.managers.amount * builders * q.builders.cost
-                builders2 += q.managers.amount * builders   * (q.prestige.BOGOF.amount + 1)
-            }
-            if (q.money >= q.engineers.cost * q.managers.amount * engineers) {
-                q.engineers.amount += q.managers.amount * engineers * (q.prestige.BOGOF.amount + 1)
-                q.money -= q.managers.amount * engineers * q.engineers.cost
-                engineers2 += q.managers.amount * engineers * (q.prestige.BOGOF.amount + 1)
-            }
-
-            if (q.money >= q.managers.cost * q.superManagers.amount * managers) {
-                q.managers.amount += q.superManagers.amount * managers * (q.prestige.BOGOF.amount + 1)
-                q.money -= q.superManagers.amount * managers * q.managers.cost
-                managers2 += q.managers.amount * managers * (q.prestige.BOGOF.amount + 1)
-            } 
-            
-
-            if (q.money >= q.managers.cost * managers * q.superManagers.amount) {
-                q.managers.amount += q.superManagers.amount * managers * (q.prestige.BOGOF.amount + 1)
-                q.money -= q.managers.cost * managers * q.superManagers.amount
-                managers2 += q.superManagers.amount * managers * (q.prestige.BOGOF.amount + 1)
-            }
-
-            window.alert(`while you were gone for ${minutes} minutes: \nYou earned $${num2txt(q.moneyPerSecond * a)},\nYou earned ${num2txt(builders2)} builders,\nYou earned ${num2txt(engineers2)} engineers, \nYou earned ${num2txt(managers2)} managers,\nYou earned ${num2txt(factories2)} factories,`)
-        }
+    if (q.earth.lastPlayed != null) {
+        //redo this
     }
-    if (q.print.cost / 1000 == 1) {
-        for (var i in q) {
-            if (q[i] != null && q[i].cost != undefined) {
-                q[i].cost *= q[difficulty]
+
+    q.earth.autoPrint.on = false
+    q.earth.autoUpgrade.on = false
+
+    q.moon.autoPrint.on = false
+    q.moon.autoUpgrade.on = false
+
+
+    if (q.moon.click.cost / stock["moon"].click.cost == 1) {
+        for (var i in q.moon) {
+            if (q.moon[i] != null && q.moon[i].cost != undefined) {
+                q.moon[i].cost *= q[difficulty]
             }
         }
     }
-    setInterval(function () { save() }, 1)
-    clearInterval(giveMonee)
-    giveMonee = setInterval(function () {
-        if (settings.automationsOn) {
-            q.money += q.moneyPerSecond * q.prestige.multiplier.amount
+
+    if (q.earth.click.cost / stock["earth"].click.cost == 1) {
+        for (var i in q.earth) {
+            if (q.earth[i] != null && q.earth[i].cost != undefined) {
+                q.earth[i].cost *= q[difficulty]
+            }
         }
-    }, q.prestige.nuclearPower.amount)
+    }
+
+    clearInterval(intervals["moonGiveMoney"])
+    intervals["moonGiveMoney"] = setInterval(function () {
+        q["moon"].money += q["moon"].moneyPerSecond * q["moon"].prestige.multiplier.amount
+    }, q["moon"].prestige.nuclearPower.amount)
+    
+    clearInterval(intervals["earth"+"GiveMoney"])
+    intervals["earth"+"GiveMoney"] = setInterval(function () {
+        q["earth"].money += q["earth"].moneyPerSecond * q["earth"].prestige.multiplier.amount
+    }, q["earth"].prestige.nuclearPower.amount)
+
 }
 
-function prestigeUpgrade(upgrade) {
-    if (q.prestige.prestigeTokens >= q.prestige[upgrade].cost) {
-        if (q.prestige[upgrade].level < q.prestige[upgrade].max) {
-            q.prestige[upgrade].amount += q.prestige[upgrade].add
-            q.prestige[upgrade].level += 1
-            q.prestige.prestigeTokens -= q.prestige[upgrade].cost
-            q.prestige[upgrade].cost = Math.floor(1.5**(q.prestige[upgrade].level +1))
+function prestigeUpgrade(upgrade,planet) {
+    if (q[planet].prestige.prestigeTokens >= q[planet].prestige[upgrade].cost) {
+        if (q[planet].prestige[upgrade].level < q[planet].prestige[upgrade].max) {
+            q[planet].prestige[upgrade].amount += q[planet].prestige[upgrade].add
+            q[planet].prestige[upgrade].level += 1
+            q[planet].prestige.prestigeTokens -= q[planet].prestige[upgrade].cost
+            q[planet].prestige[upgrade].cost = Math.floor(1.5**(q[planet].prestige[upgrade].level +1))
 
         }
     
-        if (q.prestige.tokensAdd.amount ==  1) {
-            q.prestige.tokensAdd.add = 2
+        if (q[planet].prestige.tokensAdd.amount ==  1) {
+            q[planet].prestige.tokensAdd.add = 2
         }
-        if (q.prestige.tokensAdd.amount ==  2) {
-            q.prestige.tokensAdd.add = 4
+        if (q[planet].prestige.tokensAdd.amount ==  2) {
+            q[planet].prestige.tokensAdd.add = 4
         }
-        if (q.prestige.tokensAdd.amount >=  3) {
-            q.prestige.tokensAdd.add = 10
+        if (q[planet].prestige.tokensAdd.amount >=  3) {
+            q[planet].prestige.tokensAdd.add = 10
         }
-        if (q.prestige.tokensAdd.amouxnt >=  10) {
-            q.prestige.tokensAdd.add = 100
+        if (q[planet].prestige.tokensAdd.amouxnt >=  10) {
+            q[planet].prestige.tokensAdd.add = 100
         }
 
 
-        for (var i in q) {
-            if (q[i] != null && q[i].cost != undefined) {
-                if (q[i].prestigeTokens != undefined) {}
+        for (var i in q[planet]) {
+            if (q[planet][i] != null && q[planet][i].cost != undefined) {
+                // probably to not do prestige upgrades
+                if (q[planet][i].prestigeTokens != undefined) {}
                 else {
-                    q[i].cost = stock[i].cost * ((100-q.prestige.taxCuts.amount)/100)
+                    q[planet][i].cost = stock[planet][i].cost  * q[difficulty] * ((100-q[planet].prestige.taxCuts.amount)/100)
                 }
             }
+            //console.log(i)
         }
 
-        clearInterval(giveMonee)
+        
 
-        giveMonee = setInterval(function () {
-            if (settings.automationsOn) {
-                q.money += q.moneyPerSecond * q.prestige.multiplier.amount
-            }
-        }, q.prestige.nuclearPower.amount)
+        clearInterval(intervals[planet+"GiveMoney"])
+        intervals[planet+"GiveMoney"] = setInterval(function () {
+            q[planet].money += q[planet].moneyPerSecond * q[planet].prestige.multiplier.amount
+        }, q[planet].prestige.nuclearPower.amount)
     }
 
     
@@ -934,217 +1352,655 @@ var crazyUpdate = setInterval(function () {
 }, 1)
 
 
-
 setIntervall(function () {
-    if (q.superManagers.amount >= 1) {
-        if (q.money > q.managers.cost) {
-            var managers = Math.floor(q.money / q.managers.cost)
+    if (q.moon.superManager.amount >= 1) {
+        if (q.moon.money > q.moon.manager.cost) {
+            var manager = Math.floor(q.moon.money / q.moon.manager.cost)
 
-            if (managers > q.superManagers.amount) {
-                managers = q.superManagers.amount
+            if (manager > q.moon.superManager.amount) {
+                manager = q.moon.superManager.amount
             }
 
-            var cost = managers * q.managers.cost
+            if (manager > q.moon.population) {
+                manager = q.moon.population
+            }
 
-            q.money -= cost
-            q.managers.amount += managers * (q.prestige.BOGOF.amount + 1)
+
+            var cost = manager * q.moon.manager.cost
+
+            q.moon.money -= cost
+            q.moon.population -= manager
+            q.moon.manager.amount += manager * (q.moon.prestige.BOGOF.amount + 1)
         }
 
-        if (q.money > q.builders.cost) {
-            var builders = Math.floor(q.money / q.builders.cost)
+        if (q.moon.money > q.moon.builder.cost) {
+            var builder = Math.floor(q.moon.money / q.moon.builder.cost)
 
-            if (builders > q.superManagers.amount) {
-                builders = q.superManagers.amount
+            if (builder > q.moon.superManager.amount) {
+                builder = q.moon.superManager.amount
             }
 
-            var cost = builders * q.builders.cost
-            q.money -= cost
-            q.builders.amount += builders * (q.prestige.BOGOF.amount + 1)
+            if (builder > q.moon.population) {
+                builder = q.moon.population
+            }
+
+
+            var cost = builder * q.moon.builder.cost
+            q.moon.money -= cost
+            q.moon.population -= builder
+            q.moon.builder.amount += builder * (q.moon.prestige.BOGOF.amount + 1)
         }
 
-        if (q.money > q.engineers.cost) {
-            var engineers = Math.floor(q.money / q.engineers.cost)
+        if (q.moon.money > q.moon.engineer.cost) {
+            var engineer = Math.floor(q.moon.money / q.moon.engineer.cost)
 
-            if (engineers > q.superManagers.amount) {
-                engineers = q.superManagers.amount
+            if (engineer > q.moon.superManager.amount) {
+                engineer = q.moon.superManager.amount
             }
 
-            var cost = engineers * q.engineers.cost
-            q.money -= cost
-            q.engineers.amount += engineers * (q.prestige.BOGOF.amount + 1)
+            if (engineer > q.moon.population) {
+                engineer = q.moon.population
+            }
+
+
+            var cost = engineer * q.moon.engineer.cost
+            q.moon.money -= cost
+            q.moon.population -= engineer
+            q.moon.engineer.amount += engineer * (q.moon.prestige.BOGOF.amount + 1)
+        }
+
+        if (q.moon.money > q.moon.colonists.cost) {
+            var colonists = Math.floor(q.moon.money / q.moon.colonists.cost)
+
+            if (colonists > q.moon.superManager.amount) {
+                colonists = q.moon.superManager.amount
+            }
+
+            if (colonists >= q.moon.populationCapacity) {
+                colonists = 0
+            }
+
+
+            var cost = colonists * q.moon.colonists.cost
+            q.moon.money -= cost
+            q.moon.population += colonists * (q.moon.prestige.BOGOF.amount + 1)
         }
     }
 }, 300000)
 
 setIntervall(function () {
-    if (q.managers.amount >= 1) {
+    if (q.moon.manager.amount >= 1) {
+        if (q.moon.money > q.moon.builder.cost) {
+            var builder = Math.floor(q.moon.money / q.moon.builder.cost)
 
-        if (q.money > q.builders.cost) {
-            var builders = Math.floor(q.money / q.builders.cost)
-
-            if (builders > q.managers.amount) {
-                builders = q.managers.amount
+            if (builder > q.moon.manager.amount) {
+                builder = q.moon.manager.amount
             }
 
-            var cost = builders * q.builders.cost
+            if (builder > q.moon.population) {
+                builder = q.moon.population
+            }
 
-            q.money -= cost
-            q.builders.amount += builders * (q.prestige.BOGOF.amount + 1)
+
+            var cost = builder * q.moon.builder.cost
+
+            q.moon.money -= cost
+            q.moon.population -= builder
+            q.moon.builder.amount += builder * (q.moon.prestige.BOGOF.amount + 1)
         }
-    }
-    if (q.managers.amount >= 1) {
 
-        if (q.money > q.engineers.cost) {
-            var engineers = Math.floor(q.money / q.engineers.cost)
+        if (q.moon.money > q.moon.engineer.cost) {
+            var engineer = Math.floor(q.moon.money / q.moon.engineer.cost)
 
-            if (engineers > q.managers.amount) {
-                engineers = q.managers.amount
+            if (engineer > q.moon.manager.amount) {
+                engineer = q.moon.manager.amount
             }
 
-            var cost = engineers * q.engineers.cost
+            if (engineer > q.moon.population) {
+                engineer = q.moon.population
+            }
 
-            q.money -= cost
-            q.engineers.amount += engineers * (q.prestige.BOGOF.amount + 1)
+            var cost = engineer * q.moon.engineer.cost
+
+            q.moon.money -= cost
+            q.moon.population -= engineer
+            q.moon.engineer.amount += engineer * (q.moon.prestige.BOGOF.amount + 1)
+        }
+
+        if (q.moon.money > q.moon.colonists.cost) {
+            var colonists = Math.floor(q.moon.money / q.moon.colonists.cost)
+            if (colonists > q.moon.manager.amount) {
+                colonists = q.moon.manager.amount
+            }
+
+            if (colonists >= q.moon.populationCapacity) {
+                colonists = 0
+            }
+
+
+            var cost = colonists * q.moon.colonists.cost
+            q.moon.money -= cost
+            q.moon.population += colonists * (q.moon.prestige.BOGOF.amount + 1)
         }
     }
 }, 60000)
 
 setIntervall(function () {
-    if (q.engineers.amount >= 1) {
-        for (const iterator of q.factories) {
-            if (q[iterator].amount >= 1) {
-                q[iterator].earn = Math.floor(q[iterator].earn + ((q.engineers.amount)/1000))
-                q[iterator].cost = Math.floor(q[iterator].cost + ((q.engineers.amount)/500))
+    if (q.moon.engineer.amount >= 1) {
+        for (const iterator of q.moon.factories) {
+            if (q.moon[iterator].amount >= 1) {
+                q.moon[iterator].earn = Math.floor(q.moon[iterator].earn + ((q.moon.engineer.amount)/1000))
+                q.moon[iterator].cost = Math.floor(q.moon[iterator].cost + ((q.moon.engineer.amount)/500))
             }
         }
     }
 },60000)
 
 setIntervall(function () {
-    if (q.builders.amount >= 1) {
-        q.factories.reduceRight((_, elem) => {
+    if (q.moon.builder.amount >= 1) {
+        q.moon.factories.reduceRight((_, elem) => {
             if(elem != undefined) {
-                if (q.money > q[elem].cost) {
-                    var ek = Math.floor(q.money / q[elem].cost)
+                if (q.moon.money > q.moon[elem].cost) {
+                    var ek = Math.floor(q.moon.money / q.moon[elem].cost)
 
-                    if (ek > q.builders.amount) {
-                        ek = q.builders.amount
+                    if (ek > q.moon.builder.amount) {
+                        ek = q.moon.builder.amount
                     }
 
-                    var cost = ek * q[elem].cost
-                    q.money -= cost
-                    q[elem].amount += ek * (q.prestige.BOGOF.amount + 1)
+                    var cost = ek * q.moon[elem].cost
+                    q.moon.money -= cost
+                    q.moon[elem].amount += ek * (q.moon.prestige.BOGOF.amount + 1)
+                }
+            }
+        }, null)
+
+        q.moon.reactors.reduceRight((_, elem) => {
+            if(elem != undefined) {
+                if (q.moon.money > q.moon[elem].cost) {
+                    var ek = Math.floor(q.moon.money / q.moon[elem].cost)
+
+                    if (ek > q.moon.builder.amount) {
+                        ek = q.moon.builder.amount
+                    }
+
+                    var cost = ek * q.moon[elem].cost
+                    q.moon.money -= cost
+                    q.moon[elem].amount += ek * (q.moon.prestige.BOGOF.amount + 1)
+                }
+            }
+        }, null)
+
+        q.moon.habs.reduceRight((_, elem) => {
+            if(elem != undefined) {
+                if (q.moon.money > q.moon[elem].cost) {
+                    var ek = Math.floor(q.moon.money / q.moon[elem].cost)
+
+                    if (ek > q.moon.builder.amount) {
+                        ek = q.moon.builder.amount
+                    }
+
+                    var cost = ek * q.moon[elem].cost
+                    q.moon.money -= cost
+                    q.moon[elem].amount += ek * (q.moon.prestige.BOGOF.amount + 1)
+                    q.moon.populationCapacity += q.moon[elem].population * ek
+                }
+            }
+        }, null)
+
+        q.moon.waterMakers.reduceRight((_, elem) => {
+            if(elem != undefined) {
+                if (q.moon.money > q.moon[elem].cost) {
+                    var ek = Math.floor(q.moon.money / q.moon[elem].cost)
+
+                    if (ek > q.moon.builder.amount) {
+                        ek = q.moon.builder.amount
+                    }
+
+                    var cost = ek * q.moon[elem].cost
+                    q.moon.money -= cost
+                    q.moon[elem].amount += ek * (q.moon.prestige.BOGOF.amount + 1)
+                }
+            }
+        }, null)
+
+        q.moon.farms.reduceRight((_, elem) => {
+            if(elem != undefined) {
+                if (q.moon.money > q.moon[elem].cost) {
+                    var ek = Math.floor(q.moon.money / q.moon[elem].cost)
+
+                    if (ek > q.moon.builder.amount) {
+                        ek = q.moon.builder.amount
+                    }
+
+                    var cost = ek * q.moon[elem].cost
+                    q.moon.money -= cost
+                    q.moon[elem].amount += ek * (q.moon.prestige.BOGOF.amount + 1)
                 }
             }
         }, null)
     }
 }, 15000)
-setIntervall(function () {moneyPopup(moneyEarnedInASecond);clicks = 0},1000)
+
+
+
+setIntervall(function () {
+    if (q.earth.superManager.amount >= 1) {
+        if (q.earth.money > q.earth.manager.cost) {
+            var manager = Math.floor(q.earth.money / q.earth.manager.cost)
+
+            if (manager > q.earth.superManager.amount) {
+                manager = q.earth.superManager.amount
+            }
+
+            var cost = manager * q.earth.manager.cost
+
+            q.earth.money -= cost
+            q.earth.manager.amount += manager * (q.earth.prestige.BOGOF.amount + 1)
+        }
+
+        if (q.earth.money > q.earth.builder.cost) {
+            var builder = Math.floor(q.earth.money / q.earth.builder.cost)
+
+            if (builder > q.earth.superManager.amount) {
+                builder = q.earth.superManager.amount
+            }
+
+            var cost = builder * q.earth.builder.cost
+            q.earth.money -= cost
+            q.earth.builder.amount += builder * (q.earth.prestige.BOGOF.amount + 1)
+        }
+
+        if (q.earth.money > q.earth.engineer.cost) {
+            var engineer = Math.floor(q.earth.money / q.earth.engineer.cost)
+
+            if (engineer > q.earth.superManager.amount) {
+                engineer = q.earth.superManager.amount
+            }
+
+            var cost = engineer * q.earth.engineer.cost
+            q.earth.money -= cost
+            q.earth.engineer.amount += engineer * (q.earth.prestige.BOGOF.amount + 1)
+        }
+    }
+}, 300000)
+
+setIntervall(function () {
+    if (q.earth.manager.amount >= 1) {
+
+        if (q.earth.money > q.earth.builder.cost) {
+            var builder = Math.floor(q.earth.money / q.earth.builder.cost)
+
+            if (builder > q.earth.manager.amount) {
+                builder = q.earth.manager.amount
+            }
+
+            var cost = builder * q.earth.builder.cost
+
+            q.earth.money -= cost
+            q.earth.builder.amount += builder * (q.earth.prestige.BOGOF.amount + 1)
+        }
+    }
+    if (q.earth.manager.amount >= 1) {
+
+        if (q.earth.money > q.earth.engineer.cost) {
+            var engineer = Math.floor(q.earth.money / q.earth.engineer.cost)
+
+            if (engineer > q.earth.manager.amount) {
+                engineer = q.earth.manager.amount
+            }
+
+            var cost = engineer * q.earth.engineer.cost
+
+            q.earth.money -= cost
+            q.earth.engineer.amount += engineer * (q.earth.prestige.BOGOF.amount + 1)
+        }
+    }
+}, 60000)
+
+setIntervall(function () {
+    if (q.earth.engineer.amount >= 1) {
+        for (const iterator of q.earth.factories) {
+            if (q.earth[iterator].amount >= 1) {
+                q.earth[iterator].earn = Math.floor(q.earth[iterator].earn + ((q.earth.engineer.amount)/1000))
+                q.earth[iterator].cost = Math.floor(q.earth[iterator].cost + ((q.earth.engineer.amount)/500))
+            }
+        }
+    }
+},60000)
+
+setIntervall(function () {
+    if (q.earth.builder.amount >= 1) {
+        q.earth.factories.reduceRight((_, elem) => {
+            if(elem != undefined) {
+                if (q.earth.money > q.earth[elem].cost) {
+                    var ek = Math.floor(q.earth.money / q.earth[elem].cost)
+
+                    if (ek > q.earth.builder.amount) {
+                        ek = q.earth.builder.amount
+                    }
+
+                    var cost = ek * q.earth[elem].cost
+                    q.earth.money -= cost
+                    q.earth[elem].amount += ek * (q.earth.prestige.BOGOF.amount + 1)
+                }
+            }
+        }, null)
+    }
+}, 15000)
 
 //prestigers
 
 setIntervall(function(){
-    if (q.prestige.wizzard.amount >=1) {
-        q.money += (Math.floor(q.prestige.cost/10)) * q.prestige.wizzard.amount * q.prestige.multiplier.amount
+    if (q.earth.prestige.wizzard.amount >=1) {
+        q.earth.money += (Math.floor(q.earth.prestige.cost/10)) * q.earth.prestige.wizzard.amount * q.earth.prestige.multiplier.amount
     }
-},600000)
+},120000)
 
 setIntervall(function() {
-    if (q.prestige.hackerman.amount >=1) {
-        q.money += (Math.floor(q.prestige.cost/500)) * q.prestige.hackerman.amount * q.prestige.multiplier.amount
+    if (q.earth.prestige.hackerman.amount >=1) {
+        q.earth.money += (Math.floor(q.earth.prestige.cost/500)) * q.earth.prestige.hackerman.amount * q.earth.prestige.multiplier.amount
     }
-},600000) 
+},120000) 
 
 setIntervall(function () {
-    if (q.prestige.nasaEngineer.amount >= 1) {
-        for (const iterator of q.factories) {
-            if (q[iterator].amount >= 1) {
-                q[iterator].earn = Math.floor(q[iterator].earn + ((q.prestige.nasaEngineer.amount)/500))
+    if (q.earth.prestige.nasaEngineer.amount >= 1) {
+        for (const iterator of q.earth.factories) {
+            if (q.earth[iterator].amount >= 1) {
+                q.earth[iterator].earn = Math.floor(q.earth[iterator].earn + ((q.earth.prestige.nasaEngineer.amount)/500))
             }
         }
     }
-},300000)
+},60000)
 
 setIntervall(function() {
-    if (q.prestige.artist.amount >=1) {
-        q.money += (Math.floor(q.prestige.cost/500000000)) * q.prestige.artist.amount * q.prestige.multiplier.amount
+    if (q.earth.prestige.artist.amount >=1) {
+        q.earth.money += (Math.floor(q.earth.prestige.cost/500000000)) * q.earth.prestige.artist.amount * q.earth.prestige.multiplier.amount
     }
-},300000) 
+},60000) 
+
+
+setIntervall(function(){
+    if (q.moon.prestige.wizzard.amount >=1) {
+        q.moon.money += (Math.floor(q.moon.prestige.cost/10)) * q.moon.prestige.wizzard.amount * q.moon.prestige.multiplier.amount
+    }
+},120000)
+
+setIntervall(function() {
+    if (q.moon.prestige.hackerman.amount >=1) {
+        q.moon.money += (Math.floor(q.moon.prestige.cost/500)) * q.moon.prestige.hackerman.amount * q.moon.prestige.multiplier.amount
+    }
+},120000) 
+
+setIntervall(function () {
+    if (q.moon.prestige.nasaEngineer.amount >= 1) {
+        for (const iterator of q.moon.factories) {
+            if (q.moon[iterator].amount >= 1) {
+                q.moon[iterator].earn = Math.floor(q.moon[iterator].earn + ((q.moon.prestige.nasaEngineer.amount)/500))
+            }
+        }
+    }
+},60000)
+
+setIntervall(function() {
+    if (q.moon.prestige.artist.amount >=1) {
+        q.moon.money += (Math.floor(q.moon.prestige.cost/500000000)) * q.moon.prestige.artist.amount * q.moon.prestige.multiplier.amount
+    }
+},60000) 
+
+setInterval(function() {
+    if (q.moon.purchased) {
+
+        let reactors = q.moon.reactors;
+        //console.log(reactors)
+        var totalEnergy = 0;
+        for (let i = 0; i < reactors.length; i++) {
+            totalEnergy += q.moon[reactors[i]].produce * q.moon[reactors[i]].amount
+        }
+        q.moon.energy += totalEnergy;
+        //console.log(`Total energy generated: ${totalEnergy}`);
+
+        let things = q.moon.things;
+        var totalEnergy = 0;
+
+        for (let i = 0; i < things.length; i++) {
+            if (q.moon[things[i]].amount > 0) {
+                totalEnergy += q.moon[things[i]].Econsumption * q.moon[things[i]].amount;
+            }
+        }
+
+        if (q.moon.energy - totalEnergy >= 0) {
+            q.moon.energy -= totalEnergy
+        }
+        else {
+            //console.log("not enough energy ")
+            return false
+        }
+
+        //console.log(`Total energy consumed: ${totalEnergy}`);
+
+
+        
+
+        let waterMakers = q.moon.waterMakers;
+        let totalWater = 0;
+        
+
+        for (let i = 0; i < waterMakers.length; i++) {
+            totalWater += q.moon[waterMakers[i]].produce * q.moon[waterMakers[i]].amount;
+        }
+
+        q.moon.water += totalWater
+
+        //console.log(`Water made: ${totalWater}`)
+        
+
+
+        farms = q.moon.farms
+        totalFood = 0
+        waterConsumed = 0
+        for (let i = 0; i < farms.length; i++) {
+            totalFood += q.moon[farms[i]].produce * q.moon[farms[i]].amount;
+            waterConsumed += q.moon[farms[i]].produce * q.moon[farms[i]].amount;
+        }
+
+        if (waterConsumed > q.moon.water) {
+            //console.log("not enough wateer")
+        }
+
+        else {
+            q.moon.water -= waterConsumed
+            q.moon.food += totalFood
+            //console.log(`Food farmed: ${totalFood}`)
+        }
+
+        //console.log(q.moon.water)
+        //console.log(q.moon.food)
+        //console.log(q.moon.energy)
+
+        var killed = 0
+        if (q.moon.population * 5 > q.moon.food) {
+            killed += q.moon.population * 5 - q.moon.food
+        }
+        else if (q.moon.population * 5 > q.moon.water) {
+            killed += q.moon.population * 5 - q.moon.water
+        }
+        else {
+            q.moon.food -= q.moon.population * 5
+            q.moon.water -= q.moon.population * 5
+        }
+
+        if (killed >= 1) {
+            if (killed > q.moon.population) {
+                killed = q.moon.population
+            }
+            q.moon.population -= killed
+            customAlert(`${num2txt(killed)} colonists died !!!`)
+        }
+
+    }
+},5000)
+
+
+
 
 }
 
 /*Button onclicks*/{
+document.querySelector(".earthPrintMoney").onclick = function() {giveMoney()}
+document.querySelector(".earthUpgradePrinter").onclick = function () { upgrade() }
+document.querySelector(".earthAutoUpgradeBuy").onclick = function () { autoUpgrade() }
+document.querySelector(".earthAutoPrintMoneyBuy").onclick = function () { autoPrintMoney() }
+document.querySelector(".earthAutoPlayBuy").onclick = function () { autoPlay() }
 
-document.querySelector(".upgradePrinter").onclick = function () { upgrade() }
-document.querySelector(".printMoney").onclick = function () { giveMoney() }
-document.querySelector(".ez1").onclick = function () { autoUpgrade() }
-document.querySelector(".ez2").onclick = function () { autoPrintMoney() }
-document.querySelector(".ez3").onclick = function () { autoPlay() }
-document.querySelector(".buyMoreMoney").onclick = function() {prestigeUpgrade("multiplier")}
-document.querySelector(".buyMoreTokens").onclick = function() {prestigeUpgrade("tokensAdd")}
-document.querySelector(".buyNuclearFactories").onclick = function() {prestigeUpgrade("nuclearPower")}
-document.querySelector(".buyTaxCuts").onclick = function() {prestigeUpgrade("taxCuts")}
-document.querySelector(".buyBuyOneGetOneFree").onclick = function() {prestigeUpgrade("BOGOF")}
-document.querySelector(".hireBuilder").onclick = function () { hire("builders") }
-document.querySelector(".hireManager").onclick = function () { hire("managers") }
-document.querySelector(".hireSuperManager").onclick = function () { hire("superManagers") }
-document.querySelector(".hireEngineer").onclick = function () { hire("engineers") }
+document.querySelector(".earthBuyMoreMoney").onclick = function() {prestigeUpgrade("multiplier","earth")}
+document.querySelector(".earthBuyMoreTokens").onclick = function() {prestigeUpgrade("tokensAdd","earth")}
+document.querySelector(".earthBuyNuclearFactories").onclick = function() {prestigeUpgrade("nuclearPower","earth")}
+document.querySelector(".earthBuyTaxCuts").onclick = function() {prestigeUpgrade("taxCuts","earth")}
+document.querySelector(".earthBuyBuyOneGetOneFree").onclick = function() {prestigeUpgrade("BOGOF","earth")}
+document.querySelector(".earthHireBuilder").onclick = function () { hire("builder","earth") }
+document.querySelector(".earthHireManager").onclick = function () { hire("manager","earth") }
+document.querySelector(".earthHireSuperManager").onclick = function () { hire("superManager","earth") }
+document.querySelector(".earthHireEngineer").onclick = function () { hire("engineer","earth") }
 
-document.querySelector(".hireWizzard").onclick = function () { Phire("wizzard") }
-document.querySelector(".hireHackerMan").onclick = function () { Phire("hackerman") }
-document.querySelector(".hireArtist").onclick = function () { Phire("artist") }
-document.querySelector(".hireNasaEngineer").onclick = function () { Phire("nasaEngineer") }
-document.querySelector(".hireBuisnessManager").onclick = function () { Phire("buisnessManager") }
+document.querySelector(".earthHireWizzard").onclick = function () { prestigeHire("wizzard","earth") }
+document.querySelector(".earthHireHackerMan").onclick = function () { prestigeHire("hackerman","earth") }
+document.querySelector(".earthHireArtist").onclick = function () { prestigeHire("artist","earth") }
+document.querySelector(".earthHireNasaEngineer").onclick = function () { prestigeHire("nasaEngineer","earth") }
+document.querySelector(".earthHireBuisnessManager").onclick = function () { prestigeHire("buisnessManager","earth") }
 
-document.querySelector(".prestigeButton").onclick = function () { prestige() }
-document.querySelector(".prsTstrt").onclick = function () { start() }
+document.querySelector(".moonBuyMoreMoney").onclick = function() {prestigeUpgrade("multiplier","moon")}
+document.querySelector(".moonBuyMoreTokens").onclick = function() {prestigeUpgrade("tokensAdd","moon")}
+document.querySelector(".moonBuyNuclearFactories").onclick = function() {prestigeUpgrade("nuclearPower","moon")}
+document.querySelector(".moonBuyTaxCuts").onclick = function() {prestigeUpgrade("taxCuts","moon")}
+document.querySelector(".moonBuyBuyOneGetOneFree").onclick = function() {prestigeUpgrade("BOGOF","moon")}
+
+document.querySelector(".moonHireWizzard").onclick = function () { prestigeHire("wizzard","moon") }
+document.querySelector(".moonHireHackerMan").onclick = function () { prestigeHire("hackerman","moon") }
+document.querySelector(".moonHireArtist").onclick = function () { prestigeHire("artist","moon") }
+document.querySelector(".moonHireNasaEngineer").onclick = function () { prestigeHire("nasaEngineer","moon") }
+document.querySelector(".moonHireBuisnessManager").onclick = function () { prestigeHire("buisnessManager","moon") }
+
+
+document.querySelector(".earthPrestigeButton").onclick = function () { prestige("earth") }
+document.querySelector(".moonPrestigeButton").onclick = function () { prestige("moon") }
+document.querySelector(".startGame").onclick = function () { start() }
 document.querySelector(".easy").onclick = function () {setDifficulty(`easy`,true) }
 document.querySelector(".medium").onclick = function () { setDifficulty(`medium`, true) }
 document.querySelector(".hard").onclick = function () { setDifficulty(`hard`,true) }
 document.querySelector(".insane").onclick = function () { setDifficulty(`insane`, true) }
+document.querySelector(".impossible").onclick = function () {setDifficulty(`impossible`,true) }
+
+document.querySelector(".purchaseMoon").onclick = () => {buyMoon()}
 
 
-document.querySelector(".alerts").onclick = function () {
-    if (settings.alertsOn) {settings.alertsOn = false}
-    else {settings.alertsOn = true}
-}
-document.querySelector(".automations").onclick = function () {
-    if (settings.automationsOn) {settings.automationsOn = false}
-    else {settings.automationsOn = true}
-}
 
 
-x = 0
+
 displays = ["block", "none"]
-document.querySelector(".upgradeButton").onclick = () => {
-    document.querySelector(".upgrades").style.display = displays[x]
-    document.querySelector(".prestigeUpgrades").style.display = displays[1]
-    y=0 
-    if (x == 0) { x = 1 }
-    else if (x == 1) { x = 0 }
+document.querySelector(".earthUpgradeButton").onclick = () => {
+    document.querySelector(".earthUpgrades").style.display = displays[menus.earthUpgradesDisplay]
+    document.querySelector(".earthPrestigeUpgrades").style.display = displays[1]
+    menus.earthPrestigeUpgradesDisplay=0 
+    if (menus.earthUpgradesDisplay == 0) {menus.earthUpgradesDisplay = 1 }
+    else if (menus.earthUpgradesDisplay == 1) { menus.earthUpgradesDisplay = 0 }
 }
 
-y = 0
-document.querySelector(".prestigeUpgradesButton").onclick = () => {
-    if (q.prestige.amount >=1) {
-        document.querySelector(".prestigeUpgrades").style.display = displays[y]
-        document.querySelector(".upgrades").style.display = displays[1]
-        x=0
-        if (y == 0) { y = 1 }
-        else if (y == 1) { y = 0 }
+document.querySelector(".earthPrestigeUpgradesButton").onclick = () => {
+    if (q.earth.prestige.amount >=1) {
+        document.querySelector(".earthPrestigeUpgrades").style.display = displays[menus.earthPrestigeUpgradesDisplay]
+        document.querySelector(".earthUpgrades").style.display = displays[1]
+        menus.earthUpgradesDisplay=0
+        if (menus.earthPrestigeUpgradesDisplay == 0) { menus.earthPrestigeUpgradesDisplay = 1 }
+        else if (menus.earthPrestigeUpgradesDisplay == 1) { menus.earthPrestigeUpgradesDisplay = 0 }
     }
 }
 
-document.querySelector(".up").onclick = () => {
+document.querySelector(".earthUp").onclick = () => {
     page += 1
 }
 
-document.querySelector(".down").onclick = () => {
-    if (page > 0) {
+document.querySelector(".earthDown").onclick = () => {
+    if (page > 1) {
         page -= 1
     }
 }
+
+
+document.querySelector(".close").onclick = () => {
+    document.querySelector(".alert").close()
+}
+
+
+}
+
+
+document.querySelector(".changeWorldUp").onclick =() => {
+    planet += 1
+}
+document.querySelector(".changeWorldDown").onclick =() => {
+    planet -= 1
+}
+
+
+document.querySelector(".moonUp").onclick = () => {
+    moonPage += 1
+}
+
+document.querySelector(".moonDown").onclick = () => {
+    if (moonPage > 1) {
+        moonPage -= 1
+    }
 }
 
 
 
+
+
+
+document.querySelector(".moonAutoUpgradeBuy").onclick = () => {
+    moonAutoUpgrade()
+}
+
+document.querySelector(".moonAutoPrintMoneyBuy").onclick = () => {
+    moonAutoPrintMoney()
+}
+
+document.querySelector(".hireMoonBuilder").onclick = () => {
+    hire("builder","moon")
+}
+document.querySelector(".hireMoonEngineer").onclick = () => {
+    hire("engineer","moon")
+}
+document.querySelector(".hireMoonManager").onclick = () => {
+    hire("manager","moon")
+}
+document.querySelector(".hireMoonSuperManager").onclick = () => {
+    hire("superManager","moon")
+}
+
+
+
+moonAutoPrintInterval = null
+moonAutoUpgradeInterval = null
+
+
+document.querySelector(".printMoonMoney").onclick = () => {giveMoonMoney()}
+
+displays = ["block", "none"]
+document.querySelector(".moonUpgradeButton").onclick = () => {
+    document.querySelector(".moonUpgrades").style.display = displays[menus.moonUpgradesDisplay]
+    document.querySelector(".moonPrestigeUpgrades").style.display = displays[1]
+    menus.moonPrestigeUpgradesDisplay=0 
+    if (menus.moonUpgradesDisplay == 0) { menus.moonUpgradesDisplay = 1 }
+    else if (menus.moonUpgradesDisplay == 1) { menus.moonUpgradesDisplay = 0 }
+}
+
+document.querySelector(".moonPrestigeUpgradesButton").onclick = () => {
+    if (q.earth.prestige.amount >=1) {
+        document.querySelector(".moonPrestigeUpgrades").style.display = displays[menus.moonPrestigeUpgradesDisplay]
+        document.querySelector(".moonUpgrades").style.display = displays[1]
+        menus.moonUpgradesDisplay=0
+        if (menus.moonPrestigeUpgradesDisplay == 0) { menus.moonPrestigeUpgradesDisplay = 1 }
+        else if (menus.moonPrestigeUpgradesDisplay == 1) { menus.moonPrestigeUpgradesDisplay = 0 }
+    }
+}
