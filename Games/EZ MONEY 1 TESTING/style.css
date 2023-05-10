@@ -1,7 +1,9 @@
 .start{
-    visibility: visibility;
-    position: relative;
-    top: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
 }
 
 body{
@@ -59,9 +61,10 @@ body{
     border-width: 1px;
     position: center;
 }
-.earthPrestigeUpgradesButton {
+.earthPrestigeUpgradesButton, .moonPrestigeUpgradesButton{
     border-width: 1px;
     position: center;
+    visibility: hidden;
 }
 
 
@@ -100,7 +103,7 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.earthPrestigeUpgrades {
+.earthPrestigeUpgrades, .moonPrestigeUpgrades {
     position:absolute;
     display: none;
     text-align: left;
@@ -181,11 +184,11 @@ body{
 }
 
 
-.earthPrestige {
+.earthPrestige,.moonPrestige {
     text-align: center;
 }
 
-.earthPrestigeButton {
+.earthPrestigeButton, .moonPrestigeButton {
     width: 150px;
     height: 50px;
 }
@@ -196,7 +199,7 @@ body{
 
 
 
-.earthPrestigeUpgrades {
+.earthPrestigeUpgrades, .moonPrestigeUpgrades {
     display: none;
 }
 .earthPrestigeUpgrade {
@@ -212,7 +215,7 @@ button:hover {
     background-color: rgba(70, 70, 70, 0.611);
 }
 
-.earthPrestigeProgress {
+.earthPrestigeProgress,.moonPrestigeProgress {
     position: relative;
     top: 5px;
     left: 50%;
@@ -223,7 +226,7 @@ button:hover {
     border-radius: 5px;
     overflow: hidden;
 }
-.earthPrestigeProgressFill {
+.earthPrestigeProgressFill, .moonPrestigeProgressFill {
     width: 0%;
     height: 100%;
     background-color: green;
