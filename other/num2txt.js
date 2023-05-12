@@ -81,3 +81,8 @@ function num2txt(num) {
     //return pogger number
     return betterNumber
 }  
+
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
