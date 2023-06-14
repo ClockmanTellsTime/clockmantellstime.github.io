@@ -1051,19 +1051,25 @@ function updateStats() {
 
 
 function updatePlanets() {
-    for (var i of q.planets) {
-        if (q[i].purchased != undefined) {
-            if (q[i].purchased) {
-                document.querySelector(`.${i}LockScreen`).style.display = "none"
-                document.querySelector(`.${i}Content`).style.display = "block"
+    try {
+        for (var i of q.planets) {
+            if (q[i].purchased != undefined) {
+                if (q[i].purchased) {
+                    document.querySelector(`.${i}LockScreen`).style.display = "none"
+                    document.querySelector(`.${i}Content`).style.display = "block"
+                }
+                else {
+                    document.querySelector(`.${i}LockScreen`).style.display = "block"
+                    document.querySelector(`.${i}Content`).style.display = "none"
+                }
             }
-            else {
-                document.querySelector(`.${i}LockScreen`).style.display = "block"
-                document.querySelector(`.${i}Content`).style.display = "none"
-            }
-        }
-        
-    }   
+            
+        }  
+    } 
+    catch(err) {
+        reset()
+        console.log(err)
+    }
 }
 
 function buyPlanet(p) {
