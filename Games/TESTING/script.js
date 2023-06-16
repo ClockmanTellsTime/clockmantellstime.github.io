@@ -2033,7 +2033,7 @@ setIntervall(function() {
 setInterval(function () {
     if (q.moon.autoPrint.on) {
         for (var i = 0; i < q.ascend.moon.autoPrintStack.amount; i++) {
-            q.moon.money += q.moon.click.amount * q.moon.prestige.multiplier.amount
+            q.moon.money += q.moon.click.amount * q.moon.prestige.multiplier.amount * q.ascend.moon.multiplier.amount
         }
     }
 }, 1)
@@ -2391,7 +2391,7 @@ if (q.moon.purchased) {
 setInterval(function () {
     if (q.mars.autoPrint.on) {
         for (var i = 0; i < q.ascend.mars.autoPrintStack.amount; i++) {
-            q.mars.money += q.mars.click.amount * q.mars.prestige.multiplier.amount
+            q.mars.money += q.mars.click.amount * q.mars.prestige.multiplier.amount * q.ascend.mars.multiplier.amount
         }
     }
 }, 1)
@@ -2764,7 +2764,7 @@ setInterval(function () {
 setInterval(function () {
     if (q.earth.autoPrint.on) {
         for (var i = 0; i < q.ascend.earth.autoPrintStack.amount; i++) {
-            q.earth.money += q.earth.click.amount * q.earth.prestige.multiplier.amount
+            q.earth.money += q.earth.click.amount * q.earth.prestige.multiplier.amount * q.ascend.earth.multiplier.amount
         }
     }
 }, 10)
