@@ -339,8 +339,6 @@ dialog > .close {
     transform: translate(-50%,0%);
 }
 
-
-
 .earthGround {
     background-color: green;
 }
@@ -366,4 +364,10 @@ dialog > .close {
 }
 .marsLockScreen {
     background-color: #AF0E0E;
+}
+
+
+.moneyPopup {
+    position: absolute;
+    z-index: -1;
 }
