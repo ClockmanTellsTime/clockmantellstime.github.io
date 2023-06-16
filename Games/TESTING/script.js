@@ -1,14 +1,3 @@
-/*
-Acsend people
-Enchanter
-Shadow Hacker
-Technomancer
-Arcane Scholar
-Rogue wizzard 
-
-*/
-
-
 document.addEventListener("keydown", event => {
     if (gameLoaded) {
         if (event.key.toLowerCase() == "r") {
@@ -180,23 +169,23 @@ var q = {
 
         earth: {
             Enchanter: {
-                cost: 10,
+                cost: 1000000,
                 amount: 0,
             },
             shadowHacker: {
-                cost: 10,
+                cost: 10000,
                 amount: 0,
             },
             technomancer: {
-                cost: 10,
+                cost: 1000,
                 amount: 0,
             },
             arcaneScholar: {
-                cost: 10,
+                cost: 100,
                 amount: 0,
             },
             roguewizzard : {
-                cost: 10,
+                cost: 100000,
                 amount: 0,
             },
 
@@ -246,23 +235,23 @@ var q = {
         },
         moon: {
             Enchanter: {
-                cost: 10,
+                cost: 1000000,
                 amount: 0,
             },
             shadowHacker: {
-                cost: 10,
+                cost: 10000,
                 amount: 0,
             },
             technomancer: {
-                cost: 10,
+                cost: 1000,
                 amount: 0,
             },
             arcaneScholar: {
-                cost: 10,
+                cost: 100,
                 amount: 0,
             },
             roguewizzard : {
-                cost: 10,
+                cost: 100000,
                 amount: 0,
             },
 
@@ -312,23 +301,23 @@ var q = {
         },
         mars: {
             Enchanter: {
-                cost: 10,
+                cost: 1000000,
                 amount: 0,
             },
             shadowHacker: {
-                cost: 10,
+                cost: 10000,
                 amount: 0,
             },
             technomancer: {
-                cost: 10,
+                cost: 1000,
                 amount: 0,
             },
             arcaneScholar: {
-                cost: 10,
+                cost: 100,
                 amount: 0,
             },
             roguewizzard : {
-                cost: 10,
+                cost: 100000,
                 amount: 0,
             },
 
@@ -375,7 +364,7 @@ var q = {
                 add: 5,
                 level: 0,
             },
-        }
+        },
     },
     
     earth: {
@@ -985,6 +974,8 @@ function hideUpgradeButtons() {
                 
             }
 
+
+
             if (q[p].prestige.taxCuts.level == q[p].prestige.taxCuts.max){
                 document.querySelector(`.${p}BuyTaxCuts`).style.display = "none"
             }
@@ -1009,6 +1000,28 @@ function hideUpgradeButtons() {
             }
             else {
                 document.querySelector(`.changeWorldDown`).style.visibility = ""
+            }
+
+            if (q.ascend[p].taxCuts.level == q.ascend[p].taxCuts.max){
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "none"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "none"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "none"
+            }
+            else {
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "block"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "block"
+            }
+
+            if (q.ascend[p].BOGOF.level == q.ascend[p].BOGOF.max){
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "none"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "none"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "none"
+            }
+            else {
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
             }
         }
     }
