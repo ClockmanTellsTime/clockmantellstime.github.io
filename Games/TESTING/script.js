@@ -5,6 +5,73 @@ document.addEventListener("keydown", event => {
                 reset()
             }
         }   
+
+        var p = q.planets[planet]
+        var pc = capitalizeFirstLetter(p)
+
+
+        if (event.key.toLowerCase() == 1) {
+            document.querySelector(`.${p}UpgradeButton`).click()
+        } 
+
+        if (event.key.toLowerCase() == 2) {
+            if (q[p].prestige.amount >= 1) {
+                document.querySelector(`.${p}PrestigeUpgradesButton`).click()
+            }
+        } 
+
+        if (event.key.toLowerCase() == 3) {
+            document.querySelector(`.${p}AscentionUpgradesButton`).click()
+        } 
+
+
+        if (event.key.toLowerCase() == "q") {
+            upgrade(p)
+        } 
+
+        if (event.key.toLowerCase() == "a") {
+            autoUpgrade(p)
+        } 
+        if (event.key.toLowerCase() == "s") {
+            autoPrintMoney(p)
+        } 
+        if (event.key.toLowerCase() == "d") {
+            autoPlay()
+        } 
+
+        if (event.key.toLowerCase() == "z") {
+            hire("builder",p)
+        }
+        if (event.key.toLowerCase() == "x") {
+            hire("manager",p)
+        }
+        if (event.key.toLowerCase() == "c") {
+            hire("superManager",p)
+        }
+        if (event.key.toLowerCase() == "v") {
+            hire("engineer",p)
+        }
+
+        if (q[p]["mk"+parseInt(event.key)] != undefined || event.key == 0) {
+            if (event.altKey) {
+                hire("mk"+parseInt(event.key),p)
+            }
+            if (event.ctrlKey && event.altKey) {
+                levelUp("mk"+parseInt(event.key),p)
+            }
+        }
+
+        if (event.key.toLowerCase() == "p") {
+            prestige(p)
+        }
+
+        if (event.key.toLowerCase() == "o") {
+            if (q.mars.purchased) {
+                ascend()
+            }
+        }
+
+
     }
 })
 
@@ -219,7 +286,7 @@ var q = {
                 level: 0,
             },
             taxCuts: {
-                amount: 1,
+                amount: 0,
                 cost: 1,
                 max: 30,
                 add: 3,
@@ -285,7 +352,7 @@ var q = {
                 level: 0,
             },
             taxCuts: {
-                amount: 1,
+                amount: 0,
                 cost: 1,
                 max: 30,
                 add: 3,
@@ -351,7 +418,7 @@ var q = {
                 level: 0,
             },
             taxCuts: {
-                amount: 1,
+                amount: 0,
                 cost: 1,
                 max: 30,
                 add: 3,
@@ -789,6 +856,23 @@ var settings = {
 
 function giveMoney(planet) {
     q[planet].money += q[planet].click.amount * q[planet].prestige.multiplier.amount * q.ascend[planet].multiplier.amount;
+
+    var label = document.createElement("label")
+    label.className = "moneyPopup"
+    label.innerHTML = `+ $${q[planet].click.amount * q[planet].prestige.multiplier.amount * q.ascend[planet].multiplier.amount}`
+
+    document.querySelector("body").appendChild(label)
+
+    var x = Math.floor(Math.random() * window.innerWidth)
+    var y = Math.floor(Math.random() * window.innerHeight) + 50 
+
+    label.style.position = "absolute"
+    label.style.left = x + "px"
+    label.style.top = y + "px"
+
+
+
+    setTimeout(function(){document.querySelector("body").removeChild(label)},5000)
 }
 
 function upgrade(p="earth") {
@@ -1385,7 +1469,7 @@ function displayStats() {
         document.querySelector(".marsNuclearFactoriesDisplay").innerHTML = `Increase production and speed by nuclear power. Cost: PT$${num2txt(q.mars.prestige.nuclearPower.cost)} production is now every ${q.mars.prestige.nuclearPower.amount} ms`
         document.querySelector(".marsTaxCutsDisplay").innerHTML = `Reduce the prices of everything. Cost: PT$${num2txt(q.mars.prestige.taxCuts.cost)} Tax cuts: ${q.mars.prestige.taxCuts.amount}%`
         document.querySelector(".marsBOGOFDisplay").innerHTML = `Increase the amount of free factories you get when BUYING. Cost: PT$${num2txt(q.mars.prestige.BOGOF.cost)} free stuff: ${q.mars.prestige.BOGOF.amount}`
-        document.querySelector(".mars_mk1Display").innerHTML = `Mars Mk1: The first factory on the mars. Cost: $${num2txt(q.mars.mars_mk1.cost)}. You own ${num2txt(q.mars.mars_mk1.amount)} of them. It's a small step for a factory, but a giant leap for your empire.`;
+        document.querySelector(".mars_mk1Display").innerHTML = `Mars Mk1: The first factory on mars. Cost: $${num2txt(q.mars.mars_mk1.cost)}. You own ${num2txt(q.mars.mars_mk1.amount)} of them. It's a small step for a factory, but a giant leap for your empire.`;
         document.querySelector(".mars_mk2Display").innerHTML = `Mars Mk2: This upgraded factory generates ${num2txt(q.mars.mars_mk2.earn* ef)} per second. Cost: $${num2txt(q.mars.mars_mk2.cost)}. You have ${num2txt(q.mars.mars_mk2.amount)} of them.`;
         document.querySelector(".mars_mk3Display").innerHTML = `Mars Mk3: The mars's weak radiation amplifies this factory to generate ${num2txt(q.mars.mars_mk3.earn* ef)} per second. Cost: $${num2txt(q.mars.mars_mk3.cost)}. You have ${num2txt(q.mars.mars_mk3.amount)} of them.`;
         document.querySelector(".mars_mk4Display").innerHTML = `Mars Mk4: Generates ${num2txt(q.mars.mars_mk4.earn* ef)} per second. Cost: $${num2txt(q.mars.mars_mk4.cost)}. You own ${num2txt(q.mars.mars_mk4.amount)} of them.`;
@@ -3043,7 +3127,7 @@ document.querySelector(`.moonPrestigeUpgradesButton`).onclick = () => {
 }
 document.querySelector(`.printMoonMoney`).onclick = () => {giveMoney("moon")}
 document.querySelector(".moonAscentionUpgradesButton").onclick = () => {
-    toggleMenuVisibility(".moonAscentionUpgrades", "earth")
+    toggleMenuVisibility(".moonAscentionUpgrades", "moon")
 }
 document.querySelector(".moonAscentionUp").onclick = () => {
     pages.moonAscentionPage += 1
@@ -3102,7 +3186,7 @@ document.querySelector(`.marsPrestigeUpgradesButton`).onclick = () => {
 }
 document.querySelector(`.printMarsMoney`).onclick = () => {giveMoney("mars")}
 document.querySelector(".marsAscentionUpgradesButton").onclick = () => {
-    toggleMenuVisibility(".marsAscentionUpgrades", "earth")
+    toggleMenuVisibility(".marsAscentionUpgrades", "mars")
 }
 document.querySelector(".marsAscentionUp").onclick = () => {
     pages.marsAscentionPage += 1
