@@ -10,62 +10,61 @@ document.addEventListener("keydown", event => {
         var pc = capitalizeFirstLetter(p)
 
 
-        if (event.key.toLowerCase() == 1) {
+        if (event.key.toLowerCase() == 1 && !event.ctrlKey && !event.altKey) {
             document.querySelector(`.${p}UpgradeButton`).click()
         } 
-
-        if (event.key.toLowerCase() == 2) {
+        
+        else if (event.key.toLowerCase() == 2 && !event.ctrlKey && !event.altKey) {
             if (q[p].prestige.amount >= 1) {
                 document.querySelector(`.${p}PrestigeUpgradesButton`).click()
             }
         } 
-
-        if (event.key.toLowerCase() == 3) {
+        
+        else if (event.key.toLowerCase() == 3 && !event.ctrlKey && !event.altKey) {
             document.querySelector(`.${p}AscentionUpgradesButton`).click()
         } 
-
-
-        if (event.key.toLowerCase() == "q") {
+        
+        
+        else if (event.key.toLowerCase() == "q") {
             upgrade(p)
         } 
-
-        if (event.key.toLowerCase() == "a") {
+        
+        else if (event.key.toLowerCase() == "a") {
             autoUpgrade(p)
         } 
-        if (event.key.toLowerCase() == "s") {
+        else if (event.key.toLowerCase() == "s") {
             autoPrintMoney(p)
         } 
-        if (event.key.toLowerCase() == "d") {
+        else if (event.key.toLowerCase() == "d") {
             autoPlay()
         } 
-
-        if (event.key.toLowerCase() == "z") {
+        
+        else if (event.key.toLowerCase() == "z") {
             hire("builder",p)
         }
-        if (event.key.toLowerCase() == "x") {
+        else if (event.key.toLowerCase() == "x") {
             hire("manager",p)
         }
-        if (event.key.toLowerCase() == "c") {
+        else if (event.key.toLowerCase() == "c") {
             hire("superManager",p)
         }
-        if (event.key.toLowerCase() == "v") {
+        else if (event.key.toLowerCase() == "v") {
             hire("engineer",p)
         }
-
-        if (q[p]["mk"+parseInt(event.key)] != undefined || event.key == 0) {
-            if (event.altKey) {
-                hire("mk"+parseInt(event.key),p)
-            }
-            if (event.ctrlKey && event.altKey) {
-                levelUp("mk"+parseInt(event.key),p)
-            }
+        
+        if (q[p]["mk"+parseInt(event.key)] != undefined  && event.altKey|| event.key == 0 && event.altKey) {
+            hire("mk"+parseInt(event.key),p)
         }
 
-        if (event.key.toLowerCase() == "p") {
+        if (q[p]["mk"+parseInt(event.key)] != undefined  && event.ctrlKey && event.altKey|| event.key == 0 && event.ctrlKey && event.altKey) {
+            levelUp("mk"+parseInt(event.key),p)
+        }
+        
+        else if (event.key.toLowerCase() == "p") {
             prestige(p)
         }
-
-        if (event.key.toLowerCase() == "o") {
+        
+        else if (event.key.toLowerCase() == "o") {
             if (q.mars.purchased) {
                 ascend()
             }
