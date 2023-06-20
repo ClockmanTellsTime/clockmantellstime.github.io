@@ -858,7 +858,7 @@ function giveMoney(planet) {
 
     var label = document.createElement("label")
     label.className = "moneyPopup"
-    label.innerHTML = `+ $${q[planet].click.amount * q[planet].prestige.multiplier.amount * q.ascend[planet].multiplier.amount}`
+    label.innerHTML = `+ $${num2txt(q[planet].click.amount * q[planet].prestige.multiplier.amount * q.ascend[planet].multiplier.amount)}`
 
     document.querySelector("body").appendChild(label)
 
