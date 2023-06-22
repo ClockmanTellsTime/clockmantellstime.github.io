@@ -21,7 +21,9 @@ document.addEventListener("keydown", event => {
         } 
         
         else if (event.key.toLowerCase() == 3 && !event.ctrlKey && !event.altKey) {
-            document.querySelector(`.${p}AscentionUpgradesButton`).click()
+            if (q.ascend.amount >= 1) {
+                document.querySelector(`.${p}AscentionUpgradesButton`).click()
+            }
         } 
         
         
@@ -1094,9 +1096,9 @@ function hideUpgradeButtons() {
                 document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "none"
             }
             else {
-                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
-                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "block"
-                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "block"
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "inline-block"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "inline-block"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionTaxCutsBuy`).style.display = "inline-block"
             }
 
             if (q.ascend[p].BOGOF.level == q.ascend[p].BOGOF.max){
@@ -1105,9 +1107,9 @@ function hideUpgradeButtons() {
                 document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "none"
             }
             else {
-                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
-                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
-                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "block"
+                document.querySelector(`.earth${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "inline-block"
+                document.querySelector(`.moon${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "inline-block"
+                document.querySelector(`.mars${capitalizeFirstLetter(p)}AscentionBOGOFBuy`).style.display = "inline-block"
             }
         }
     }
