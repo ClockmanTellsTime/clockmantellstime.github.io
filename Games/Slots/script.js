@@ -18,6 +18,8 @@ function roll(bet) {
     if (!bet) {return}
     if (bet > 1000000000000000000){bet = 1000000000000000000}
     if (money - bet < 0){return}
+    if (bet <= 0){return}
+    if (!/^[0-9]*$/.test(bet)){return}
 
     money -= bet
     moneyDisplay.innerHTML = `Money: $${num2txt(money)}`
